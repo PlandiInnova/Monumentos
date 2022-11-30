@@ -1,0 +1,56 @@
+<div class="portadaPrincipal" *ngIf="!dentroDelContenido">
+    <div class="paisesImagen">
+        
+    </div>
+    
+
+    <div class="buttonContainer">
+        <button class="btn btn-success entrarAlContenido" (click)="entrarAlContenidoByClick()">
+            Entrar
+        </button>
+    </div>
+    
+        
+</div>
+<div class="container-fluid" *ngIf="dentroDelContenido">
+    <div class="mapcontainer">
+        <div class="example-box" cdkDragBoundary=".container-fluid" cdkDrag>
+            <div class="plotLegend" >
+                <span>Alternative content for the legend</span>
+            </div>
+        </div>
+        <div class="map">Alternative content</div>
+        
+
+    </div>
+    <div class="myModalContainer">
+        <!-- Si quitas el botón no cierra el modal xd -->
+        <button id="modal-btn" class="button" style="display: none;">Boton cerrar</button>
+        <div id="my-modal" class="modal">
+            <div class="modalContent"  id="modalContent">
+                <div class="modal-header">
+                   <div class="titleDescripcion"></div>
+                   <div class="btnCloseDescripcion"></div>
+                    <!-- <span class="close">&times;</span> -->
+                    <!-- <h2>Descripción</h2> -->
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <div class="Descripcion" id="Descripcion">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="footerDescripcion">
+                    </div>
+                    <div class="btnDownload" (click)="openPDF()">
+                        Descargar
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+  
+  
