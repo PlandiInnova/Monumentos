@@ -1,7 +1,7 @@
 [{
-	"Country": "Afghanistan",
+	"Country": "Afganist\u00e1n",
 	"AC_2": "AF",
-	"Language": "Dari Persian, Pashtu (both official), other Turkic and minor languages",
+	"Language": "Dar\u00ed y past\u00fan",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 38928346,
@@ -9,11 +9,11 @@
 	"Capital": "Kabul",
 	"CapitalLatitude": 34.5166666667,
 	"CapitalLongitude": 69.183333,
-	"CurrencyUnit": "Afghan afghani"
+	"Moneda": "Afgani afgano"
 }, {
 	"Country": "Albania",
 	"AC_2": "AL",
-	"Language": "Albanian (Tosk is the official dialect), Greek",
+	"Language": "Alban\u00e9s",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 2877797,
@@ -21,23 +21,23 @@
 	"Capital": "Tirana",
 	"CapitalLatitude": 41.3166666667,
 	"CapitalLongitude": 19.816667,
-	"CurrencyUnit": "Albanian lek"
+	"Moneda": "Lek alban\u00e9s"
 }, {
-	"Country": "Algeria",
+	"Country": "Argelia",
 	"AC_2": "DZ",
-	"Language": "Arabic (official), French, Berber dialects",
+	"Language": "\u00c1rabe moderno estandarizado",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 43851044,
 	"Area": 2381740.0,
-	"Capital": "Algiers",
+	"Capital": "Algiers [El Djaza\u00efr]",
 	"CapitalLatitude": 36.75,
 	"CapitalLongitude": 3.05,
-	"CurrencyUnit": "Algerian dinar"
+	"Moneda": "Naira nigeriana"
 }, {
-	"Country": "American Samoa",
+	"Country": "Samoa Americana",
 	"AC_2": "AS",
-	"Language": "Samoan, English",
+	"Language": "Ingl\u00e9s y samoano",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 55191,
@@ -45,23 +45,23 @@
 	"Capital": "Pago Pago",
 	"CapitalLatitude": -14.2666666667,
 	"CapitalLongitude": -170.7,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "T\u0101l\u0101"
 }, {
 	"Country": "Andorra",
 	"AC_2": "AD",
-	"Language": "Catal\u00e1n (official), French, Castilian, Portuguese",
+	"Language": "Catal\u00e1n",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 77265,
 	"Area": 468.0,
-	"Capital": "Andorra la Vella",
+	"Capital": "Andorra La Vieja",
 	"CapitalLatitude": 42.5,
 	"CapitalLongitude": 1.516667,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
 	"Country": "Angola",
 	"AC_2": "AO",
-	"Language": "Portuguese (official), Bantu and other African languages",
+	"Language": "Portugu\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 32866272,
@@ -69,35 +69,35 @@
 	"Capital": "Luanda",
 	"CapitalLatitude": -8.8333333333,
 	"CapitalLongitude": 13.216667,
-	"CurrencyUnit": "Angolan kwanza"
+	"Moneda": "Kwanza angole\u00f1o"
 }, {
 	"Country": "Anguilla",
 	"AC_2": "AI",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 15003,
 	"Area": 102.0,
-	"Capital": "The Valley",
+	"Capital": "El Valle",
 	"CapitalLatitude": 18.2166666667,
 	"CapitalLongitude": -63.05,
-	"CurrencyUnit": null
+	"Moneda": "D\u00f3lar del Caribe Oriental"
 }, {
-	"Country": "Antigua & Barbuda",
+	"Country": "Antigua y Barbuda",
 	"AC_2": "AG",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 97929,
 	"Area": 443.0,
-	"Capital": "Saint John's",
+	"Capital": "Saint John'S",
 	"CapitalLatitude": 17.1166666667,
 	"CapitalLongitude": -61.85,
-	"CurrencyUnit": "East Caribbean dollar"
+	"Moneda": "D\u00f3lar del Caribe Oriental"
 }, {
 	"Country": "Argentina",
 	"AC_2": "AR",
-	"Language": "Spanish (official), English, Italian, German, French",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 45195774,
@@ -105,23 +105,23 @@
 	"Capital": "Buenos Aires",
 	"CapitalLatitude": -34.5833333333,
 	"CapitalLongitude": -58.666667,
-	"CurrencyUnit": "Argentine peso"
+	"Moneda": "Peso"
 }, {
 	"Country": "Armenia",
 	"AC_2": "AM",
-	"Language": "Armenian 98%, Yezidi, Russian",
+	"Language": "Armenio",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 2963243,
 	"Area": 29800.0,
-	"Capital": "Yerevan",
+	"Capital": "Erev\u00e1n",
 	"CapitalLatitude": 40.1666666667,
 	"CapitalLongitude": 44.5,
-	"CurrencyUnit": "Armenian dram"
+	"Moneda": "Dram armenio"
 }, {
 	"Country": "Aruba",
 	"AC_2": "AW",
-	"Language": "Dutch, Papiamento",
+	"Language": "Holand\u00e9s y papiamento",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 106766,
@@ -129,11 +129,11 @@
 	"Capital": "Oranjestad",
 	"CapitalLatitude": 12.5166666667,
 	"CapitalLongitude": -70.033333,
-	"CurrencyUnit": "Aruban florin"
+	"Moneda": "flor\u00edn"
 }, {
 	"Country": "Australia",
 	"AC_2": "AU",
-	"Language": "English 79%, native and other languages",
+	"Language": "Ingl\u00e9s",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 25499884,
@@ -141,35 +141,35 @@
 	"Capital": "Canberra",
 	"CapitalLatitude": -35.2666666667,
 	"CapitalLongitude": 149.133333,
-	"CurrencyUnit": "Australian dollar"
+	"Moneda": "D\u00f3lar australiano"
 }, {
 	"Country": "Austria",
 	"AC_2": "AT",
-	"Language": "German (official nationwide); Slovene, Croatian, Hungarian (each official in one region)",
+	"Language": "Alem\u00e1n, localmente: Burgenland - croata y esloveno",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 9006398,
 	"Area": 83870.0,
-	"Capital": "Vienna",
+	"Capital": "Viena",
 	"CapitalLatitude": 48.2,
 	"CapitalLongitude": 16.366667,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "Azerbaijan",
+	"Country": "Azerbaiy\u00e1n",
 	"AC_2": "AZ",
-	"Language": "Azerbaijani Turkic 89%, Russian 3%, Armenian 2%, other 6% (1995 est.)",
+	"Language": "Azer\u00ed",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 10139177,
 	"Area": 86600.0,
-	"Capital": "Baku",
+	"Capital": "Bak\u00fa",
 	"CapitalLatitude": 40.3833333333,
 	"CapitalLongitude": 49.866667,
-	"CurrencyUnit": "New Azeri manat"
+	"Moneda": "Manat azer\u00ed"
 }, {
 	"Country": "Bahamas",
 	"AC_2": "BS",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 393244,
@@ -177,35 +177,35 @@
 	"Capital": "Nassau",
 	"CapitalLatitude": 25.0833333333,
 	"CapitalLongitude": -77.35,
-	"CurrencyUnit": "Bahamian dollar"
+	"Moneda": "D\u00f3lar bahame\u00f1o"
 }, {
-	"Country": "Bahrain",
+	"Country": "Bar\u00e9in",
 	"AC_2": "BH",
-	"Language": "Arabic, English, Farsi, Urdu",
+	"Language": "\u00c1rabe moderno estandarizado",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 1701575,
 	"Area": 665.0,
-	"Capital": "Manama",
+	"Capital": "Manam\u00e1",
 	"CapitalLatitude": 26.2333333333,
 	"CapitalLongitude": 50.566667,
-	"CurrencyUnit": "Bahraini dinar"
+	"Moneda": "Dinar bahrein\u00ed"
 }, {
-	"Country": "Bangladesh",
+	"Country": "Banglad\u00e9s",
 	"AC_2": "BD",
-	"Language": "Bangla (official), English",
+	"Language": "Bengal\u00ed",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 164689383,
 	"Area": 144000.0,
-	"Capital": "Dhaka",
+	"Capital": "Daca",
 	"CapitalLatitude": 23.7166666667,
 	"CapitalLongitude": 90.4,
-	"CurrencyUnit": "Bangladeshi taka"
+	"Moneda": "Taka bangladesh\u00ed"
 }, {
 	"Country": "Barbados",
 	"AC_2": "BB",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 287375,
@@ -213,11 +213,11 @@
 	"Capital": "Bridgetown",
 	"CapitalLatitude": 13.1,
 	"CapitalLongitude": -59.616667,
-	"CurrencyUnit": "Barbados dollar"
+	"Moneda": "D\u00f3lar de Barbados"
 }, {
-	"Country": "Belarus",
+	"Country": "Bielorrusia",
 	"AC_2": "BY",
-	"Language": "Belorussian (White Russian), Russian, other",
+	"Language": "Bielorruso y ruso",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 9449323,
@@ -225,47 +225,47 @@
 	"Capital": "Minsk",
 	"CapitalLatitude": 53.9,
 	"CapitalLongitude": 27.566667,
-	"CurrencyUnit": "Belarusian rubel"
+	"Moneda": "Rublo bielorruso"
 }, {
-	"Country": "Belgium",
+	"Country": "B\u00e9lgica",
 	"AC_2": "BE",
-	"Language": "Dutch (Flemish) 60%, French 40%, German less than 1% (all official)",
+	"Language": "Franc\u00e9s, holand\u00e9s y alem\u00e1n",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 11589623,
 	"Area": 30528.0,
-	"Capital": "Brussels",
+	"Capital": "Bruselas",
 	"CapitalLatitude": 50.8333333333,
 	"CapitalLongitude": 4.333333,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "Belize",
+	"Country": "Belice",
 	"AC_2": "BZ",
-	"Language": "English (official), Spanish, Mayan, Garifuna (Carib), Creole",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 397628,
 	"Area": 22966.0,
-	"Capital": "Belmopan",
+	"Capital": "Belmop\u00e1n",
 	"CapitalLatitude": 17.25,
 	"CapitalLongitude": -88.766667,
-	"CurrencyUnit": "Belize dollar"
+	"Moneda": "D\u00f3lar belice\u00f1o"
 }, {
-	"Country": "Benin",
+	"Country": "Ben\u00edn",
 	"AC_2": "BJ",
-	"Language": "French (official), Fon, Yoruba, tribal languages",
+	"Language": "Franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 12123200,
 	"Area": 112620.0,
-	"Capital": "Porto-Novo",
+	"Capital": "Porto Novo ",
 	"CapitalLatitude": 6.4833333333,
 	"CapitalLongitude": 2.616667,
-	"CurrencyUnit": "West African CFA franc"
+	"Moneda": "Franco CFA de \u00c1frica Occidental"
 }, {
-	"Country": "Bermuda",
+	"Country": "islas Bermudas",
 	"AC_2": "BM",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 62278,
@@ -273,35 +273,35 @@
 	"Capital": "Hamilton",
 	"CapitalLatitude": 32.2833333333,
 	"CapitalLongitude": -64.783333,
-	"CurrencyUnit": "Bermuda dollar"
+	"Moneda": "d\u00f3lar bermude\u00f1o"
 }, {
-	"Country": "Bhutan",
+	"Country": "But\u00e1n",
 	"AC_2": "BT",
-	"Language": "Dzongkha (official), Tibetan dialects (among Bhotes), Nepalese dialects (among Nepalese)",
+	"Language": "Dzongkha",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 771608,
 	"Area": 47000.0,
-	"Capital": "Thimphu",
+	"Capital": "Timbu",
 	"CapitalLatitude": 27.4666666667,
 	"CapitalLongitude": 89.633333,
-	"CurrencyUnit": "Bhutanese ngultrum"
+	"Moneda": "Ngultrum butan\u00e9s"
 }, {
 	"Country": "Bolivia",
 	"AC_2": "BO",
-	"Language": "Spanish, Quechua, Aymara (all official)",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 11673021,
 	"Area": 1098580.0,
-	"Capital": "La Paz",
+	"Capital": "Sucre, La Paz",
 	"CapitalLatitude": -16.5,
 	"CapitalLongitude": -68.15,
-	"CurrencyUnit": "Bolivian Boliviano"
+	"Moneda": "Boliviano"
 }, {
-	"Country": "Bosnia and Herzegovina",
+	"Country": "Bosnia y Herzegovina",
 	"AC_2": "BA",
-	"Language": "Bosnian, Serbian, Croatian",
+	"Language": "Bosnio, croata y serbio",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 3280819,
@@ -309,23 +309,23 @@
 	"Capital": "Sarajevo",
 	"CapitalLatitude": 43.8666666667,
 	"CapitalLongitude": 18.416667,
-	"CurrencyUnit": "Bosnia and Herzegovina convertible mark"
+	"Moneda": "Marco bosnioherzegovino"
 }, {
-	"Country": "Botswana",
+	"Country": "Botsuana",
 	"AC_2": "BW",
-	"Language": "English 2% (official), Setswana 78%, Kalanga 8%, Sekgalagadi 3%, other (2001)",
+	"Language": "Ingl\u00e9s y setsuana",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 2351627,
 	"Area": 600370.0,
-	"Capital": "Gaborone",
+	"Capital": "Gaberones",
 	"CapitalLatitude": -24.6333333333,
 	"CapitalLongitude": 25.9,
-	"CurrencyUnit": "Botswana pula"
+	"Moneda": "Pula"
 }, {
-	"Country": "Brazil",
+	"Country": "Brasil",
 	"AC_2": "BR",
-	"Language": "Portuguese (official), Spanish, English, French",
+	"Language": "Portugu\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 212559417,
@@ -333,11 +333,11 @@
 	"Capital": "Brasilia",
 	"CapitalLatitude": -15.7833333333,
 	"CapitalLongitude": -47.916667,
-	"CurrencyUnit": "Brazilian real"
+	"Moneda": "Real brasile\u00f1o"
 }, {
-	"Country": "British Virgin Islands",
+	"Country": "Islas V\u00edrgenes Brit\u00e1nicas",
 	"AC_2": "VG",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 30231,
@@ -345,95 +345,95 @@
 	"Capital": "Road Town",
 	"CapitalLatitude": 18.4166666667,
 	"CapitalLongitude": -64.616667,
-	"CurrencyUnit": null
+	"Moneda": " D\u00f3lar estadounidense"
 }, {
-	"Country": "Brunei",
+	"Country": "Brun\u00e9i",
 	"AC_2": "BN",
-	"Language": "Malay (official), English, Chinese",
+	"Language": "Dzongkha",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 437479,
 	"Area": 5770.0,
-	"Capital": "Bandar Seri Begawan",
+	"Capital": "Sultanato Isl\u00e1mico De Brunei",
 	"CapitalLatitude": 4.8833333333,
 	"CapitalLongitude": 114.933333,
-	"CurrencyUnit": "Brunei dollar"
+	"Moneda": "D\u00f3lar de Brun\u00e9i"
 }, {
 	"Country": "Bulgaria",
 	"AC_2": "BG",
-	"Language": "Bulgarian 85%, Turkish 10%, Roma 4%",
+	"Language": "B\u00falgaro",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 6948445,
 	"Area": 110910.0,
-	"Capital": "Sofia",
+	"Capital": "Sof\u00eda",
 	"CapitalLatitude": 42.6833333333,
 	"CapitalLongitude": 23.316667,
-	"CurrencyUnit": "Bulgarian lev"
+	"Moneda": "Lev b\u00falgaro"
 }, {
 	"Country": "Burkina Faso",
 	"AC_2": "BF",
-	"Language": "French (official); native African (Sudanic) languages 90%",
+	"Language": "Franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 20903273,
 	"Area": 274200.0,
-	"Capital": "Ouagadougou",
+	"Capital": "Uagadug\u00fa",
 	"CapitalLatitude": 12.3666666667,
 	"CapitalLongitude": -1.516667,
-	"CurrencyUnit": "West African CFA franc"
+	"Moneda": "Franco CFA de \u00c1frica Occidental"
 }, {
-	"Country": "Burma",
+	"Country": "Birmania",
 	"AC_2": "MM",
-	"Language": "Burmese",
+	"Language": "Birmano",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 54409800,
 	"Area": 678500.0,
-	"Capital": null,
+	"Capital": "Naypid\u00f3",
 	"CapitalLatitude": null,
 	"CapitalLongitude": null,
-	"CurrencyUnit": null
+	"Moneda": "Kyat birmano"
 }, {
 	"Country": "Burundi",
 	"AC_2": "BI",
-	"Language": "Kirundi and French (official), Swahili",
+	"Language": "Kirundi, franc\u00e9s e ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 11890784,
 	"Area": 27830.0,
-	"Capital": "Bujumbura",
+	"Capital": "Buyumbura",
 	"CapitalLatitude": -3.3666666667,
 	"CapitalLongitude": 29.35,
-	"CurrencyUnit": "Burundi franc"
+	"Moneda": "Franco de Burundi"
 }, {
-	"Country": "Cambodia",
+	"Country": "Camboya",
 	"AC_2": "KH",
-	"Language": "Khmer 95% (official), French, English",
+	"Language": "Camboyano",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 16718965,
 	"Area": 181040.0,
-	"Capital": "Phnom Penh",
+	"Capital": "Pnon Pehn",
 	"CapitalLatitude": 11.55,
 	"CapitalLongitude": 104.916667,
-	"CurrencyUnit": "Cambodian riel"
+	"Moneda": "Riel camboyano"
 }, {
-	"Country": "Cameroon",
+	"Country": "Camer\u00fan",
 	"AC_2": "CM",
-	"Language": "French, English (both official); 24 major African language groups",
+	"Language": "Ingl\u00e9s y franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 26545863,
 	"Area": 475440.0,
-	"Capital": "Yaounde",
+	"Capital": "Yaund\u00e9",
 	"CapitalLatitude": 3.8666666667,
 	"CapitalLongitude": 11.516667,
-	"CurrencyUnit": "Central African CFA franc"
+	"Moneda": "Franco CFA de \u00c1frica Central"
 }, {
-	"Country": "Canada",
+	"Country": "Canad\u00e1",
 	"AC_2": "CA",
-	"Language": "English 59.3%, French 23.2% (both official); other 17.5%",
+	"Language": "Ingl\u00e9s y franc\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 37742154,
@@ -441,11 +441,11 @@
 	"Capital": "Ottawa",
 	"CapitalLatitude": 45.4166666667,
 	"CapitalLongitude": -75.7,
-	"CurrencyUnit": "Canadian dollar"
+	"Moneda": "D\u00f3lar canadiense"
 }, {
 	"Country": "Cabo Verde",
 	"AC_2": "CV",
-	"Language": "Portuguese, Criuolo",
+	"Language": "Portugu\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 555987,
@@ -453,11 +453,11 @@
 	"Capital": "Praia",
 	"CapitalLatitude": 14.9166666667,
 	"CapitalLongitude": -23.516667,
-	"CurrencyUnit": "Cabo Verde escudo"
+	"Moneda": "Escudo caboverdiano"
 }, {
-	"Country": "Cayman Islands",
+	"Country": "Islas Caim\u00e1n",
 	"AC_2": "KY",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 65722,
@@ -465,11 +465,11 @@
 	"Capital": "George Town",
 	"CapitalLatitude": 19.3,
 	"CapitalLongitude": -81.383333,
-	"CurrencyUnit": "Cayman Islands dollar"
+	"Moneda": "D\u00f3lar De Las Islas Caim\u00e1n"
 }, {
-	"Country": "Central African Republic",
+	"Country": "Rep\u00fablica Centroafricana",
 	"AC_2": "CF",
-	"Language": "French, Sango",
+	"Language": "Franc\u00e9s y sango",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 4829767,
@@ -477,59 +477,59 @@
 	"Capital": "Bangui",
 	"CapitalLatitude": 4.3666666667,
 	"CapitalLongitude": 18.583333,
-	"CurrencyUnit": "Central African CFA franc"
+	"Moneda": "Franco CFA de \u00c1frica Central"
 }, {
-	"Country": "Chad",
+	"Country": "Rep\u00fablica del Chad",
 	"AC_2": "TD",
-	"Language": "French, Arabic (both official); Sara; more than 120 languages and dialects",
+	"Language": "Franc\u00e9s, \u00c1rabe moderno",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 16425864,
 	"Area": 1284000.0,
-	"Capital": "N'Djamena",
+	"Capital": "Yamena ",
 	"CapitalLatitude": 12.1,
 	"CapitalLongitude": 15.033333,
-	"CurrencyUnit": "Central African CFA franc"
+	"Moneda": "Franco CFA"
 }, {
 	"Country": "Chile",
 	"AC_2": "CL",
-	"Language": "Spanish",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 19116201,
 	"Area": 756950.0,
-	"Capital": "Santiago",
+	"Capital": "Santiago De Chile",
 	"CapitalLatitude": -33.45,
 	"CapitalLongitude": -70.666667,
-	"CurrencyUnit": "Chilean peso"
+	"Moneda": "Peso chileno"
 }, {
 	"Country": "China",
 	"AC_2": "CN",
-	"Language": "Standard Chinese (Mandarin\/Putonghua), Yue (Cantonese), Wu (Shanghaiese), Minbei (Fuzhou), Minnan (Hokkien-Taiwanese), Xiang, Gan, Hakka dialects, minority languages",
+	"Language": "Mandar\u00edn",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 1439323776,
 	"Area": 9596960.0,
-	"Capital": "Beijing",
+	"Capital": "Pek\u00edn",
 	"CapitalLatitude": 39.9166666667,
 	"CapitalLongitude": 116.383333,
-	"CurrencyUnit": "Chinese yuan"
+	"Moneda": "Yuan chino"
 }, {
 	"Country": "Colombia",
 	"AC_2": "CO",
-	"Language": "Spanish",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 50882891,
 	"Area": 1138910.0,
-	"Capital": "Bogota",
+	"Capital": "Bogot\u00e1",
 	"CapitalLatitude": 4.6,
 	"CapitalLongitude": -74.083333,
-	"CurrencyUnit": "Colombian peso"
+	"Moneda": "Peso colombiano"
 }, {
-	"Country": "Comoros",
+	"Country": "Comoras",
 	"AC_2": "KM",
-	"Language": "Arabic and French (both official), Shikomoro (Swahili\/Arabic blend)",
+	"Language": "\u00c1rabe, franc\u00e9s y comorense",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 869601,
@@ -537,11 +537,11 @@
 	"Capital": "Moroni",
 	"CapitalLatitude": -11.7,
 	"CapitalLongitude": 43.233333,
-	"CurrencyUnit": "Comorian franc"
+	"Moneda": "Franco comorano"
 }, {
-	"Country": "Congo, Dem. Rep.",
+	"Country": "Rep\u00fablica Democr\u00e1tica del Congo",
 	"AC_2": "CD",
-	"Language": "French, Lingala, Swahili, Kongo, Luba-Kasai",
+	"Language": "Franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 89561403,
@@ -549,11 +549,11 @@
 	"Capital": "Kinshasa",
 	"CapitalLatitude": -4.3166666667,
 	"CapitalLongitude": 15.3,
-	"CurrencyUnit": "Congolese franc"
+	"Moneda": "Franco congole\u00f1o"
 }, {
-	"Country": "Congo, Repub. of the",
+	"Country": "Rep\u00fablica Del Congo",
 	"AC_2": "CG",
-	"Language": "French, Lingala, Swahili, Kongo, Luba-Kasai",
+	"Language": "Franc\u00e9s, lingala, swahili",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 5518087,
@@ -561,11 +561,11 @@
 	"Capital": "Brazzaville",
 	"CapitalLatitude": -4.25,
 	"CapitalLongitude": 15.283333,
-	"CurrencyUnit": "Central African CFA franc"
+	"Moneda": "Franco congole\u00f1o"
 }, {
-	"Country": "Cook Islands",
+	"Country": "Islas Cook",
 	"AC_2": "CK",
-	"Language": "Rarotongan, Pukapukan, English",
+	"Language": "Ingl\u00e9s y maor\u00ed",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 17564,
@@ -573,35 +573,35 @@
 	"Capital": "Avarua",
 	"CapitalLatitude": -21.2,
 	"CapitalLongitude": -159.766667,
-	"CurrencyUnit": null
+	"Moneda": "d\u00f3lar de la Islas Cook"
 }, {
 	"Country": "Costa Rica",
 	"AC_2": "CR",
-	"Language": "Spanish (official), English",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 5094118,
 	"Area": 51100.0,
-	"Capital": "San Jose",
+	"Capital": "San Jos\u00e9",
 	"CapitalLatitude": 9.9333333333,
 	"CapitalLongitude": -84.083333,
-	"CurrencyUnit": "Costa Rican colon"
+	"Moneda": "Col\u00f3n costarricense"
 }, {
-	"Country": "C\u00f4te d'Ivoire",
+	"Country": "Costa de marfil",
 	"AC_2": "CI",
-	"Language": "French",
+	"Language": "Franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 26378274,
 	"Area": 322460.0,
-	"Capital": "Yamoussoukro",
+	"Capital": "Yamusukro, Abiy\u00e1n",
 	"CapitalLatitude": 6.8166666667,
 	"CapitalLongitude": -5.266667,
-	"CurrencyUnit": "West African CFA franc"
+	"Moneda": "Franco CFA de \u00c1frica Occidental"
 }, {
-	"Country": "Croatia",
+	"Country": "Croacia",
 	"AC_2": "HR",
-	"Language": "Croatian 96% (official), other 4% (including Italian, Hungarian, Czech, Slovak, German)",
+	"Language": "Croata",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 4105267,
@@ -609,23 +609,23 @@
 	"Capital": "Zagreb",
 	"CapitalLatitude": 45.8,
 	"CapitalLongitude": 16,
-	"CurrencyUnit": "Croatian kuna"
+	"Moneda": "Kuna croata"
 }, {
 	"Country": "Cuba",
 	"AC_2": "CU",
-	"Language": "Spanish",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 11326616,
 	"Area": 110860.0,
-	"Capital": "Havana",
+	"Capital": "La Habana",
 	"CapitalLatitude": 23.1166666667,
 	"CapitalLongitude": -82.35,
-	"CurrencyUnit": "Cuban peso"
+	"Moneda": "Peso cubano"
 }, {
-	"Country": "Cyprus",
+	"Country": "Chipre",
 	"AC_2": "CY",
-	"Language": "Greek, Turkish (both official); English",
+	"Language": "Griego moderno y turco",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 1207359,
@@ -633,47 +633,47 @@
 	"Capital": "Nicosia",
 	"CapitalLatitude": 35.1666666667,
 	"CapitalLongitude": 33.366667,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "Czech Republic (Czechia)",
+	"Country": "Rep\u00fablica Checa (Chequia)",
 	"AC_2": "CZ",
-	"Language": "Czech",
+	"Language": "Checo",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 10708981,
 	"Area": 78866.0,
-	"Capital": "Prague",
+	"Capital": "Praga",
 	"CapitalLatitude": 50.0833333333,
 	"CapitalLongitude": 14.466667,
-	"CurrencyUnit": "Czech koruna"
+	"Moneda": "Corona Checa"
 }, {
-	"Country": "Denmark",
+	"Country": "Dinamarca",
 	"AC_2": "DK",
-	"Language": "Danish, Faroese, Greenlandic (Inuit dialect), German; English is the predominant second language",
+	"Language": "Dan\u00e9s",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 5792202,
 	"Area": 43094.0,
-	"Capital": "Copenhagen",
+	"Capital": "Copenhague",
 	"CapitalLatitude": 55.6666666667,
 	"CapitalLongitude": 12.583333,
-	"CurrencyUnit": "Danish krone"
+	"Moneda": "Corona danesa"
 }, {
-	"Country": "Djibouti",
+	"Country": "Yibuti",
 	"AC_2": "DJ",
-	"Language": "French and Arabic (both official), Somali, Afar",
+	"Language": "\u00c1rabe y franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 988000,
 	"Area": 23000.0,
-	"Capital": "Djibouti",
+	"Capital": "Yibuti",
 	"CapitalLatitude": 11.5833333333,
 	"CapitalLongitude": 43.15,
-	"CurrencyUnit": "Djibouti franc"
+	"Moneda": "Franco yibutiano"
 }, {
 	"Country": "Dominica",
 	"AC_2": "DM",
-	"Language": "English (official) and French patois",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 71986,
@@ -681,11 +681,11 @@
 	"Capital": "Roseau",
 	"CapitalLatitude": 15.3,
 	"CapitalLongitude": -61.4,
-	"CurrencyUnit": "East Caribbean dollar"
+	"Moneda": "D\u00f3lar del Caribe Oriental"
 }, {
-	"Country": "Dominican Republic",
+	"Country": "Rep\u00fablica Dominicana",
 	"AC_2": "DO",
-	"Language": "Spanish",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 10847910,
@@ -693,11 +693,11 @@
 	"Capital": "Santo Domingo",
 	"CapitalLatitude": 18.4666666667,
 	"CapitalLongitude": -69.9,
-	"CurrencyUnit": "Dominican peso"
+	"Moneda": "Peso dominicano"
 }, {
-	"Country": "Timor-Leste",
+	"Country": "Timor Oriental",
 	"AC_2": "TL",
-	"Language": "Tetum, Portuguese (official); Bahasa Indonesia, English; other indigenous languages, including Tetum, Galole, Mambae, and Kemak",
+	"Language": "Tetun y portugu\u00e9s",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 1318445,
@@ -705,11 +705,11 @@
 	"Capital": "Dili",
 	"CapitalLatitude": -8.5833333333,
 	"CapitalLongitude": 125.6,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "D\u00f3lar estadounidense"
 }, {
 	"Country": "Ecuador",
 	"AC_2": "EC",
-	"Language": "Spanish (official), Quechua, other Amerindian languages",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 17643054,
@@ -717,23 +717,23 @@
 	"Capital": "Quito",
 	"CapitalLatitude": -0.2166666667,
 	"CapitalLongitude": -78.5,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "D\u00f3lar estadounidense"
 }, {
-	"Country": "Egypt",
+	"Country": "Egipto",
 	"AC_2": "EG",
-	"Language": "Arabic (official), English and French widely understood by educated classes",
+	"Language": "\u00c1rabe",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 102334404,
 	"Area": 1001450.0,
-	"Capital": "Cairo",
+	"Capital": "El Cairo",
 	"CapitalLatitude": 30.05,
 	"CapitalLongitude": 31.25,
-	"CurrencyUnit": "Egyptian pound"
+	"Moneda": "Libra egipcia"
 }, {
 	"Country": "El Salvador",
 	"AC_2": "SV",
-	"Language": "Spanish, Nahua (among some Amerindians)",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 6486205,
@@ -741,11 +741,11 @@
 	"Capital": "San Salvador",
 	"CapitalLatitude": 13.7,
 	"CapitalLongitude": -89.2,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "D\u00f3lar estadounidense"
 }, {
-	"Country": "Equatorial Guinea",
+	"Country": "Guinea Ecuatorial",
 	"AC_2": "GQ",
-	"Language": "Spanish, French (both official); pidgin English, Fang, Bubi, Igbo",
+	"Language": "Espa\u00f1ol, franc\u00e9s y portugu\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 1402985,
@@ -753,11 +753,11 @@
 	"Capital": "Malabo",
 	"CapitalLatitude": 3.75,
 	"CapitalLongitude": 8.783333,
-	"CurrencyUnit": "Central African CFA franc"
+	"Moneda": "Franco CFA de \u00c1frica Central"
 }, {
 	"Country": "Eritrea",
 	"AC_2": "ER",
-	"Language": "Afar, Arabic, Tigre and Kunama, Tigrinya, other Cushitic languages",
+	"Language": "\u00c1rabe, ingl\u00e9s y tigri\u00f1a",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 3546421,
@@ -765,47 +765,47 @@
 	"Capital": "Asmara",
 	"CapitalLatitude": 15.3333333333,
 	"CapitalLongitude": 38.933333,
-	"CurrencyUnit": "Eritrean nakfa"
+	"Moneda": "Nakfa"
 }, {
 	"Country": "Estonia",
 	"AC_2": "EE",
-	"Language": "Estonian 67% (official), Russian 30%, other (2000)",
+	"Language": "Estonio",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 1326535,
 	"Area": 45226.0,
-	"Capital": "Tallinn",
+	"Capital": "Tall\u00edn",
 	"CapitalLatitude": 59.4333333333,
 	"CapitalLongitude": 24.716667,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "Ethiopia",
+	"Country": "Etiop\u00eda",
 	"AC_2": "ET",
-	"Language": "Amharic, Tigrigna, Orominga, Guaragigna, Somali, Arabic, English, over 70 others",
+	"Language": "Amh\u00e1rico",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 114963588,
 	"Area": 1127127.0,
-	"Capital": "Addis Ababa",
+	"Capital": "Ad\u00eds Abeba",
 	"CapitalLatitude": 9.0333333333,
 	"CapitalLongitude": 38.7,
-	"CurrencyUnit": "Ethiopian birr"
+	"Moneda": "Birr et\u00edope"
 }, {
-	"Country": "Faroe Islands",
+	"Country": "Islas Faroe",
 	"AC_2": "FO",
 	"Language": "Faroese",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 49053,
 	"Area": 1399.0,
-	"Capital": "Torshavn",
+	"Capital": "T\u00f3rshavn",
 	"CapitalLatitude": 62.0,
 	"CapitalLongitude": -6.766667,
-	"CurrencyUnit": "Danish krone"
+	"Moneda": "Corona Feroesa"
 }, {
-	"Country": "Fiji",
+	"Country": "Fiyi",
 	"AC_2": "FJ",
-	"Language": "English (official), Fijian, Hindustani",
+	"Language": "Ingl\u00e9s y fiyiano",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 896445,
@@ -813,11 +813,11 @@
 	"Capital": "Suva",
 	"CapitalLatitude": -18.1333333333,
 	"CapitalLongitude": 178.416667,
-	"CurrencyUnit": "Fijian dollar"
+	"Moneda": "D\u00f3lar fiyiano"
 }, {
-	"Country": "Finland",
+	"Country": "Finlandia",
 	"AC_2": "FI",
-	"Language": "Finnish 92%, Swedish 6% (both official); small Sami- (Lapp) and Russian-speaking minorities",
+	"Language": "Finland\u00e9s y sueco",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 5540720,
@@ -825,47 +825,47 @@
 	"Capital": "Helsinki",
 	"CapitalLatitude": 60.1666666667,
 	"CapitalLongitude": 24.933333,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "France",
+	"Country": "Francia",
 	"AC_2": "FR",
-	"Language": "French 100%, rapidly declining regional dialects (Proven\u00e7al, Breton, Alsatian, Corsican, Catalan, Basque, Flemish)",
+	"Language": "Franc\u00e9s",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 65273511,
 	"Area": 547030.0,
-	"Capital": "Paris",
+	"Capital": "Par\u00eds",
 	"CapitalLatitude": 48.8666666667,
 	"CapitalLongitude": 2.333333,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "French Guiana",
+	"Country": "Guayana Francesa",
 	"AC_2": "GF",
-	"Language": "French",
+	"Language": "Franc\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 298682,
 	"Area": 91000.0,
-	"Capital": null,
+	"Capital": "Cayena",
 	"CapitalLatitude": null,
 	"CapitalLongitude": null,
-	"CurrencyUnit": null
+	"Moneda": "Euro "
 }, {
-	"Country": "French Polynesia",
+	"Country": "Polinesia francesa",
 	"AC_2": "PF",
-	"Language": "French",
+	"Language": "Franc\u00e9s",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 280908,
 	"Area": 4167.0,
-	"Capital": "Papeete",
+	"Capital": " Papeete",
 	"CapitalLatitude": -17.5333333333,
 	"CapitalLongitude": -149.566667,
-	"CurrencyUnit": "CFP franc"
+	"Moneda": "franco del Pac\u00edfico"
 }, {
-	"Country": "Gabon",
+	"Country": "Gab\u00f3n",
 	"AC_2": "GA",
-	"Language": "French (official), Fang, Myene, Nzebi, Bapounou\/Eschira, Bandjabi",
+	"Language": "Franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 2225734,
@@ -873,11 +873,11 @@
 	"Capital": "Libreville",
 	"CapitalLatitude": 0.3833333333,
 	"CapitalLongitude": 9.45,
-	"CurrencyUnit": "Central African CFA franc"
+	"Moneda": "Franco CFA de \u00c1frica Central"
 }, {
 	"Country": "Gambia",
 	"AC_2": "GM",
-	"Language": "English",
+	"Language": "\u00c1rabe e ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 2416668,
@@ -885,47 +885,47 @@
 	"Capital": "Banjul",
 	"CapitalLatitude": 13.45,
 	"CapitalLongitude": -16.566667,
-	"CurrencyUnit": "Gambian dalasi"
+	"Moneda": "Dalasi"
 }, {
-	"Country": "Gaza Strip",
+	"Country": "Franja de Gaza",
 	"AC_2": "PS",
-	"Language": "Arabic",
+	"Language": "\u00c1rabe moderno estandarizado",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 2048000,
 	"Area": 360.0,
-	"Capital": "Jerusalem",
+	"Capital": "Gaza",
 	"CapitalLatitude": 31.7666666667,
 	"CapitalLongitude": 35.233333,
-	"CurrencyUnit": "Israeli new shekel"
+	"Moneda": "sheqel israel\u00ed"
 }, {
 	"Country": "Georgia",
 	"AC_2": "GE",
-	"Language": "Georgian 71% (official), Russian 9%, Armenian 7%, Azerbaijani 6%, other 7% (Abkhaz is the official language in Abkhazia)",
+	"Language": "Georgiano",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 3989167,
 	"Area": 69700.0,
-	"Capital": "Tbilisi",
+	"Capital": "Tiflis",
 	"CapitalLatitude": 41.6833333333,
 	"CapitalLongitude": 44.833333,
-	"CurrencyUnit": "Georgian lari"
+	"Moneda": "Lari georgiano"
 }, {
-	"Country": "Germany",
+	"Country": "Alemania",
 	"AC_2": "DE",
-	"Language": "German",
+	"Language": "Alem\u00e1n",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 83783942,
 	"Area": 357021.0,
-	"Capital": "Berlin",
+	"Capital": "Berl\u00edn",
 	"CapitalLatitude": 52.5166666667,
 	"CapitalLongitude": 13.4,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
 	"Country": "Ghana",
 	"AC_2": "GH",
-	"Language": "English (official), African languages (including Akan, Moshi-Dagomba, Ewe, and Ga)",
+	"Language": "Ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 31072940,
@@ -933,11 +933,11 @@
 	"Capital": "Accra",
 	"CapitalLatitude": 5.55,
 	"CapitalLongitude": -0.216667,
-	"CurrencyUnit": "New Ghanaian cedi"
+	"Moneda": "Cedi"
 }, {
 	"Country": "Gibraltar",
 	"AC_2": "GI",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 33691,
@@ -945,23 +945,23 @@
 	"Capital": "Gibraltar",
 	"CapitalLatitude": 36.1333333333,
 	"CapitalLongitude": -5.35,
-	"CurrencyUnit": null
+	"Moneda": "Libra de Gibraltar"
 }, {
-	"Country": "Greece",
+	"Country": "Grecia",
 	"AC_2": "GR",
-	"Language": "Greek 99% (official), English, French",
+	"Language": "Griego moderno",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 10423054,
 	"Area": 131940.0,
-	"Capital": "Athens",
+	"Capital": "Atenas",
 	"CapitalLatitude": 37.9833333333,
 	"CapitalLongitude": 23.733333,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "Greenland",
+	"Country": "Groenlandia",
 	"AC_2": "GL",
-	"Language": "Greenlandic",
+	"Language": "Dan\u00e9s y groenland\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 56770,
@@ -969,59 +969,59 @@
 	"Capital": "Nuuk",
 	"CapitalLatitude": 64.1833333333,
 	"CapitalLongitude": -51.75,
-	"CurrencyUnit": "Danish krone"
+	"Moneda": "corona danesa"
 }, {
-	"Country": "Grenada",
+	"Country": "Granada",
 	"AC_2": "GD",
-	"Language": "English (official), French patois",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 112523,
 	"Area": 344.0,
-	"Capital": "Saint George's",
+	"Capital": "Saint George'S",
 	"CapitalLatitude": 12.05,
 	"CapitalLongitude": -61.75,
-	"CurrencyUnit": "East Caribbean dollar"
+	"Moneda": "D\u00f3lar del Caribe Oriental"
 }, {
-	"Country": "Guadeloupe",
+	"Country": "Guadalupe",
 	"AC_2": "GP",
-	"Language": "French",
+	"Language": "Franc\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 400124,
 	"Area": 1780.0,
-	"Capital": null,
+	"Capital": " Basse-Terre",
 	"CapitalLatitude": null,
 	"CapitalLongitude": null,
-	"CurrencyUnit": null
+	"Moneda": "Euro"
 }, {
 	"Country": "Guam",
 	"AC_2": "GU",
-	"Language": "Chamorro, English",
+	"Language": "Ingl\u00e9s y chamorro",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 168775,
 	"Area": 541.0,
-	"Capital": "Hagatna",
+	"Capital": "Aga\u00f1a",
 	"CapitalLatitude": 13.4666666667,
 	"CapitalLongitude": 144.733333,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "d\u00f3lar estadounidense"
 }, {
 	"Country": "Guatemala",
 	"AC_2": "GT",
-	"Language": "Spanish 60%, Amerindian languages 40% (23 officially recognized Amerindian languages, including Quiche, Cakchiquel, Kekchi, Mam, Garifuna, and Xinca)",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 17915568,
 	"Area": 108890.0,
-	"Capital": "Guatemala City",
+	"Capital": "Ciudad De Guatemala",
 	"CapitalLatitude": 14.6166666667,
 	"CapitalLongitude": -90.516667,
-	"CurrencyUnit": "Guatemalan quetzal"
+	"Moneda": "Quetzal guatemalteco"
 }, {
 	"Country": "Guernsey",
 	"AC_2": "GG",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 62792,
@@ -1029,11 +1029,11 @@
 	"Capital": "Saint Peter Port",
 	"CapitalLatitude": 49.45,
 	"CapitalLongitude": -2.533333,
-	"CurrencyUnit": null
+	"Moneda": "Libra de Guernsey"
 }, {
 	"Country": "Guinea",
 	"AC_2": "GN",
-	"Language": "French (official), native tongues (Malink\u00e9, Susu, Fulani)",
+	"Language": "Franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 13132795,
@@ -1041,11 +1041,11 @@
 	"Capital": "Conakry",
 	"CapitalLatitude": 9.5,
 	"CapitalLongitude": -13.7,
-	"CurrencyUnit": "Guinean franc"
+	"Moneda": "Franco guineano"
 }, {
-	"Country": "Guinea-Bissau",
+	"Country": "Guinea-Bis\u00e1u",
 	"AC_2": "GW",
-	"Language": "Portuguese (official), Criolo, African languages",
+	"Language": "Portugu\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 1968001,
@@ -1053,11 +1053,11 @@
 	"Capital": "Bissau",
 	"CapitalLatitude": 11.85,
 	"CapitalLongitude": -15.583333,
-	"CurrencyUnit": "West African CFA franc"
+	"Moneda": "Franco CFA de \u00c1frica Occidental"
 }, {
 	"Country": "Guyana",
 	"AC_2": "GY",
-	"Language": "English (official), Amerindian dialects, Creole, Hindi, Urdu",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 786552,
@@ -1065,23 +1065,23 @@
 	"Capital": "Georgetown",
 	"CapitalLatitude": 6.8,
 	"CapitalLongitude": -58.15,
-	"CurrencyUnit": "Guyana dollar"
+	"Moneda": "D\u00f3lar guyan\u00e9s"
 }, {
-	"Country": "Haiti",
+	"Country": "Hait\u00ed",
 	"AC_2": "HT",
-	"Language": "Creole and French (both official)",
+	"Language": "Haitiano y franc\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 11402528,
 	"Area": 27750.0,
-	"Capital": "Port-au-Prince",
+	"Capital": "Puerto Pr\u00edncipe",
 	"CapitalLatitude": 18.5333333333,
 	"CapitalLongitude": -72.333333,
-	"CurrencyUnit": "Haitian gourde"
+	"Moneda": "Gourde haitiano"
 }, {
 	"Country": "Honduras",
 	"AC_2": "HN",
-	"Language": "Spanish (official), Amerindian dialects; English widely spoken in business",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 9904607,
@@ -1089,23 +1089,11 @@
 	"Capital": "Tegucigalpa",
 	"CapitalLatitude": 14.1,
 	"CapitalLongitude": -87.216667,
-	"CurrencyUnit": "Honduran lempira"
+	"Moneda": "Lempira hondure\u00f1o"
 }, {
-	"Country": "Hong Kong",
-	"AC_2": "HK",
-	"Language": "Chinese, English",
-	"Region": "Asia",
-	"color": "#F76624",
-	"Population": 7496981,
-	"Area": 1092.0,
-	"Capital": null,
-	"CapitalLatitude": 0.0,
-	"CapitalLongitude": 0,
-	"CurrencyUnit": "Hong Kong dollar"
-}, {
-	"Country": "Hungary",
+	"Country": "Hungr\u00eda",
 	"AC_2": "HU",
-	"Language": "Magyar (Hungarian) 94%, other 6%",
+	"Language": "H\u00fangaro",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 9660351,
@@ -1113,119 +1101,119 @@
 	"Capital": "Budapest",
 	"CapitalLatitude": 47.5,
 	"CapitalLongitude": 19.083333,
-	"CurrencyUnit": "Hungarian forint"
+	"Moneda": "Forinto h\u00fangaro"
 }, {
-	"Country": "Iceland",
+	"Country": "Islandia",
 	"AC_2": "IS",
-	"Language": "Icelandic, English, Nordic languages, German widely spoken",
+	"Language": "Island\u00e9s",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 341243,
 	"Area": 103000.0,
-	"Capital": "Reykjavik",
+	"Capital": "Reikiavik",
 	"CapitalLatitude": 64.15,
 	"CapitalLongitude": -21.95,
-	"CurrencyUnit": "Iceland krona"
+	"Moneda": "Corona islandes"
 }, {
 	"Country": "India",
 	"AC_2": "IN",
-	"Language": "Hindi 30%, English, Bengali, Gujarati, Kashmiri, Malayalam, Marathi, Oriya, Punjabi, Tamil, Telugu, Urdu, Kannada, Assamese, Sanskrit, Sindhi (all official); Hindi\/Urdu; 1,600+ dialects",
+	"Language": "Hindi, Ingl\u00e9s",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 1380004385,
 	"Area": 3287590.0,
-	"Capital": "New Delhi",
+	"Capital": "Nueva Delhi",
 	"CapitalLatitude": 28.6,
 	"CapitalLongitude": 77.2,
-	"CurrencyUnit": "Indian rupee"
+	"Moneda": "Rupia india"
 }, {
 	"Country": "Indonesia",
 	"AC_2": "ID",
-	"Language": "Bahasa Indonesia (official), English, Dutch, Javanese, and more than 580 other languages and dialects",
+	"Language": "Indonesio",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 273523615,
 	"Area": 1919440.0,
-	"Capital": "Jakarta",
+	"Capital": "Yakarta",
 	"CapitalLatitude": -6.1666666667,
 	"CapitalLongitude": 106.816667,
-	"CurrencyUnit": "Indonesian rupiah"
+	"Moneda": "Rupia indonesia"
 }, {
-	"Country": "Iran",
+	"Country": "Ir\u00e1n",
 	"AC_2": "IR",
-	"Language": "Persian and Persian dialects 58%, Turkic and Turkic dialects 26%, Kurdish 9%, Luri 2%, Balochi 1%, Arabic 1%, Turkish 1%, other 2%",
+	"Language": "Persa",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 83992949,
 	"Area": 1648000.0,
-	"Capital": "Tehran",
+	"Capital": "Teher\u00e1n",
 	"CapitalLatitude": 35.7,
 	"CapitalLongitude": 51.416667,
-	"CurrencyUnit": "Iranian rial"
+	"Moneda": "Rial iran\u00ed"
 }, {
-	"Country": "Iraq",
+	"Country": "Irak",
 	"AC_2": "IQ",
-	"Language": "Arabic (official), Kurdish (official in Kurdish regions), Assyrian, Armenian",
+	"Language": "\u00e1rabe (oficial) y kurdo (oficial en la Regi\u00f3n del Kurdist\u00e1n Iraqu\u00ed",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 40222493,
 	"Area": 437072.0,
-	"Capital": "Baghdad",
+	"Capital": "Bagdad",
 	"CapitalLatitude": 33.3333333333,
 	"CapitalLongitude": 44.4,
-	"CurrencyUnit": "Iraqi dinar"
+	"Moneda": "Dinar iraqu\u00ed"
 }, {
-	"Country": "Ireland",
+	"Country": "Irlanda",
 	"AC_2": "IE",
-	"Language": "English, Irish (Gaelic) (both official)",
+	"Language": "Ingl\u00e9s e irland\u00e9s",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 4937786,
 	"Area": 70280.0,
-	"Capital": "Dublin",
+	"Capital": "Dubl\u00edn",
 	"CapitalLatitude": 53.3166666667,
 	"CapitalLongitude": -6.233333,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "Isle of Man",
+	"Country": "Isla del hombre",
 	"AC_2": "IM",
-	"Language": "Manx, English",
+	"Language": "Ingl\u00e9s, man\u00e9s",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 85033,
 	"Area": 572.0,
-	"Capital": "Douglas",
+	"Capital": " Douglas",
 	"CapitalLatitude": 54.15,
 	"CapitalLongitude": -4.483333,
-	"CurrencyUnit": "Pound sterling"
+	"Moneda": "Libra manesa"
 }, {
 	"Country": "Israel",
 	"AC_2": "IL",
-	"Language": "Hebrew (official), Arabic, English",
+	"Language": "Hebreo",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 8655535,
 	"Area": 20770.0,
-	"Capital": "Jerusalem",
+	"Capital": "Jerusal\u00e9n",
 	"CapitalLatitude": 31.7666666667,
 	"CapitalLongitude": 35.233333,
-	"CurrencyUnit": "Israeli new shekel"
+	"Moneda": "Nuevo sh\u00e9quel"
 }, {
-	"Country": "Italy",
+	"Country": "Italia",
 	"AC_2": "IT",
-	"Language": "Italian (official); German-, French-, and Slovene-speaking minorities",
+	"Language": "Italiano, localmente: franc\u00e9s, ladino, alem\u00e1n, sardo y esloveno",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 60461826,
 	"Area": 301230.0,
-	"Capital": "Rome",
+	"Capital": "Roma",
 	"CapitalLatitude": 41.9,
 	"CapitalLongitude": 12.483333,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
 	"Country": "Jamaica",
 	"AC_2": "JM",
-	"Language": "English, Jamaican Creole",
+	"Language": "Ingl\u00e9s y jamaicano",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 2961167,
@@ -1233,23 +1221,23 @@
 	"Capital": "Kingston",
 	"CapitalLatitude": 18.0,
 	"CapitalLongitude": -76.8,
-	"CurrencyUnit": "Jamaican dollar"
+	"Moneda": "D\u00f3lar jamaiquino"
 }, {
-	"Country": "Japan",
+	"Country": "Jap\u00f3n",
 	"AC_2": "JP",
-	"Language": "Japanese",
+	"Language": "Japon\u00e9s",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 126476461,
 	"Area": 377835.0,
-	"Capital": "Tokyo",
+	"Capital": "Tokio",
 	"CapitalLatitude": 35.6833333333,
 	"CapitalLongitude": 139.75,
-	"CurrencyUnit": "Japanese yen"
+	"Moneda": "Yen"
 }, {
 	"Country": "Jersey",
 	"AC_2": "JE",
-	"Language": "J\u00e8rriais, English, French",
+	"Language": "Ingl\u00e9s y jersey\u00e9s",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": "\u200b115800",
@@ -1257,35 +1245,35 @@
 	"Capital": "Saint Helier",
 	"CapitalLatitude": 49.1833333333,
 	"CapitalLongitude": -2.1,
-	"CurrencyUnit": null
+	"Moneda": " Libra de Jersey"
 }, {
-	"Country": "Jordan",
+	"Country": "Jord\u00e1n",
 	"AC_2": "JO",
-	"Language": "Arabic (official), English",
+	"Language": "\u00c1rabe jordano",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 10203134,
 	"Area": 92300.0,
-	"Capital": "Amman",
+	"Capital": "Am\u00e1n",
 	"CapitalLatitude": 31.95,
 	"CapitalLongitude": 35.933333,
-	"CurrencyUnit": "Jordanian dinar"
+	"Moneda": "Dinar jordano"
 }, {
-	"Country": "Kazakhstan",
+	"Country": "Kazajst\u00e1n",
 	"AC_2": "KZ",
-	"Language": "Kazak (Qazaq, state language) 64%; Russian (official, used in everyday business) 95% (2001 est.)",
+	"Language": "Kazajo",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 18776707,
 	"Area": 2717300.0,
-	"Capital": "Astana",
+	"Capital": "Nursult\u00e1n",
 	"CapitalLatitude": 51.1666666667,
 	"CapitalLongitude": 71.416667,
-	"CurrencyUnit": "Kazakh tenge"
+	"Moneda": "Tenge kazajo"
 }, {
-	"Country": "Kenya",
+	"Country": "Kenia",
 	"AC_2": "KE",
-	"Language": "English (official), Swahili (national), and numerous indigenous languages",
+	"Language": "Suajili e ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 53771296,
@@ -1293,11 +1281,11 @@
 	"Capital": "Nairobi",
 	"CapitalLatitude": -1.2833333333,
 	"CapitalLongitude": 36.816667,
-	"CurrencyUnit": "Kenyan shilling"
+	"Moneda": "Chel\u00edn keniano"
 }, {
 	"Country": "Kiribati",
 	"AC_2": "KI",
-	"Language": "English (official), I-Kiribati (Gilbertese)",
+	"Language": "Ingl\u00e9s y gilbert\u00e9s",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 119449,
@@ -1305,11 +1293,11 @@
 	"Capital": "Tarawa",
 	"CapitalLatitude": -0.8833333333,
 	"CapitalLongitude": 169.533333,
-	"CurrencyUnit": "Australian dollar"
+	"Moneda": "D\u00f3lar australiano"
 }, {
-	"Country": "North Korea",
+	"Country": "Corea del Norte",
 	"AC_2": "KP",
-	"Language": "Korean",
+	"Language": "Coreano",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 25778816,
@@ -1317,59 +1305,59 @@
 	"Capital": "Pyongyang",
 	"CapitalLatitude": 39.0166666667,
 	"CapitalLongitude": 125.75,
-	"CurrencyUnit": "Democratic People's Republic of Korean won"
+	"Moneda": "Won norcoreano"
 }, {
-	"Country": "South Korea",
+	"Country": "Corea del Sur",
 	"AC_2": "KR",
-	"Language": "Korean, English widely taught",
+	"Language": "Coreano, lenguaje de signos coreano",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 51269185,
 	"Area": 98480.0,
-	"Capital": "Seoul",
+	"Capital": "Se\u00fal",
 	"CapitalLatitude": 37.55,
 	"CapitalLongitude": 126.983333,
-	"CurrencyUnit": "Korean won"
+	"Moneda": "Won surcoreano"
 }, {
 	"Country": "Kuwait",
 	"AC_2": "KW",
-	"Language": "Arabic (official), English",
+	"Language": "\u00c1rabe",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 4270571,
 	"Area": 17820.0,
-	"Capital": "Kuwait City",
+	"Capital": "Ciudad De Kuwait",
 	"CapitalLatitude": 29.3666666667,
 	"CapitalLongitude": 47.966667,
-	"CurrencyUnit": "Kuwaiti dinar"
+	"Moneda": "Dinar kuwait\u00ed"
 }, {
-	"Country": "Kyrgyzstan",
+	"Country": "Kirguist\u00e1n",
 	"AC_2": "KG",
-	"Language": "Kyrgyz, Russian (both official)",
+	"Language": "Kirgu\u00eds y ruso",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 6524195,
 	"Area": 198500.0,
-	"Capital": "Bishkek",
+	"Capital": "Biskek",
 	"CapitalLatitude": 42.8666666667,
 	"CapitalLongitude": 74.6,
-	"CurrencyUnit": "Kyrgyz som"
+	"Moneda": "Som kirgu\u00eds"
 }, {
 	"Country": "Laos",
 	"AC_2": "LA",
-	"Language": "Lao (official), French, English, various ethnic languages",
+	"Language": "Laosiano",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 7275560,
 	"Area": 236800.0,
-	"Capital": "Vientiane",
+	"Capital": "Vienti\u00e1n",
 	"CapitalLatitude": 17.9666666667,
 	"CapitalLongitude": 102.6,
-	"CurrencyUnit": "Lao kip"
+	"Moneda": "Kip laosiano"
 }, {
-	"Country": "Latvia",
+	"Country": "letonia",
 	"AC_2": "LV",
-	"Language": "Latvian 58% (official), Russian 38%, Lithuanian, other (2000)",
+	"Language": "Let\u00f3n",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 1886198,
@@ -1377,11 +1365,11 @@
 	"Capital": "Riga",
 	"CapitalLatitude": 56.95,
 	"CapitalLongitude": 24.1,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "Lebanon",
+	"Country": "L\u00edbano",
 	"AC_2": "LB",
-	"Language": "Arabic (official), French, English, Armenian",
+	"Language": "\u00c1rabe",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 6825445,
@@ -1389,11 +1377,11 @@
 	"Capital": "Beirut",
 	"CapitalLatitude": 33.8666666667,
 	"CapitalLongitude": 35.5,
-	"CurrencyUnit": "Lebanese pound"
+	"Moneda": "Libra libanesa"
 }, {
-	"Country": "Lesotho",
+	"Country": "Lesoto",
 	"AC_2": "LS",
-	"Language": "English, Sesotho (both official); Zulu, Xhosa",
+	"Language": "Sesoto, Ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 2142249,
@@ -1401,11 +1389,11 @@
 	"Capital": "Maseru",
 	"CapitalLatitude": -29.3166666667,
 	"CapitalLongitude": 27.483333,
-	"CurrencyUnit": "Lesotho loti"
+	"Moneda": "Loti"
 }, {
 	"Country": "Liberia",
 	"AC_2": "LR",
-	"Language": "English 20% (official), some 20 ethnic-group languages",
+	"Language": "Ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 5057681,
@@ -1413,23 +1401,23 @@
 	"Capital": "Monrovia",
 	"CapitalLatitude": 6.3,
 	"CapitalLongitude": -10.8,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "D\u00f3lar liberiano"
 }, {
-	"Country": "Libya",
+	"Country": "Libia",
 	"AC_2": "LY",
-	"Language": "Arabic, Italian, and English widely understood in major cities",
+	"Language": "\u00c1rabe",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 6871292,
 	"Area": 1759540.0,
-	"Capital": "Tripoli",
+	"Capital": "Tr\u00edpoli",
 	"CapitalLatitude": 32.8833333333,
 	"CapitalLongitude": 13.166667,
-	"CurrencyUnit": "Libyan dinar"
+	"Moneda": "Dinar libio"
 }, {
 	"Country": "Liechtenstein",
 	"AC_2": "LI",
-	"Language": "German (official), Alemannic dialect",
+	"Language": "Alem\u00e1n",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 38128,
@@ -1437,59 +1425,59 @@
 	"Capital": "Vaduz",
 	"CapitalLatitude": 47.1333333333,
 	"CapitalLongitude": 9.516667,
-	"CurrencyUnit": "Swiss franc"
+	"Moneda": "Franco suizo"
 }, {
-	"Country": "Lithuania",
+	"Country": "Lituania",
 	"AC_2": "LT",
-	"Language": "Lithuanian 82% (official), Russian 8%, Polish 6% (2001)",
+	"Language": "Lituano",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 2722289,
 	"Area": 65200.0,
-	"Capital": "Vilnius",
+	"Capital": "Vilna",
 	"CapitalLatitude": 54.6833333333,
 	"CapitalLongitude": 25.316667,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "Luxembourg",
+	"Country": "luxemburgo",
 	"AC_2": "LU",
-	"Language": "Luxermbourgish (national) French, German (both administrative)",
+	"Language": "Luxemburgu\u00e9s, franc\u00e9s y alem\u00e1n",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 625978,
 	"Area": 2586.0,
-	"Capital": "Luxembourg",
+	"Capital": "Luxemburgo",
 	"CapitalLatitude": 49.6,
 	"CapitalLongitude": 6.116667,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
 	"Country": "Macao",
 	"AC_2": "MO",
-	"Language": "Chinese, Portuguese",
+	"Language": "Portugu\u00e9s, Chino",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 658391,
 	"Area": 28.0,
-	"Capital": null,
+	"Capital": "Ciudad De Macao",
 	"CapitalLatitude": 0.0,
 	"CapitalLongitude": 0,
-	"CurrencyUnit": "Macao pataca"
+	"Moneda": "Pataca macaense"
 }, {
 	"Country": "Macedonia",
 	"AC_2": "MK",
-	"Language": "Macedonian 67%, Albanian 25% (both official); Turkish 4%, Roma 2%, Serbian 1% (2002)",
+	"Language": "Macedonio",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 2065000,
 	"Area": 25333.0,
-	"Capital": "Skopje",
+	"Capital": "Tesal\u00f3nica",
 	"CapitalLatitude": 42.0,
 	"CapitalLongitude": 21.433333,
-	"CurrencyUnit": "Macedonian denar"
+	"Moneda": "Denar macedonio"
 }, {
 	"Country": "Madagascar",
 	"AC_2": "MG",
-	"Language": "Malagasy and French (both official)",
+	"Language": "Malgache y franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 27691018,
@@ -1497,23 +1485,23 @@
 	"Capital": "Antananarivo",
 	"CapitalLatitude": -18.9166666667,
 	"CapitalLongitude": 47.516667,
-	"CurrencyUnit": "Malagasy ariary"
+	"Moneda": "Ariary malgache"
 }, {
-	"Country": "Malawi",
+	"Country": "Malaui",
 	"AC_2": "MW",
-	"Language": "Chichewa 57.2% (official), Chinyanja 12.8%, Chiyao 10.1%, Chitumbuka 9.5%, Chisena 2.7%, Chilomwe 2.4%, Chitonga 1.7%, other 3.6% (1998)",
+	"Language": "Ingl\u00e9s y chichewa",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 19129952,
 	"Area": 118480.0,
-	"Capital": "Lilongwe",
+	"Capital": "Lilong\u00fce",
 	"CapitalLatitude": -13.9666666667,
 	"CapitalLongitude": 33.783333,
-	"CurrencyUnit": "Malawi kwacha"
+	"Moneda": "Kwacha malau\u00ed"
 }, {
-	"Country": "Malaysia",
+	"Country": "Malasia",
 	"AC_2": "MY",
-	"Language": "Bahasa Melayu (Malay, official), English, Chinese dialects (Cantonese, Mandarin, Hokkien, Hakka, Hainan, Foochow), Tamil, Telugu, Malayalam, Panjabi, Thai; several indigenous languages (including Iban, Kadazan) in East Malaysia",
+	"Language": "Malayo",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 32365999,
@@ -1521,23 +1509,23 @@
 	"Capital": "Kuala Lumpur",
 	"CapitalLatitude": 3.1666666667,
 	"CapitalLongitude": 101.7,
-	"CurrencyUnit": "Malaysian ringgit"
+	"Moneda": "Ringgit malayo"
 }, {
-	"Country": "Maldives",
+	"Country": "Maldivas",
 	"AC_2": "MV",
-	"Language": "Maldivian Dhivehi (official); English spoken by most government officials",
+	"Language": "Maldivo",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 540544,
 	"Area": 300.0,
-	"Capital": "Male",
+	"Capital": "Mal\u00e9",
 	"CapitalLatitude": 4.1666666667,
 	"CapitalLongitude": 73.5,
-	"CurrencyUnit": "Maldivian rufiyaa"
+	"Moneda": "Rupia de Maldivas"
 }, {
-	"Country": "Mali",
+	"Country": "Mal\u00ed",
 	"AC_2": "ML",
-	"Language": "French (official), Bambara 80%, numerous African languages",
+	"Language": "Franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 20250833,
@@ -1545,23 +1533,23 @@
 	"Capital": "Bamako",
 	"CapitalLatitude": 12.65,
 	"CapitalLongitude": -8,
-	"CurrencyUnit": "West African CFA franc"
+	"Moneda": "Franco CFA de \u00c1frica Occidental"
 }, {
 	"Country": "Malta",
 	"AC_2": "MT",
-	"Language": "Maltese and English (both official)",
+	"Language": "Malt\u00e9s e ingl\u00e9s",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 441543,
 	"Area": 316.0,
-	"Capital": "Valletta",
+	"Capital": "La Valeta",
 	"CapitalLatitude": 35.8833333333,
 	"CapitalLongitude": 14.5,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "Marshall Islands",
+	"Country": "Islas Marshall",
 	"AC_2": "MH",
-	"Language": "Marshallese 98% (two major dialects from the Malayo-Polynesian family), English widely spoken as a second language (both official); Japanese",
+	"Language": "Marshal\u00e9s e ingl\u00e9s",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 59190,
@@ -1569,35 +1557,35 @@
 	"Capital": "Majuro",
 	"CapitalLatitude": 7.1,
 	"CapitalLongitude": 171.383333,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "D\u00f3lar estadounidense"
 }, {
-	"Country": "Martinique",
+	"Country": "Martinica",
 	"AC_2": "MQ",
-	"Language": "French",
+	"Language": "Franc\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 375265,
 	"Area": 1100.0,
-	"Capital": null,
+	"Capital": "Fort-De-France",
 	"CapitalLatitude": null,
 	"CapitalLongitude": null,
-	"CurrencyUnit": null
+	"Moneda": "Euro"
 }, {
 	"Country": "Mauritania",
 	"AC_2": "MR",
-	"Language": "Hassaniya Arabic (official), Pulaar, Soninke, French, Wolof",
+	"Language": "\u00c1rabe",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 4649658,
 	"Area": 1030700.0,
-	"Capital": "Nouakchott",
+	"Capital": "Nuakchot",
 	"CapitalLatitude": 18.0666666667,
 	"CapitalLongitude": -15.966667,
-	"CurrencyUnit": "Mauritanian ouguiya"
+	"Moneda": "Uguiya"
 }, {
-	"Country": "Mauritius",
+	"Country": "Mauricio",
 	"AC_2": "MU",
-	"Language": "English less than 1% (official), Creole 81%, Bojpoori 12%, French 3% (2000)",
+	"Language": "Ingl\u00e9s y franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 1271768,
@@ -1605,35 +1593,35 @@
 	"Capital": "Port Louis",
 	"CapitalLatitude": -20.15,
 	"CapitalLongitude": 57.483333,
-	"CurrencyUnit": "Mauritian rupee"
+	"Moneda": "Rupia de Mauricio"
 }, {
 	"Country": "Mayotte",
 	"AC_2": "YT",
-	"Language": "French",
+	"Language": "Franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 272815,
 	"Area": 374.0,
-	"Capital": null,
+	"Capital": "Mamoudzou",
 	"CapitalLatitude": null,
 	"CapitalLongitude": null,
-	"CurrencyUnit": null
+	"Moneda": "Europa"
 }, {
-	"Country": "Mexico",
+	"Country": "M\u00e9xico",
 	"AC_2": "MX",
-	"Language": "Spanish, various Mayan, Nahuatl, and other regional indigenous languages",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 128932753,
 	"Area": 1972550.0,
-	"Capital": "Mexico City",
+	"Capital": "M\u00e9xico D. F.",
 	"CapitalLatitude": 19.4333333333,
 	"CapitalLongitude": -99.133333,
-	"CurrencyUnit": "Mexican peso"
+	"Moneda": "Peso mexicano"
 }, {
 	"Country": "Micronesia",
 	"AC_2": "FM",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 548914,
@@ -1641,11 +1629,11 @@
 	"Capital": "Palikir",
 	"CapitalLatitude": 6.9166666667,
 	"CapitalLongitude": 158.15,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "D\u00f3lar estadounidense"
 }, {
-	"Country": "Moldova",
+	"Country": "Moldavia",
 	"AC_2": "MD",
-	"Language": "Moldovan (official; virtually the same as Romanian), Russian, Gagauz (a Turkish dialect)",
+	"Language": "Rumano, localmente: gaga\u00fazo, ruso y ucraniano",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 4033963,
@@ -1653,35 +1641,35 @@
 	"Capital": "Chisinau",
 	"CapitalLatitude": 47.0,
 	"CapitalLongitude": 28.85,
-	"CurrencyUnit": "Moldovan leu"
+	"Moneda": "Leu moldavo"
 }, {
-	"Country": "Monaco",
+	"Country": "M\u00f3naco",
 	"AC_2": "MC",
-	"Language": "French (official), English, Italian, Mon\u00e9gasque",
+	"Language": "Franc\u00e9s",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 39242,
 	"Area": 2.0,
-	"Capital": "Monaco",
+	"Capital": "M\u00f3naco",
 	"CapitalLatitude": 43.7333333333,
 	"CapitalLongitude": 7.416667,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
 	"Country": "Mongolia",
 	"AC_2": "MN",
-	"Language": "Mongolian, 90%; also Turkic and Russian (1999)",
+	"Language": "Mongol",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 3278290,
 	"Area": 1564116.0,
-	"Capital": "Ulaanbaatar",
+	"Capital": "Ulan Bator",
 	"CapitalLatitude": 47.9166666667,
 	"CapitalLongitude": 106.916667,
-	"CurrencyUnit": "Mongolian tugrik"
+	"Moneda": "Tugrik mongol"
 }, {
 	"Country": "Montserrat",
 	"AC_2": "MS",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 4992,
@@ -1689,11 +1677,11 @@
 	"Capital": "Plymouth",
 	"CapitalLatitude": 16.7,
 	"CapitalLongitude": -62.216667,
-	"CurrencyUnit": null
+	"Moneda": "D\u00f3lar del Caribe Oriental"
 }, {
-	"Country": "Morocco",
+	"Country": "Marruecos",
 	"AC_2": "MA",
-	"Language": "Arabic (official), Berber dialects, French often used for business, government, and diplomacy",
+	"Language": "\u00c1rabe y tamazight",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 36910560,
@@ -1701,11 +1689,11 @@
 	"Capital": "Rabat",
 	"CapitalLatitude": 34.0166666667,
 	"CapitalLongitude": -6.816667,
-	"CurrencyUnit": "Moroccan dirham"
+	"Moneda": "Dirham marroqu\u00ed"
 }, {
 	"Country": "Mozambique",
 	"AC_2": "MZ",
-	"Language": "Portuguese 9% (official; second language of 27%), Emakhuwa 26%, Xichangana 11%, Elomwe 8%, Cisena 7%, Echuwabo 6%, other Mozambican languages 32% (1997)",
+	"Language": "Portugu\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 31255435,
@@ -1713,11 +1701,11 @@
 	"Capital": "Maputo",
 	"CapitalLatitude": -25.95,
 	"CapitalLongitude": 32.583333,
-	"CurrencyUnit": "New Mozambican metical"
+	"Moneda": "Metical mozambique\u00f1o"
 }, {
 	"Country": "Namibia",
-	"AC_2": "NA",
-	"Language": "English 7% (official), Afrikaans is common language of most of the population and of about 60% of the white population, German 32%; indigenous languages: Oshivambo, Herero, Nama",
+	"AC_2": null,
+	"Language": "Ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 2540905,
@@ -1725,11 +1713,11 @@
 	"Capital": "Windhoek",
 	"CapitalLatitude": -22.5666666667,
 	"CapitalLongitude": 17.083333,
-	"CurrencyUnit": null
+	"Moneda": "D\u00f3lar namibio"
 }, {
 	"Country": "Nauru",
 	"AC_2": "NR",
-	"Language": "Nauruan (official), English",
+	"Language": "Ingl\u00e9s y nauruano",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 10824,
@@ -1737,23 +1725,23 @@
 	"Capital": "Yaren",
 	"CapitalLatitude": -0.5477,
 	"CapitalLongitude": 166.920867,
-	"CurrencyUnit": null
+	"Moneda": "D\u00f3lar australiano"
 }, {
 	"Country": "Nepal",
 	"AC_2": "NP",
-	"Language": "Nepali 48% (official), Maithali 12%, Bhojpuri 7%, Tharu 6%, Tamang 5%, others. English spoken by many in government and business (2001)",
+	"Language": "Nepal\u00ed",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 29136808,
 	"Area": 147181.0,
-	"Capital": "Kathmandu",
+	"Capital": "Katmand\u00fa",
 	"CapitalLatitude": 27.7166666667,
 	"CapitalLongitude": 85.316667,
-	"CurrencyUnit": "Nepalese rupee"
+	"Moneda": "Rupia nepal\u00ed"
 }, {
-	"Country": "Netherlands",
+	"Country": "Pa\u00edses Bajos",
 	"AC_2": "NL",
-	"Language": "Dutch, Frisian (both official)",
+	"Language": "Holand\u00e9s, localmente: fris\u00f3n",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 17134872,
@@ -1761,35 +1749,35 @@
 	"Capital": "Amsterdam",
 	"CapitalLatitude": 52.35,
 	"CapitalLongitude": 4.916667,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "Netherlands Antilles",
+	"Country": "Antillas Holandesas",
 	"AC_2": "AN",
-	"Language": "English, Dutch, and Papiamentu, a local Spanish-based creole that includes Portuguese, Dutch, and some African words.",
+	"Language": "Neerland\u00e9s",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 17134872,
 	"Area": 960.0,
-	"Capital": null,
+	"Capital": "Willemstad",
 	"CapitalLatitude": null,
 	"CapitalLongitude": null,
-	"CurrencyUnit": null
+	"Moneda": "Flor\u00edn"
 }, {
-	"Country": "New Caledonia",
+	"Country": "Nueva Caledonia",
 	"AC_2": "NC",
-	"Language": "French",
+	"Language": "Franc\u00e9s",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 285498,
 	"Area": 19060.0,
-	"Capital": "Noumea",
+	"Capital": "Numea",
 	"CapitalLatitude": -22.2666666667,
 	"CapitalLongitude": 166.45,
-	"CurrencyUnit": "CFP franc"
+	"Moneda": "Franco del Pac\u00edfico"
 }, {
-	"Country": "New Zealand",
+	"Country": "Nueva Zelanda",
 	"AC_2": "NZ",
-	"Language": "English, Maori (both official)",
+	"Language": "Ingl\u00e9s, maor\u00ed y lengua de signos neozelandesa",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 4822233,
@@ -1797,11 +1785,11 @@
 	"Capital": "Wellington",
 	"CapitalLatitude": -41.3,
 	"CapitalLongitude": 174.783333,
-	"CurrencyUnit": "New Zealand dollar"
+	"Moneda": "D\u00f3lar neozeland\u00e9s"
 }, {
 	"Country": "Nicaragua",
 	"AC_2": "NI",
-	"Language": "Spanish 98% (official); English and indigenous languages on Atlantic coast (1995)",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 6624554,
@@ -1809,11 +1797,11 @@
 	"Capital": "Managua",
 	"CapitalLatitude": 12.1333333333,
 	"CapitalLongitude": -86.25,
-	"CurrencyUnit": "Nicaraguan gold cordoba"
+	"Moneda": "C\u00f3rdoba nicarag\u00fcense"
 }, {
-	"Country": "Niger",
+	"Country": "N\u00edger",
 	"AC_2": "NE",
-	"Language": "French (official), Hausa, Djerma",
+	"Language": "Franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 24206644,
@@ -1821,35 +1809,35 @@
 	"Capital": "Niamey",
 	"CapitalLatitude": 13.5166666667,
 	"CapitalLongitude": 2.116667,
-	"CurrencyUnit": "West African CFA franc"
+	"Moneda": "Franco CFA de \u00c1frica Occidental"
 }, {
 	"Country": "Nigeria",
 	"AC_2": "NG",
-	"Language": "English (official), Hausa, Yoruba, Igbo, Fulani, and more than 200 others",
+	"Language": "Ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 206139589,
 	"Area": 923768.0,
-	"Capital": "Abuja",
+	"Capital": "Abuya",
 	"CapitalLatitude": 9.0833333333,
 	"CapitalLongitude": 7.533333,
-	"CurrencyUnit": "Nigerian naira"
+	"Moneda": "Naira"
 }, {
-	"Country": "Northern Mariana Islands",
+	"Country": "Islas Marianas del Norte",
 	"AC_2": "MP",
-	"Language": "English, Chamorro, Carolinian",
+	"Language": "Ingl\u00e9s, chamorro y carolinio",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 57559,
 	"Area": 477.0,
-	"Capital": "Saipan",
+	"Capital": "Saip\u00e1n",
 	"CapitalLatitude": 15.2,
 	"CapitalLongitude": 145.75,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "D\u00f3lar estadounidense"
 }, {
-	"Country": "Norway",
+	"Country": "Noruega",
 	"AC_2": "NO",
-	"Language": "Bokm\u00e5l Norwegian, Nynorsk Norwegian (both official); small Sami- and Finnish-speaking minorities (Sami is official in six municipalities)",
+	"Language": "Noruego",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 5421241,
@@ -1857,23 +1845,23 @@
 	"Capital": "Oslo",
 	"CapitalLatitude": 59.9166666667,
 	"CapitalLongitude": 10.75,
-	"CurrencyUnit": "Norwegian krone"
+	"Moneda": "Corona noruega"
 }, {
-	"Country": "Oman",
+	"Country": "Om\u00e1n",
 	"AC_2": "OM",
-	"Language": "Arabic (official), English, Baluchi, Urdu, Indian dialects",
+	"Language": "\u00c1rabe",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 5106626,
 	"Area": 212460.0,
-	"Capital": "Muscat",
+	"Capital": "Mascate",
 	"CapitalLatitude": 23.6166666667,
 	"CapitalLongitude": 58.583333,
-	"CurrencyUnit": "Rial Omani"
+	"Moneda": "Rial oman\u00ed"
 }, {
-	"Country": "Pakistan",
+	"Country": "Pakist\u00e1n",
 	"AC_2": "PK",
-	"Language": "Urdu 8%, English (both official); Punjabi 48%, Sindhi 12%, Siraiki (a Punjabi variant) 10%, Pashtu 8%, Balochi 3%, Hindko 2%, Brahui 1%, Burushaski, and others 8%",
+	"Language": "Urdu e ingl\u00e9s",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 220892340,
@@ -1881,11 +1869,11 @@
 	"Capital": "Islamabad",
 	"CapitalLatitude": 33.6833333333,
 	"CapitalLongitude": 73.05,
-	"CurrencyUnit": "Pakistani rupee"
+	"Moneda": "Rupia pakistan\u00ed"
 }, {
-	"Country": "Palau",
+	"Country": "Palaos",
 	"AC_2": "PW",
-	"Language": "Palauan 64.7%, English 9.4%, Sonsoralese, Tobi, Angaur (each official on some islands), Filipino 13.5%, Chinese 5.7%, Carolinian 1.5%, Japanese 1.5%, other Asian 2.3%, other languages 1.5% (2000)",
+	"Language": "Ingl\u00e9s, palauano y japon\u00e9s",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 18094,
@@ -1893,23 +1881,23 @@
 	"Capital": "Melekeok",
 	"CapitalLatitude": 7.4833333333,
 	"CapitalLongitude": 134.633333,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "D\u00f3lar estadounidense"
 }, {
-	"Country": "Panama",
+	"Country": "Panam\u00e1",
 	"AC_2": "PA",
-	"Language": "Spanish (official), English 14%, many bilingual",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 4314767,
 	"Area": 78200.0,
-	"Capital": "Panama City",
+	"Capital": "Ciudad De Panam\u00e1",
 	"CapitalLatitude": 8.9666666667,
 	"CapitalLongitude": -79.533333,
-	"CurrencyUnit": "Panamanian balboa"
+	"Moneda": "Balboa paname\u00f1o"
 }, {
-	"Country": "Papua New Guinea",
+	"Country": "Pap\u00faa Nueva Guinea",
 	"AC_2": "PG",
-	"Language": "Tok Pisin (Melanesian Pidgin, the lingua franca), Hiri Motu (in Papua region), English 1%\u20132%; 715 indigenous languages",
+	"Language": "Ingl\u00e9s, tok pisin y hiri motu",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 8947024,
@@ -1917,23 +1905,23 @@
 	"Capital": "Port Moresby",
 	"CapitalLatitude": -9.45,
 	"CapitalLongitude": 147.183333,
-	"CurrencyUnit": "Papua New Guinea kina"
+	"Moneda": "Kina"
 }, {
 	"Country": "Paraguay",
 	"AC_2": "PY",
-	"Language": "Spanish, Guaran\u00ed (both official)",
+	"Language": "Espa\u00f1ol y guaran\u00ed",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 7132538,
 	"Area": 406750.0,
-	"Capital": "Asuncion",
+	"Capital": "Asunci\u00f3n",
 	"CapitalLatitude": -25.2666666667,
 	"CapitalLongitude": -57.666667,
-	"CurrencyUnit": "Paraguayan guarani"
+	"Moneda": "Guaran\u00ed"
 }, {
-	"Country": "Peru",
+	"Country": "Per\u00fa",
 	"AC_2": "PE",
-	"Language": "Spanish, Qu\u00e9chua (both official); Aymara; many minor Amazonian languages",
+	"Language": "Espa\u00f1ol, quechua y aymara",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 32971854,
@@ -1941,11 +1929,11 @@
 	"Capital": "Lima",
 	"CapitalLatitude": -12.05,
 	"CapitalLongitude": -77.05,
-	"CurrencyUnit": "Peruvian new sol"
+	"Moneda": "Nuevo sol"
 }, {
-	"Country": "Philippines",
+	"Country": "Filipinas",
 	"AC_2": "PH",
-	"Language": "Filipino (based on Tagalog), English (both official); eight major dialects: Tagalog, Cebuano, Ilocano, Hiligaynon or Ilonggo, Bicol, Waray, Pampango, and Pangasinense",
+	"Language": "Filipino e ingl\u00e9s",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 109581078,
@@ -1953,35 +1941,35 @@
 	"Capital": "Manila",
 	"CapitalLatitude": 14.6,
 	"CapitalLongitude": 120.966667,
-	"CurrencyUnit": "Philippine peso"
+	"Moneda": "Peso filipino"
 }, {
-	"Country": "Poland",
+	"Country": "Polonia",
 	"AC_2": "PL",
-	"Language": "Polish 98% (2002)",
+	"Language": "Polaco",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 37846611,
 	"Area": 312685.0,
-	"Capital": "Warsaw",
+	"Capital": "Varsovia",
 	"CapitalLatitude": 52.25,
 	"CapitalLongitude": 21,
-	"CurrencyUnit": "Polish zloty"
+	"Moneda": "Zloty"
 }, {
 	"Country": "Portugal",
 	"AC_2": "PT",
-	"Language": "Portuguese (official), Mirandese (official, but locally used)",
+	"Language": "Portugu\u00e9s",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 10196709,
 	"Area": 92391.0,
-	"Capital": "Lisbon",
+	"Capital": "Lisboa",
 	"CapitalLatitude": 38.7166666667,
 	"CapitalLongitude": -9.133333,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
 	"Country": "Puerto Rico",
 	"AC_2": "PR",
-	"Language": "Spanish, English",
+	"Language": "Espa\u00f1ol e ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 2860853,
@@ -1989,11 +1977,11 @@
 	"Capital": "San Juan",
 	"CapitalLatitude": 18.4666666667,
 	"CapitalLongitude": -66.116667,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "D\u00f3lar estadounidense"
 }, {
-	"Country": "Qatar",
+	"Country": "Katar",
 	"AC_2": "QA",
-	"Language": "Arabic (official); English a common second language",
+	"Language": "\u00c1rabe",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 2881053,
@@ -2001,47 +1989,47 @@
 	"Capital": "Doha",
 	"CapitalLatitude": 25.2833333333,
 	"CapitalLongitude": 51.533333,
-	"CurrencyUnit": "Qatari riyal"
+	"Moneda": "Riyal catar\u00ed"
 }, {
 	"Country": "R\u00e9union",
 	"AC_2": "RE",
-	"Language": "French",
+	"Language": "Franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 895312,
 	"Area": 2517.0,
-	"Capital": null,
+	"Capital": "Saint-Denis",
 	"CapitalLatitude": null,
 	"CapitalLongitude": null,
-	"CurrencyUnit": null
+	"Moneda": "Euro"
 }, {
-	"Country": "Romania",
+	"Country": "Rumania",
 	"AC_2": "RO",
-	"Language": "Romanian (official), Hungarian, German",
+	"Language": "Rumano",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 19237691,
 	"Area": 237500.0,
-	"Capital": "Bucharest",
+	"Capital": "Bucarest",
 	"CapitalLatitude": 44.4333333333,
 	"CapitalLongitude": 26.1,
-	"CurrencyUnit": "New Romanian leu"
+	"Moneda": "Leu rumano"
 }, {
-	"Country": "Russia",
+	"Country": "Rusia",
 	"AC_2": "RU",
-	"Language": "Russian, others",
+	"Language": "Ruso",
 	"Region": "Europe",
 	"color": "0-#B9D516-#F76624",
 	"Population": 145934462,
 	"Area": 17075200.0,
-	"Capital": "Moscow",
+	"Capital": "Mosc\u00fa",
 	"CapitalLatitude": 55.75,
 	"CapitalLongitude": 37.6,
-	"CurrencyUnit": "Russian ruble"
+	"Moneda": "Rublo ruso"
 }, {
-	"Country": "Rwanda",
+	"Country": "Ruanda",
 	"AC_2": "RW",
-	"Language": "Kinyarwanda, French, and English (all official); Kiswahili in commercial centers",
+	"Language": "Ruanda, franc\u00e9s e ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 12952218,
@@ -2049,11 +2037,11 @@
 	"Capital": "Kigali",
 	"CapitalLatitude": -1.95,
 	"CapitalLongitude": 30.05,
-	"CurrencyUnit": "Rwandan franc"
+	"Moneda": "Franco ruand\u00e9s"
 }, {
-	"Country": "Saint Helena",
+	"Country": "Santa Elena",
 	"AC_2": "SH",
-	"Language": "English",
+	"Language": "Espa\u00f1ol",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 6077,
@@ -2061,11 +2049,11 @@
 	"Capital": "Jamestown",
 	"CapitalLatitude": -15.9333333333,
 	"CapitalLongitude": -5.716667,
-	"CurrencyUnit": null
+	"Moneda": "Libra de Santa Elena"
 }, {
-	"Country": "Saint Kitts & Nevis",
+	"Country": "San Crist\u00f3bal y Nieves",
 	"AC_2": "KN",
-	"Language": "English",
+	"Language": "Ingl\u00e9s y criollo",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 53199,
@@ -2073,11 +2061,11 @@
 	"Capital": "Basseterre",
 	"CapitalLatitude": 17.3,
 	"CapitalLongitude": -62.716667,
-	"CurrencyUnit": "East Caribbean dollar"
+	"Moneda": "D\u00f3lar del Caribe Oriental"
 }, {
-	"Country": "Saint Lucia",
+	"Country": "Santa Luc\u00eda",
 	"AC_2": "LC",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 183627,
@@ -2085,11 +2073,11 @@
 	"Capital": "Castries",
 	"CapitalLatitude": 14.0,
 	"CapitalLongitude": -61,
-	"CurrencyUnit": "East Caribbean dollar"
+	"Moneda": "D\u00f3lar del Caribe Oriental"
 }, {
-	"Country": "Saint Pierre & Miquelon",
+	"Country": "San Pedro y Miquel\u00f3n",
 	"AC_2": "PM",
-	"Language": "French",
+	"Language": "Franc\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 5794,
@@ -2097,11 +2085,11 @@
 	"Capital": "Saint-Pierre",
 	"CapitalLatitude": 46.7666666667,
 	"CapitalLongitude": -56.183333,
-	"CurrencyUnit": null
+	"Moneda": "Euro"
 }, {
-	"Country": "Saint Vincent and the Grenadines",
+	"Country": "San Vicente y las Granadinas",
 	"AC_2": "VC",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 110940,
@@ -2109,11 +2097,11 @@
 	"Capital": "Kingstown",
 	"CapitalLatitude": 13.1333333333,
 	"CapitalLongitude": -61.216667,
-	"CurrencyUnit": "East Caribbean dollar"
+	"Moneda": "D\u00f3lar del Caribe Oriental"
 }, {
 	"Country": "Samoa",
 	"AC_2": "WS",
-	"Language": "Samoan, English",
+	"Language": "Samoano e ingl\u00e9s",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 198414,
@@ -2121,47 +2109,47 @@
 	"Capital": "Apia",
 	"CapitalLatitude": -13.8166666667,
 	"CapitalLongitude": -171.766667,
-	"CurrencyUnit": "Samoan tala"
+	"Moneda": "Tala"
 }, {
 	"Country": "San Marino",
 	"AC_2": "SM",
-	"Language": "Italian",
+	"Language": "Italiano",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 33931,
 	"Area": 61.0,
-	"Capital": "San Marino",
+	"Capital": "Ciudad De San Marino",
 	"CapitalLatitude": 43.9333333333,
 	"CapitalLongitude": 12.416667,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "Sao Tome & Principe",
+	"Country": "Santo Tom\u00e9 y Pr\u00edncipe",
 	"AC_2": "ST",
-	"Language": "Portuguese",
+	"Language": "Portugu\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 219159,
 	"Area": 1001.0,
-	"Capital": "Sao Tome",
+	"Capital": "Santo Tom\u00e9",
 	"CapitalLatitude": 0.3333333333,
 	"CapitalLongitude": 6.733333,
-	"CurrencyUnit": "S\u00c3\u00a3o Tom\u00c3\u00a9 and Principe dobra"
+	"Moneda": "Dobra"
 }, {
-	"Country": "Saudi Arabia",
+	"Country": "Arabia Saudita",
 	"AC_2": "SA",
-	"Language": "Arabic",
+	"Language": "\u00c1rabe",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 34813871,
 	"Area": 1960582.0,
-	"Capital": "Riyadh",
+	"Capital": "Riad",
 	"CapitalLatitude": 24.65,
 	"CapitalLongitude": 46.7,
-	"CurrencyUnit": "Saudi Arabian riyal"
+	"Moneda": "Riyal saud\u00ed"
 }, {
 	"Country": "Senegal",
 	"AC_2": "SN",
-	"Language": "French (official); Wolof, Pulaar, Jola, Mandinka",
+	"Language": "Franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 16743927,
@@ -2169,23 +2157,23 @@
 	"Capital": "Dakar",
 	"CapitalLatitude": 14.7333333333,
 	"CapitalLongitude": -17.633333,
-	"CurrencyUnit": "West African CFA franc"
+	"Moneda": "Franco CFA de \u00c1frica Occidental"
 }, {
 	"Country": "Serbia",
 	"AC_2": "RS",
-	"Language": "Serbian (official); Romanian, Hungarian, Slovak, and Croatian (all official in Vojvodina); Albanian (official in Kosovo)",
+	"Language": "Serbio",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 8737371,
 	"Area": 88361.0,
-	"Capital": "Belgrade",
+	"Capital": "Belgrado",
 	"CapitalLatitude": 44.8333333333,
 	"CapitalLongitude": 20.5,
-	"CurrencyUnit": "New Serbian dinar"
+	"Moneda": "Dinar serbio"
 }, {
 	"Country": "Seychelles",
 	"AC_2": "SC",
-	"Language": "Seselwa Creole 92%, English 5%, French (all official) (2002)",
+	"Language": "Criollo seychelense, franc\u00e9s e ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 98347,
@@ -2193,11 +2181,11 @@
 	"Capital": "Victoria",
 	"CapitalLatitude": -4.6166666667,
 	"CapitalLongitude": 55.45,
-	"CurrencyUnit": "Seychelles rupee"
+	"Moneda": "Rupia de Seychelles"
 }, {
-	"Country": "Sierra Leone",
+	"Country": "Sierra Leona",
 	"AC_2": "SL",
-	"Language": "English (official), Mende (southern vernacular), Temne (northern vernacular), Krio (lingua franca)",
+	"Language": "Ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 7976983,
@@ -2205,23 +2193,23 @@
 	"Capital": "Freetown",
 	"CapitalLatitude": 8.4833333333,
 	"CapitalLongitude": -13.233333,
-	"CurrencyUnit": "Sierra Leonean leone"
+	"Moneda": "Leone"
 }, {
-	"Country": "Singapore",
+	"Country": "Singapur",
 	"AC_2": "SG",
-	"Language": "Mandarin 35%, English 23%, Malay 14.1%, Hokkien 11.4%, Cantonese 5.7%, Teochew 4.9%, Tamil 3.2%, other Chinese dialects 1.8%, other 0.9% (2000)",
+	"Language": "Ingl\u00e9s, mandar\u00edn, malayo y tamil",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 5850342,
 	"Area": 693.0,
-	"Capital": "Singapore",
+	"Capital": "Singapur",
 	"CapitalLatitude": 1.2833333333,
 	"CapitalLongitude": 103.85,
-	"CurrencyUnit": "Singapore dollar"
+	"Moneda": "D\u00f3lar de Singapur"
 }, {
-	"Country": "Slovakia",
+	"Country": "Eslovaquia",
 	"AC_2": "SK",
-	"Language": "Slovak 84% (official), Hungarian 11%, Roma 2%, Ukrainian 1% (2001)",
+	"Language": "Eslovaco",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 5459642,
@@ -2229,23 +2217,23 @@
 	"Capital": "Bratislava",
 	"CapitalLatitude": 48.15,
 	"CapitalLongitude": 17.116667,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "Slovenia",
+	"Country": "Eslovenia",
 	"AC_2": "SI",
-	"Language": "Slovenian 91%, Serbo-Croatian 5% (2002)",
+	"Language": "Esloveno, localmente: h\u00fangaro e italiano",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 2078938,
 	"Area": 20273.0,
-	"Capital": "Ljubljana",
+	"Capital": "Lublijana",
 	"CapitalLatitude": 46.05,
 	"CapitalLongitude": 14.516667,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
-	"Country": "Solomon Islands",
+	"Country": "Islas Salom\u00f3n",
 	"AC_2": "SB",
-	"Language": "English 1%\u20132% (official), Melanesian pidgin (lingua franca), 120 indigenous languages",
+	"Language": "Ingl\u00e9s",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 686884,
@@ -2253,35 +2241,35 @@
 	"Capital": "Honiara",
 	"CapitalLatitude": -9.4333333333,
 	"CapitalLongitude": 159.95,
-	"CurrencyUnit": "Solomon Islands dollar"
+	"Moneda": "D\u00f3lar de las Islas Salom\u00f3n"
 }, {
 	"Country": "Somalia",
 	"AC_2": "SO",
-	"Language": "Somali (official), Arabic, English, Italian",
+	"Language": "Somal\u00ed y \u00e1rabe",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 15893222,
 	"Area": 637657.0,
-	"Capital": "Mogadishu",
+	"Capital": "Mogadiscio",
 	"CapitalLatitude": 2.0666666667,
 	"CapitalLongitude": 45.333333,
-	"CurrencyUnit": "Somali shilling"
+	"Moneda": "Chel\u00edn somal\u00ed"
 }, {
-	"Country": "South Africa",
+	"Country": "Sud\u00e1frica",
 	"AC_2": "ZA",
-	"Language": "IsiZulu 23.8%, IsiXhosa 17.6%, Afrikaans 13.3%, Sepedi 9.4%, English 8.2%, Setswana 8.2%, Sesotho 7.9%, Xitsonga 4.4%, other 7.2%",
+	"Language": "Zul\u00fa",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 59308690,
 	"Area": 1219912.0,
-	"Capital": "Pretoria",
+	"Capital": "Pretoria, Ciudad Del Cabo, Bloemfontein",
 	"CapitalLatitude": -25.7,
 	"CapitalLongitude": 28.216667,
-	"CurrencyUnit": "South African rand"
+	"Moneda": "Rand sudafricano"
 }, {
-	"Country": "Spain",
+	"Country": "Espa\u00f1a",
 	"AC_2": "ES",
-	"Language": "Castilian Spanish 74% (official nationwide); Catalan 17%, Galician 7%, Basque 2% (each official regionally)",
+	"Language": "Espa\u00f1ol, localmente: catal\u00e1n, gallego y euskera",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 46754778,
@@ -2289,11 +2277,11 @@
 	"Capital": "Madrid",
 	"CapitalLatitude": 40.4,
 	"CapitalLongitude": -3.683333,
-	"CurrencyUnit": "Euro"
+	"Moneda": "Euro"
 }, {
 	"Country": "Sri Lanka",
 	"AC_2": "LK",
-	"Language": "Sinhala 74% (official and national), Tamil 18% (national), other 8%; English is commonly used in government and spoken competently by about 10%",
+	"Language": "Cingal\u00e9s, tamil e ingl\u00e9s",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 21413249,
@@ -2301,35 +2289,35 @@
 	"Capital": "Colombo",
 	"CapitalLatitude": 6.9166666667,
 	"CapitalLongitude": 79.833333,
-	"CurrencyUnit": "Sri Lankan rupee"
+	"Moneda": "Rupia de Sri Lanka"
 }, {
-	"Country": "Sudan",
+	"Country": "Sud\u00e1n",
 	"AC_2": "SD",
-	"Language": "Arabic (official), Nubian, Ta Bedawie, diverse dialects of Nilotic, Nilo-Hamitic, Sudanic languages, English",
+	"Language": "\u00c1rabe e ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 43849260,
 	"Area": 2505810.0,
-	"Capital": "Khartoum",
+	"Capital": "Jartum",
 	"CapitalLatitude": 15.6,
 	"CapitalLongitude": 32.533333,
-	"CurrencyUnit": "Sudanese pound"
+	"Moneda": "Libra sudanesa"
 }, {
-	"Country": "South Sudan",
+	"Country": "Sud\u00e1n del Sur",
 	"AC_2": "SS",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 11193725,
 	"Area": 644329.0,
-	"Capital": "Juba",
+	"Capital": "Yuba",
 	"CapitalLatitude": 4.8594,
 	"CapitalLongitude": "31.5713\u00b0",
-	"CurrencyUnit": "South Sudanese pound"
+	"Moneda": "Libra sursudanesa"
 }, {
-	"Country": "Suriname",
+	"Country": "Surinam",
 	"AC_2": "SR",
-	"Language": "Dutch (official), Surinamese (lingua franca), English widely spoken, Hindustani, Javanese",
+	"Language": "Holand\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 586632,
@@ -2337,11 +2325,11 @@
 	"Capital": "Paramaribo",
 	"CapitalLatitude": 5.8333333333,
 	"CapitalLongitude": -55.166667,
-	"CurrencyUnit": "Suriname dollar"
+	"Moneda": "D\u00f3lar surinam\u00e9s"
 }, {
-	"Country": "Swaziland",
+	"Country": "Suazilandia",
 	"AC_2": "SZ",
-	"Language": "English, siSwati (both official)",
+	"Language": "Suazi, Ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 1172000,
@@ -2349,83 +2337,83 @@
 	"Capital": "Mbabane",
 	"CapitalLatitude": -26.3166666667,
 	"CapitalLongitude": 31.133333,
-	"CurrencyUnit": "Swaziland lilangeni"
+	"Moneda": "Lilangeni"
 }, {
-	"Country": "Sweden",
+	"Country": "Suecia",
 	"AC_2": "SE",
-	"Language": "Swedish, small Sami- and Finnish-speaking minorities",
+	"Language": "Sueco",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 10099265,
 	"Area": 449964.0,
-	"Capital": "Stockholm",
+	"Capital": "Estocolmo",
 	"CapitalLatitude": 59.3333333333,
 	"CapitalLongitude": 18.05,
-	"CurrencyUnit": "Swedish krona"
+	"Moneda": "Corona sueca"
 }, {
-	"Country": "Switzerland",
+	"Country": "Suiza",
 	"AC_2": "CH",
-	"Language": "German 64%, French 20%, Italian 7% (all official); Romansch 0.5% (national)",
+	"Language": "Alem\u00e1n, franc\u00e9s, italiano y romanche",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 8654622,
 	"Area": 41290.0,
-	"Capital": "Bern",
+	"Capital": "Berna",
 	"CapitalLatitude": 46.9166666667,
 	"CapitalLongitude": 7.466667,
-	"CurrencyUnit": "Swiss franc"
+	"Moneda": "Franco suizo"
 }, {
-	"Country": "Syria",
+	"Country": "Siria",
 	"AC_2": "SY",
-	"Language": "Arabic (official); Kurdish, Armenian, Aramaic, Circassian widely understood; French, English somewhat understood",
+	"Language": "\u00c1rabe",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 17500658,
 	"Area": 185180.0,
-	"Capital": "Damascus",
+	"Capital": "Damasco",
 	"CapitalLatitude": 33.5,
 	"CapitalLongitude": 36.3,
-	"CurrencyUnit": "Syrian pound"
+	"Moneda": "Libra siria"
 }, {
-	"Country": "Taiwan",
+	"Country": "Taiw\u00e1n",
 	"AC_2": "TW",
-	"Language": "Chinese (Mandarin, official), Taiwanese (Min), Hakka dialects",
+	"Language": "Mandar\u00edn",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 23816775,
 	"Area": 35980.0,
-	"Capital": "Taipei",
+	"Capital": "Taip\u00e9i",
 	"CapitalLatitude": 25.0333333333,
 	"CapitalLongitude": 121.516667,
-	"CurrencyUnit": null
+	"Moneda": "Nuevo d\u00f3lar taiwan\u00e9s"
 }, {
-	"Country": "Tajikistan",
+	"Country": "Tayikist\u00e1n",
 	"AC_2": "TJ",
-	"Language": "Tajik (official), Russian widely used in government and business",
+	"Language": "Tayiko",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 9537645,
 	"Area": 143100.0,
-	"Capital": "Dushanbe",
+	"Capital": "Dusamb\u00e9",
 	"CapitalLatitude": 38.55,
 	"CapitalLongitude": 68.766667,
-	"CurrencyUnit": "Tajik somoni"
+	"Moneda": "Somoni tayiko"
 }, {
 	"Country": "Tanzania",
 	"AC_2": "TZ",
-	"Language": "Swahili, English (both official); Arabic; many local languages",
+	"Language": "Ingl\u00e9s y suajili",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 59734218,
 	"Area": 945087.0,
-	"Capital": "Dar es Salaam",
+	"Capital": "Dodoma",
 	"CapitalLatitude": -6.8,
 	"CapitalLongitude": 39.283333,
-	"CurrencyUnit": "Tanzanian shilling"
+	"Moneda": "Chel\u00edn tanzano"
 }, {
-	"Country": "Thailand",
+	"Country": "Tailandia",
 	"AC_2": "TH",
-	"Language": "Thai (Siamese), English (secondary language of the elite), ethnic and regional dialects",
+	"Language": "Tailand\u00e9s",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 69799978,
@@ -2433,95 +2421,95 @@
 	"Capital": "Bangkok",
 	"CapitalLatitude": 13.75,
 	"CapitalLongitude": 100.516667,
-	"CurrencyUnit": "Thai baht"
+	"Moneda": "Baht tailand\u00e9s"
 }, {
 	"Country": "Togo",
 	"AC_2": "TG",
-	"Language": "French (official, commerce); Ew\u00e9, Mina (south); Kaby\u00e9, Dagomba (north); and many dialects",
+	"Language": "Franc\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 8278724,
 	"Area": 56785.0,
-	"Capital": "Lome",
+	"Capital": "Lom\u00e9",
 	"CapitalLatitude": 6.1166666667,
 	"CapitalLongitude": 1.216667,
-	"CurrencyUnit": "West African CFA franc"
+	"Moneda": "Franco CFA de \u00c1frica Occidental"
 }, {
 	"Country": "Tonga",
 	"AC_2": "TO",
-	"Language": "Tongan (an Austronesian language), English",
+	"Language": "Tongano e ingl\u00e9s",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 105695,
 	"Area": 748.0,
-	"Capital": "Nuku'alofa",
+	"Capital": "Nuku'Alofa",
 	"CapitalLatitude": -21.1333333333,
 	"CapitalLongitude": -175.2,
-	"CurrencyUnit": "Tongan pa'anga"
+	"Moneda": "Pa'anga"
 }, {
-	"Country": "Trinidad and Tobago",
+	"Country": "Trinidad y Tobago",
 	"AC_2": "TT",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 1399488,
 	"Area": 5128.0,
-	"Capital": "Port of Spain",
+	"Capital": "Puerto Espa\u00f1a",
 	"CapitalLatitude": 10.65,
 	"CapitalLongitude": -61.516667,
-	"CurrencyUnit": "Trinidad and Tobago dollar"
+	"Moneda": "D\u00f3lar trinitense"
 }, {
-	"Country": "Tunisia",
+	"Country": "T\u00fanez",
 	"AC_2": "TN",
-	"Language": "Arabic (official, commerce), French (commerce)",
+	"Language": "\u00c1rabe",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 11818619,
 	"Area": 163610.0,
-	"Capital": "Tunis",
+	"Capital": "T\u00fanez",
 	"CapitalLatitude": 36.8,
 	"CapitalLongitude": 10.183333,
-	"CurrencyUnit": "Tunisian dinar"
+	"Moneda": "Dinar tunecino"
 }, {
-	"Country": "Turkey",
+	"Country": "Turqu\u00eda ",
 	"AC_2": "TR",
-	"Language": "Turkish (official), Kurdish, Dimli, Azeri, Kabardian",
+	"Language": "Turqu\u00eda, Espa\u00f1ol",
 	"Region": "Europe",
 	"color": "0-#B9D516-#F76624",
 	"Population": 84339067,
 	"Area": 780580.0,
-	"Capital": "Ankara",
+	"Capital": "Estambul",
 	"CapitalLatitude": 39.9333333333,
 	"CapitalLongitude": 32.866667,
-	"CurrencyUnit": "New Turkish lira"
+	"Moneda": "Lira turca"
 }, {
-	"Country": "Turkmenistan",
+	"Country": "Turkmenist\u00e1n",
 	"AC_2": "TM",
-	"Language": "Turkmen 72%; Russian 12%; Uzbek 9%, other 7%",
+	"Language": "Turcomano",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 6031200,
 	"Area": 488100.0,
-	"Capital": "Ashgabat",
+	"Capital": "Asjabad",
 	"CapitalLatitude": 37.95,
 	"CapitalLongitude": 58.383333,
-	"CurrencyUnit": "New Turkmen manat"
+	"Moneda": "Manat turcomano"
 }, {
-	"Country": "Turks and Caicos",
+	"Country": "Las Islas Turcas y Caicos\u200b",
 	"AC_2": "TC",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 38717,
 	"Area": 430.0,
-	"Capital": "Grand Turk",
+	"Capital": "Cockburn Town",
 	"CapitalLatitude": 21.4666666667,
 	"CapitalLongitude": -71.133333,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "D\u00f3lar estadounidense"
 }, {
-	"Country": "Tuvalu",
+	"Country": "Tuvalu ",
 	"AC_2": "TV",
-	"Language": "Tuvaluan, English, Samoan, Kiribati (on the island of Nui)",
+	"Language": "tuvaluano",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 11792,
@@ -2529,11 +2517,11 @@
 	"Capital": "Funafuti",
 	"CapitalLatitude": -8.5166666667,
 	"CapitalLongitude": 179.216667,
-	"CurrencyUnit": "Australian dollar"
+	"Moneda": "D\u00f3lar estadounidense"
 }, {
 	"Country": "Uganda",
 	"AC_2": "UG",
-	"Language": "English (official), Ganda or Luganda, other Niger-Congo languages, Nilo-Saharan languages, Swahili, Arabic",
+	"Language": "Ingl\u00e9s y suajili",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 45741007,
@@ -2541,23 +2529,23 @@
 	"Capital": "Kampala",
 	"CapitalLatitude": 0.3166666667,
 	"CapitalLongitude": 32.55,
-	"CurrencyUnit": "Ugandan shilling"
+	"Moneda": "Chel\u00edn ugand\u00e9s"
 }, {
-	"Country": "Ukraine",
+	"Country": "Ucrania",
 	"AC_2": "UA",
-	"Language": "Ukrainian 67%, Russian 24%, Romanian, Polish, Hungarian",
+	"Language": "Ucraniano",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 43733762,
 	"Area": 603700.0,
-	"Capital": "Kyiv",
+	"Capital": "Kiev",
 	"CapitalLatitude": 50.4333333333,
 	"CapitalLongitude": 30.516667,
-	"CurrencyUnit": "Ukrainian hryvnia"
+	"Moneda": "Grivna"
 }, {
-	"Country": "United Arab Emirates",
+	"Country": "Emiratos \u00c1rabes Unidos",
 	"AC_2": "AE",
-	"Language": "Arabic (official), Persian, English, Hindi, Urdu",
+	"Language": "\u00c1rabe",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 9890402,
@@ -2565,35 +2553,35 @@
 	"Capital": "Abu Dhabi",
 	"CapitalLatitude": 24.4666666667,
 	"CapitalLongitude": 54.366667,
-	"CurrencyUnit": "U.A.E. dirham"
+	"Moneda": "Dirham de los Emiratos \u00c1rabes Unidos"
 }, {
-	"Country": "United Kingdom",
+	"Country": "Reino Unido",
 	"AC_2": "GB",
-	"Language": "English, Welsh, Scots Gaelic",
+	"Language": "Ingl\u00e9s",
 	"Region": "Europe",
 	"color": "#B9D516",
 	"Population": 67886011,
 	"Area": 244820.0,
-	"Capital": "London",
+	"Capital": "Londres",
 	"CapitalLatitude": 51.5,
 	"CapitalLongitude": -0.083333,
-	"CurrencyUnit": "Pound sterling"
+	"Moneda": "Libra brit\u00e1nica"
 }, {
-	"Country": "United States",
+	"Country": "Estados Unidos",
 	"AC_2": "US",
-	"Language": "English 82%, Spanish 11% (2000)",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 331002651,
 	"Area": 9631420.0,
-	"Capital": "Washington",
+	"Capital": "Washington D. C.",
 	"CapitalLatitude": 38.883333,
 	"CapitalLongitude": -77,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "D\u00f3lar estadounidense"
 }, {
 	"Country": "Uruguay",
 	"AC_2": "UY",
-	"Language": "Spanish, Portunol, or Brazilero",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 3473730,
@@ -2601,11 +2589,11 @@
 	"Capital": "Montevideo",
 	"CapitalLatitude": -34.85,
 	"CapitalLongitude": -56.166667,
-	"CurrencyUnit": "Uruguayan peso"
+	"Moneda": "Peso uruguayo"
 }, {
-	"Country": "Uzbekistan",
+	"Country": "Uzbekist\u00e1n",
 	"AC_2": "UZ",
-	"Language": "Uzbek 74.3%, Russian 14.2%, Tajik 4.4%, other 7.1%",
+	"Language": "Uzbeko",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 33469203,
@@ -2613,23 +2601,23 @@
 	"Capital": "Tashkent",
 	"CapitalLatitude": 41.3166666667,
 	"CapitalLongitude": 69.25,
-	"CurrencyUnit": "Uzbek sum"
+	"Moneda": "Som uzbeko"
 }, {
 	"Country": "Vanuatu",
 	"AC_2": "VU",
-	"Language": "Bislama 23% (a Melanesian pidgin English), English 2%, French 1% (all 3 official); more than 100 local languages 73%",
+	"Language": "Bislama, ingl\u00e9s y franc\u00e9s",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 307145,
 	"Area": 12200.0,
-	"Capital": "Port-Vila",
+	"Capital": "Port Vila",
 	"CapitalLatitude": -17.7333333333,
 	"CapitalLongitude": 168.316667,
-	"CurrencyUnit": "Vanuatu vatu"
+	"Moneda": "Vatu"
 }, {
 	"Country": "Venezuela",
 	"AC_2": "VE",
-	"Language": "Spanish (official), numerous indigenous dialects",
+	"Language": "Espa\u00f1ol",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 28435940,
@@ -2637,11 +2625,11 @@
 	"Capital": "Caracas",
 	"CapitalLatitude": 10.4833333333,
 	"CapitalLongitude": -66.866667,
-	"CurrencyUnit": "Venezuelan bolivar fuerte"
+	"Moneda": "Bol\u00edvar fuerte"
 }, {
 	"Country": "Vietnam",
 	"AC_2": "VN",
-	"Language": "Vietnamese (official); English (increasingly favored as a second language); some French, Chinese, Khmer; mountain area languages (Mon-Khmer and Malayo-Polynesian)",
+	"Language": "Vietnamita",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 97338579,
@@ -2649,11 +2637,11 @@
 	"Capital": "Hanoi",
 	"CapitalLatitude": 21.0333333333,
 	"CapitalLongitude": 105.85,
-	"CurrencyUnit": "Vietnamese dong"
+	"Moneda": "Dong vietnamita"
 }, {
-	"Country": "U.S. Virgin Islands",
+	"Country": "Islas V\u00edrgenes de EE.UU",
 	"AC_2": "VI",
-	"Language": "English",
+	"Language": "Ingl\u00e9s",
 	"Region": "America",
 	"color": "#43BBCC",
 	"Population": 104425,
@@ -2661,47 +2649,47 @@
 	"Capital": "Charlotte Amalie",
 	"CapitalLatitude": 18.35,
 	"CapitalLongitude": -64.933333,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "D\u00f3lar estadounidense"
 }, {
-	"Country": "Wallis and Futuna",
+	"Country": "Wallis y Futuna",
 	"AC_2": "WF",
-	"Language": "French",
+	"Language": "Franc\u00e9s",
 	"Region": "Oceania",
 	"color": "#E93546",
 	"Population": 11239,
 	"Area": 274.0,
-	"Capital": "Mata-Utu",
+	"Capital": "Mat\u0101'Utu",
 	"CapitalLatitude": -13.95,
 	"CapitalLongitude": -171.933333,
-	"CurrencyUnit": null
+	"Moneda": "Franco del Pac\u00edfico"
 }, {
-	"Country": "Western Sahara",
+	"Country": "Sahara Occidental",
 	"AC_2": "EH",
-	"Language": "Arabic",
+	"Language": "Castellano",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 597339,
 	"Area": 266000.0,
-	"Capital": "El-Aai\u00c3\u00ban",
+	"Capital": "Laayoune",
 	"CapitalLatitude": 27.153611,
 	"CapitalLongitude": -13.203333,
-	"CurrencyUnit": null
+	"Moneda": "Dirham marroqu\u00ed"
 }, {
 	"Country": "Yemen",
 	"AC_2": "YE",
-	"Language": "Arabic",
+	"Language": "\u00c1rabe",
 	"Region": "Asia",
 	"color": "#F76624",
 	"Population": 29825964,
 	"Area": 527970.0,
-	"Capital": "Sanaa",
+	"Capital": "San\u00e1",
 	"CapitalLatitude": 15.35,
 	"CapitalLongitude": 44.2,
-	"CurrencyUnit": "Yemeni rial"
+	"Moneda": "Rial yemen\u00ed"
 }, {
 	"Country": "Zambia",
 	"AC_2": "ZM",
-	"Language": "English (official); major vernaculars: Bemba, Kaonda, Lozi, Lunda, Luvale, Nyanja, Tonga; about 70 other indigenous languages",
+	"Language": "Ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 18383955,
@@ -2709,11 +2697,11 @@
 	"Capital": "Lusaka",
 	"CapitalLatitude": -15.4166666667,
 	"CapitalLongitude": 28.283333,
-	"CurrencyUnit": "New Zambian kwacha"
+	"Moneda": "Kwacha zambiano"
 }, {
-	"Country": "Zimbabwe",
+	"Country": "Zimbabue",
 	"AC_2": "ZW",
-	"Language": "English (official), Shona, Ndebele (Sindebele), numerous minor tribal dialects",
+	"Language": "Ingl\u00e9s",
 	"Region": "Africa",
 	"color": "#E9A713",
 	"Population": 14862924,
@@ -2721,5 +2709,17 @@
 	"Capital": "Harare",
 	"CapitalLatitude": -17.8166666667,
 	"CapitalLongitude": 31.033333,
-	"CurrencyUnit": "U.S. dollar"
+	"Moneda": "D\u00f3lar estadounidense"
+}, {
+	"Country": null,
+	"AC_2": null,
+	"Language": null,
+	"Region": null,
+	"color": null,
+	"Population": null,
+	"Area": null,
+	"Capital": null,
+	"CapitalLatitude": null,
+	"CapitalLongitude": null,
+	"Moneda": null
 }]

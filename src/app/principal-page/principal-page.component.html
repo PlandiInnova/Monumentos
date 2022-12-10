@@ -1,25 +1,33 @@
 <div class="portadaPrincipal" *ngIf="!dentroDelContenido">
-    <div class="paisesImagen">
-        
+    <div class="paisesImagen responsive">
     </div>
     
-
-    <div class="buttonContainer">
-        <button class="btn btn-success entrarAlContenido" (click)="entrarAlContenidoByClick()">
-            Entrar
-        </button>
+    <div class="titleTextInfoMundial">INFOMUNDIAL</div>
+    <div class="buttonContainer" (click)="entrarAlContenidoByClick()">
+            <span class="buttonContainerText">Iniciar</span>
     </div>
     
         
 </div>
 <div class="container-fluid" *ngIf="dentroDelContenido">
     <div class="mapcontainer">
-        <div class="example-box" cdkDragBoundary=".container-fluid" cdkDrag>
-            <div class="plotLegend" >
+
+<!-- ************************************************************************ -->
+
+<div class="example-box" cdkDragBoundary=".container-fluid" cdkDrag id="navigationDiv">
+    <div class="toggle" id="toggleDiv" cdkDragHandle>
+        <div class="CursorToMoveDice" id="CursorToMoveDice" (click)="openMenu()"></div>
+    </div>
+            <div class="plotLegend">
                 <span>Alternative content for the legend</span>
             </div>
         </div>
-        <div class="map">Alternative content</div>
+<!-- ************************************************************************ -->
+
+
+
+
+<div class="map">Alternative content</div>
         
 
     </div>
@@ -28,18 +36,26 @@
         <button id="modal-btn" class="button" style="display: none;">Boton cerrar</button>
         <div id="my-modal" class="modal">
             <div class="modalContent"  id="modalContent">
-                <div class="modal-header">
+                <div class="modal-header p-0 pt-2 pr-1">
                    <div class="titleDescripcion"></div>
                    <div class="btnCloseDescripcion"></div>
                     <!-- <span class="close">&times;</span> -->
                     <!-- <h2>Descripción</h2> -->
                 </div>
                 <div class="modal-body" id="modal-body">
-                    <div class="Descripcion" id="Descripcion">
+                    <div class="Descripcion p-5 pt-2" id="Descripcion">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <div class="footerDescripcion">
+                        <!-- <span style="font-family: Goldplay_Black;">Goldplay_Black</span> <br/> -->
+                        <!-- <span style="font-family: Goldplay_Bold;">Goldplay_Bold</span> <br/> -->
+                        <!-- <span style="font-family: Goldplay_Light;">Goldplay_Light</span> <br/> -->
+                        <!-- <span style="font-family: Goldplay_Medium;">Goldplay_Medium</span> <br/> -->
+                        <!-- <span style="font-family: Goldplay_Regular;">Goldplay_Regular</span> <br/> -->
+                        <!-- <span style="font-family: Goldplay_SemiBold;">Goldplay_SemiBold</span> <br/> -->
+                        <!-- <span style="font-family: Goldplay_Thin;">Goldplay_Thin</span> <br/> -->
+                        <!-- <span style="font-family: Pacifico_Regular;">Pacifico_Regular</span> <br/> -->
                     </div>
                     <div class="btnDownload" (click)="openPDF()">
                         Descargar

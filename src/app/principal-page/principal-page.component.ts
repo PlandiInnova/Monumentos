@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import 'jquery-mapael';
 // import html2pdf from 'html2pdf.js';
 import 'jquery-mapael/js/maps/world_countries.js';
+import { empty } from 'rxjs';
 // import dfCountries from '../../../assets/dfCountries.json';
 import dfByRecords from '../../assets/dfByRecords.json';
 import dfCountries from '../../assets/dfCountries.json';
@@ -38,7 +39,7 @@ export class PrincipalPageComponent implements OnInit {
    this.dataToPlots(this.monumentosDataRecords);
 
   uniqueUsageToChangeInfoContries: '↓↓↓↓↓↓↓'
-  //  areas(this.dataCountries);
+   areas(this.dataCountries);
   uniqueUsageToChangeInfoContries: '↑↑↑↑↑↑↑'
 
 
@@ -58,19 +59,32 @@ export class PrincipalPageComponent implements OnInit {
     this.dentroDelContenido = true;
     setTimeout(() => {
       mapaGrande(this.plots,this.plots);
-    }, 100);
+    }, 5);
   }
 
   public openPDF(): void {
-
-
-
+    
     var element = document.getElementById('modal-body');
-    var options = {filename: 'Monumento.pdf'};
+
+    var options = {
+      filename: 'Monumento.pdf', 
+      margin: [10,10,10,10],
+      // enableLinks: true,
+      
+      // image: {type: 'jpeg', quality: 0.95}
+      jsPDF: {
+
+
+        // encryption: {userPassword: 123,ownerPassword: 234}
+      }
+    };
   
-    var exporter = new html2pdf(element, options);
+    // var exporter = new
+    html2pdf(element, options);
   
-    exporter.getPdf(true);
+    // exporter.getPdf(true);
+
+    // exporter.getPdf(true);
   
     // options.source = element
     // options.download = false;
@@ -84,45 +98,92 @@ export class PrincipalPageComponent implements OnInit {
     openMenu(){
       let toggleDiv = <HTMLDivElement>document.getElementById('toggleDiv');
       let navigationDiv = <HTMLDivElement>document.getElementById('navigationDiv');
-      let toggleOpenClose = <HTMLDivElement>document.getElementById('toggleOpenClose');
+      let CursorToMoveDiceDiv = <HTMLDivElement>document.getElementById('CursorToMoveDice');
+
+      // console.log(CursorToMoveDiceDiv.getBoundingClientRect());
+      
+      setTimeout(() => {
+        let x = CursorToMoveDiceDiv.getBoundingClientRect();
+        let xx = navigationDiv.getBoundingClientRect();
+        
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+
+        console.log(x, w, h);
+
+// console.log(x,w,h);
+
+if(x.right > w+20 || xx.bottom > h){
+  // console.log('c salió');
+  // navigationDiv.click();
+  CursorToMoveDiceDiv.click();
+
+}
+        
+      }, 2000);
+
+      
+
+      // console.log(toggleDiv.classList);
+      // let toggleOpenClose = <HTMLDivElement>document.getElementById('toggleOpenClose');
       let toggleStatus = toggleDiv.classList.value;
-  
-      if(toggleStatus === 'toggle'){
+      
+      if(toggleStatus === 'cdk-drag-handle toggle'){
         
         toggleDiv.classList.add('active');
         navigationDiv.classList.add('active');
-        toggleOpenClose.classList.add('active');
+        CursorToMoveDiceDiv.classList.add('active');
+        // toggleOpenClose.classList.add('active');
       }else {
         toggleDiv.classList.remove('active');      
         navigationDiv.classList.remove('active');      
-        toggleOpenClose.classList.remove('active');      
+        CursorToMoveDiceDiv.classList.remove('active');      
+        // toggleOpenClose.classList.remove('active');      
       }
     }
 
   dataToPlots(monumentos: any){
 
+    // console.log(monumentos);
+
     formula: 'CONCATENAR("<li>",Y2,"</li>","<li>",Z2,"</li>","<li>",AA2,"</li>","<li>",AB2,"</li>","<li>",AC2,"</li>","<li>",AD2,"</li>","<li>",AE2,"</li>")'
     // console.log(monumentos);
 
-    monumentos: '↓↓↓↓'
-    Alpha_code_2: "CA"
-    Area_hec:     0
-    CatByDanger:     2
-    Category_short: "C"
-    DangerState:     0
-    Pais: "Canadá"
-    Region_Es: "Europa y Norte América"
-    category: "Cultural"
-    criteria_txt: "(iii)"
-    danger: null
-    id_number:     157
-    iso_code: "CA"
-    latitude: 52.095
-    longitude: -131.2202778
-    short_description: "La aldea de Ninstints está situada en una pequeña isla frente a la costa occidental del archipiélago de la Reina Carlota (Haida Gwaii). Los vestigios de viviendas y tótems esculpidos de carácter funerario y conmemorativo constituyen un testimonio del arte y el modo de vida del pueblo haida. El sitio celebra la relación de los haida con la tierra y el mar, así como su cultura aún viva, y proporciona también una clave visual de sus tradiciones orales."
-    site: "SGang Gwaay"
-    unique_number: 175 
-    
+
+Alpha_code_2: "EC"
+Area_hec: 14066514
+CatByDanger: 1
+Category_short: "N"
+Criterio: "vii,viii,ix,x"
+DangerState: 0
+Pais: "Ecuador"
+Region_Es: "América Latina y El Caribe"
+category: "Natural"
+criteri_1_txt: "para contener fenómenos naturales superlativos o áreas de excepcional belleza natural e importancia estética."
+criteri_2_txt: "ser ejemplos sobresalientes que representen etapas importantes de la historia de la tierra, incluido el registro de la vida, procesos geológicos, terrestres, geomórficos o fisiográficos significativos."
+criteri_3_txt: "ser ejemplos destacados que representen importantes procesos ecológicos y biológicos en curso en la evolución y el desarrollo de ecosistemas terrestres, de agua dulce, costeros y marinos y comunidades de plantas y animales."
+criteri_4_txt: "Contiene los hábitats naturales más importantes para la conservación in situ de la diversidad biológica, incluidas las especias amenazadas con valor universal excepcional para la ciencia o conservación."
+criteri_5_txt: null
+criteri_6_txt: null
+criteri_7_txt: null
+criterio_1: "vii"
+criterio_2: "viii"
+criterio_3: "ix"
+criterio_4: "x"
+criterio_5: null
+criterio_6: null
+criterio_7: empty
+criterio_concat: "<li>para contener fenómenos naturales superlativos o áreas de excepcional belleza natural e importancia estética.</li><li>ser ejemplos sobresalientes que representen etapas importantes de la historia de la tierra, incluido el registro de la vida, procesos geológicos, terrestres, geomórficos o fisiográficos significativos.</li><li>ser ejemplos destacados que representen importantes procesos ecológicos y biológicos en curso en la evolución y el desarrollo de ecosistemas terrestres, de agua dulce, costeros y marinos y comunidades de plantas y animales.</li><li>Contiene los hábitats naturales más importantes para la conservación in situ de la diversidad biológica, incluidas las especias amenazadas con valor universal excepcional para la ciencia o conservación.</li>"
+danger: "P 2007-2010"
+id_number: 1
+iso_code: "EC"
+latitude: -0.68986
+longitude: -90.501319
+short_description: "Situadas en el Pacífico, a unos mil kilómetros del subcontinente sudamericano, estas diecinueve islas de origen volcánico y su reserva marina circundante son un museo y un laboratorio vivientes de la evolución, únicos en el mundo. Las Galápagos están situadas en la confluencia de tres corrientes oceánicas y concentran una gran variedad de especies marinas. Su actividad sísmica y volcánica ilustra los procesos de su formación geológica. Estos procesos, sumados al extremo aislamiento del archipiélago, han originado el desarrollo de una fauna singular con especies como la iguana terrestre, la tortuga gigante y numerosas especies de pinzones, cuyo estudio inspiró a Darwin la teoría de la evolución por selección natural, tras su viaje a estas islas en 1835."
+site: "Islas Galápagos"
+unique_number: 4
+
+
 
 
 
@@ -174,6 +235,49 @@ contener los hábitats naturales más importantes y significativos para la conse
     
     // console.log(monumentos);
     for(let monumento of monumentos){
+
+
+      let criterioConcatendoAlv: any = [];
+
+
+
+      if(
+        monumento.criteri_1_txt != null
+        ){
+          criterioConcatendoAlv.push(`<br/>• ${monumento.criteri_1_txt}`);
+        }
+      if(
+        monumento.criteri_2_txt != null
+        ){
+          criterioConcatendoAlv.push(`<br/>• ${monumento.criteri_2_txt}`);
+        }
+      if(
+        monumento.criteri_3_txt != null
+        ){
+          criterioConcatendoAlv.push(`<br/>• ${monumento.criteri_3_txt}`);
+        }
+      if(
+        monumento.criteri_4_txt != null
+        ){
+          criterioConcatendoAlv.push(`<br/>• ${monumento.criteri_4_txt}`);
+        }
+      if(
+        monumento.criteri_5_txt != null
+        ){
+          criterioConcatendoAlv.push(`<br/>• ${monumento.criteri_5_txt}`);
+        }
+      if(
+        monumento.criteri_6_txt != null
+        ){
+          criterioConcatendoAlv.push(`<br/>• ${monumento.criteri_6_txt}`);
+        }
+      if(
+        monumento.criteri_7_txt != null
+        ){
+          criterioConcatendoAlv.push(`<br/>• ${monumento.criteri_7_txt}`);
+        }
+        
+
       let plot: any = {};
 
       let dateDanger: any;
@@ -187,36 +291,36 @@ contener los hábitats naturales más importantes y significativos para la conse
       plot.tooltip = {
         content: 
           `
-        <h5>${monumento.site} (${monumento.Pais})</h5>
-        <img src = ".././../assets/all_images/site_${monumento.id_number}.jpg">
+        <h3>${monumento.site} (${monumento.Pais})</h3>
+        <img src = ".././../assets/all_images/site_${monumento.id_number}.jpg" class="imagenTooltip">
         `
       };
 
       
-
-      plot.Descripcion = `
-      <span style="font-size: 25px;">Monumento:</span>
-      <br/>
-      <span style="font-size: 20px; font-weight: bold;">${monumento.site}</span>
-      <span style="font-size: 20px; font-weight: bolder;">(${monumento.Pais})</span>
-      <br/>
-      Tipo de monumento: <b>${monumento.category}</b>
-      <br/>
-      <img src = ".././../assets/all_images/site_${monumento.id_number}.jpg">
-      <br/>
-      ${dateDanger}
-      <br/>      
-      <b>Descripción:</b> 
-      <br/>
-      <span style="font-size: 15px;">${monumento.short_description}</span>
-      <br/>
-      
-      <b>Criterios:</b> 
-      <br/>
-      
-      <span style="font-size: 15px;">${monumento.criterio_concat}</span>
-  
-  `;
+      // style="background: blue;
+      // <b>Descripción:</b> 
+      // <span style="font-size: 25px;">Monumento:</span>
+      // style="background: #E6E8F4"
+      // p-2 b-2 m-2
+      plot.Descripcion = 
+      `
+      <div class="" style="">
+        <span style="font-size: 20px;  font-family: Goldplay_Black;">${monumento.site}</span>
+        <span style="font-size: 20px; font-family: Goldplay_Bold;">(${monumento.Pais})</span>
+        <br/>
+        <span style="font-family: Goldplay_SemiBold;"> Tipo: <b style="font-family: Goldplay_Black;"> ${monumento.category}</b> </span>
+        <br/>
+        <img src = ".././../assets/all_images/site_${monumento.id_number}.jpg" class="responsive">
+        <br/>
+        ${dateDanger}
+        <br/>
+        <span style="font-size: 15px; font-family: Goldplay_Regular;">${monumento.short_description}</span>
+        <br/><br/>
+        <b style="font-family: Goldplay_Black;">Criterios:</b> 
+        <span style="font-size: 15px; font-family: Goldplay_Regular;">${criterioConcatendoAlv}</span>
+        </div>
+      `;
+    
       
       // <ul>${monumento.criterio_concat}</ul>
       plot.site = monumento.site;
@@ -272,7 +376,7 @@ function areas(dfAreas: any){
       `
       "${country.AC_2}" : {
         "tooltip": {
-          "content": "<span style=\\"font-weight:bold;\\">${country.Country}<\\/span><br\\/>Población : ${country.Population}<br\\/>Área: ${country.Area} Km² <br\\/> Capital: ${country.Capital} <br\\/> Moneda: ${country.CurrencyUnit}"
+          "content": "<span style=\\"font-weight:bold;\\">${country.Country}<\\/span><br\\/>Población : ${country.Population}<br\\/>Área: ${country.Area} Km² <br\\/> Capital: ${country.Capital} <br\\/> Moneda: ${country.Moneda}"
         },
         'attrs':
         {
@@ -355,9 +459,9 @@ function areas(dfAreas: any){
               
               click: function(e: any, id: any, mapElem: any, textElem: any, elemOptions: any)
               {
-                console.log(elemOptions);
-                console.log(elemOptions.tooltip);
-                console.log('working shit');
+                // console.log(elemOptions);
+                // console.log(elemOptions.tooltip);
+                // console.log('working shit');
                 openModal();
                 if (typeof elemOptions.Descripcion != 'undefined')
                 {
@@ -365,10 +469,10 @@ function areas(dfAreas: any){
                   {
                     display: 'none'
                   }).fadeIn('slow');
-                  $('.titleDescripcion').html(elemOptions.site).css(
-                  {
-                    display: 'none'
-                  }).fadeIn('slow');
+                  // $('.titleDescripcion').html(elemOptions.site).css(
+                  // {
+                  //   display: 'none'
+                  // }).fadeIn('slow');
                   
                 }
                 
@@ -389,18 +493,20 @@ function areas(dfAreas: any){
             titleAttrs:
             {
               // 'font-family': "Comic Sans MS",
-              'font-family': "MV Boli",
-              'font-size':  25,
+              'font-family': "Goldplay_Black",
+              'font-size':  20,
               // fill-opacity: "",
-              fill: "#F76624"
+              fill: "#907BFF"
             },
             labelAttrs: {
-              fill: "#F76624"
+              'font-family': "Goldplay_SemiBold",
+              fill: "#001D54"
             },
             slices:
             [{
                 label: "Natural",
                 sliceValue: "1",
+              
                 type: "svg",
                 path: "M 55.513 72.889 c 6.368 0 11.662 -4.466 12.963 -10.435 c 6.338 -1.01 11.194 -6.447 11.194 -13.072 c 0 -2.738 -0.832 -5.284 -2.263 -7.4 c 0.746 -1.651 1.171 -3.474 1.171 -5.4 c 0 -5.701 -3.607 -10.526 -8.662 -12.412 c 1.058 -1.903 1.711 -4.062 1.711 -6.393 c 0 -7.33 -5.943 -13.276 -13.284 -13.276 c -2.614 0 -5.048 0.787 -7.108 2.094 C 48.928 2.667 44.71 0 39.822 0 c -6.283 0 -11.51 4.374 -12.898 10.229 c -5.713 0.887 -10.402 5.407 -11.151 11.432 c -0.39 3.164 0.406 6.167 1.987 8.668 c -2.736 2.437 -4.504 5.944 -4.504 9.897 c 0 4.702 2.461 8.807 6.148 11.168 c -0.561 1.469 -0.905 3.053 -0.905 4.716 c 0 5.729 3.645 10.568 8.73 12.43 c 2.431 2.655 5.889 4.35 9.77 4.35 c 2.334 0 4.492 -0.654 6.398 -1.701 v 19.391 h -25.42 v 2.347 h 55.136 v -2.347 h -25.44 V 70.277 C 49.876 71.899 52.576 72.889 55.513 72.889 Z",
                 width: 10,
@@ -414,8 +520,10 @@ function areas(dfAreas: any){
               {
                 label: "Cultural",
                 sliceValue: "2",
-                type: "svg",
-                path: "M 38.654 15.571 H 7.728 C 7.728 6.971 14.651 0 23.191 0 S 38.654 6.971 38.654 15.571 Z M 43.52 43.382 H 2.861 c -0.828 0 -1.5 0.671 -1.5 1.5 c 0 0.829 0.672 1.5 1.5 1.5 H 43.52 c 0.828 0 1.5 -0.671 1.5 -1.5 C 45.02 44.053 44.349 43.382 43.52 43.382 Z M 9.147 39.345 V 19.42 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 h 33.233 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 h -2.573 v 19.925 h 2.573 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 H 9.147 Z M 25.872 39.345 V 19.42 H 20.51 v 19.925 H 25.872 Z M 34.234 19.42 h -5.362 v 19.925 h 5.362 V 19.42 Z M 12.147 39.345 h 5.362 V 19.42 h -5.362 V 39.345 Z",
+                // type: "svg",
+                // path: "M 38.654 15.571 H 7.728 C 7.728 6.971 14.651 0 23.191 0 S 38.654 6.971 38.654 15.571 Z M 43.52 43.382 H 2.861 c -0.828 0 -1.5 0.671 -1.5 1.5 c 0 0.829 0.672 1.5 1.5 1.5 H 43.52 c 0.828 0 1.5 -0.671 1.5 -1.5 C 45.02 44.053 44.349 43.382 43.52 43.382 Z M 9.147 39.345 V 19.42 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 h 33.233 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 h -2.573 v 19.925 h 2.573 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 H 9.147 Z M 25.872 39.345 V 19.42 H 20.51 v 19.925 H 25.872 Z M 34.234 19.42 h -5.362 v 19.925 h 5.362 V 19.42 Z M 12.147 39.345 h 5.362 V 19.42 h -5.362 V 39.345 Z",
+                type: 'image',
+                url: '/assets/BlueMuseum.png',
                 width: 10,
                 height: 10,
                 attrs:
@@ -427,8 +535,10 @@ function areas(dfAreas: any){
               {
                 label: "Cultural / Natural",
                 sliceValue: "3",
-                type: "svg",
-                path: "M 21 5 c -1.802 0 -3.499 0.442 -5 1.21 C 14.499 5.442 12.802 5 11 5 C 4.925 5 0 9.925 0 16 s 4.925 11 11 11 c 1.802 0 3.499 -0.442 5 -1.21 c 1.501 0.768 3.198 1.21 5 1.21 c 6.075 0 11 -4.925 11 -11 S 27.075 5 21 5 Z M 15.426 8.941 c 0.342 -0.269 0.84 -0.267 1.18 0.004 c 0.735 0.587 1.36 1.285 1.873 2.055 h -4.95 C 14.047 10.228 14.679 9.528 15.426 8.941 Z M 12.514 13 h 6.974 c 0.226 0.642 0.379 1.312 0.455 2 h -7.886 C 12.133 14.312 12.287 13.642 12.514 13 Z M 12.057 17 h 7.886 c -0.076 0.688 -0.23 1.358 -0.457 2 h -6.973 C 12.287 18.358 12.133 17.688 12.057 17 Z M 16.589 23.047 c -0.341 0.269 -0.838 0.269 -1.178 0 c -0.74 -0.585 -1.367 -1.28 -1.881 -2.047 h 4.941 C 17.956 21.766 17.329 22.462 16.589 23.047 Z M 21 25 c -1.05 0 -2.054 -0.191 -2.991 -0.523 C 20.446 22.46 22 19.412 22 16 c 0 -3.413 -1.555 -6.462 -3.994 -8.48 C 18.944 7.188 19.95 7 21 7 c 4.963 0 9 4.037 9 9 C 30 20.963 25.963 25 21 25 Z",
+                type: 'image',
+                url: '/assets/culturaNa.png',
+                // type: "svg",
+                // path: "M 21 5 c -1.802 0 -3.499 0.442 -5 1.21 C 14.499 5.442 12.802 5 11 5 C 4.925 5 0 9.925 0 16 s 4.925 11 11 11 c 1.802 0 3.499 -0.442 5 -1.21 c 1.501 0.768 3.198 1.21 5 1.21 c 6.075 0 11 -4.925 11 -11 S 27.075 5 21 5 Z M 15.426 8.941 c 0.342 -0.269 0.84 -0.267 1.18 0.004 c 0.735 0.587 1.36 1.285 1.873 2.055 h -4.95 C 14.047 10.228 14.679 9.528 15.426 8.941 Z M 12.514 13 h 6.974 c 0.226 0.642 0.379 1.312 0.455 2 h -7.886 C 12.133 14.312 12.287 13.642 12.514 13 Z M 12.057 17 h 7.886 c -0.076 0.688 -0.23 1.358 -0.457 2 h -6.973 C 12.287 18.358 12.133 17.688 12.057 17 Z M 16.589 23.047 c -0.341 0.269 -0.838 0.269 -1.178 0 c -0.74 -0.585 -1.367 -1.28 -1.881 -2.047 h 4.941 C 17.956 21.766 17.329 22.462 16.589 23.047 Z M 21 25 c -1.05 0 -2.054 -0.191 -2.991 -0.523 C 20.446 22.46 22 19.412 22 16 c 0 -3.413 -1.555 -6.462 -3.994 -8.48 C 18.944 7.188 19.95 7 21 7 c 4.963 0 9 4.037 9 9 C 30 20.963 25.963 25 21 25 Z",
                 width: 10,
                 height: 10,
                 attrs:
@@ -453,8 +563,10 @@ function areas(dfAreas: any){
               {
                 label: "Cultural (Peligro)",
                 sliceValue: "5",
-                type: "svg",
-                path: "M 38.654 15.571 H 7.728 C 7.728 6.971 14.651 0 23.191 0 S 38.654 6.971 38.654 15.571 Z M 43.52 43.382 H 2.861 c -0.828 0 -1.5 0.671 -1.5 1.5 c 0 0.829 0.672 1.5 1.5 1.5 H 43.52 c 0.828 0 1.5 -0.671 1.5 -1.5 C 45.02 44.053 44.349 43.382 43.52 43.382 Z M 9.147 39.345 V 19.42 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 h 33.233 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 h -2.573 v 19.925 h 2.573 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 H 9.147 Z M 25.872 39.345 V 19.42 H 20.51 v 19.925 H 25.872 Z M 34.234 19.42 h -5.362 v 19.925 h 5.362 V 19.42 Z M 12.147 39.345 h 5.362 V 19.42 h -5.362 V 39.345 Z",
+                // type: "svg",
+                // path: "M 38.654 15.571 H 7.728 C 7.728 6.971 14.651 0 23.191 0 S 38.654 6.971 38.654 15.571 Z M 43.52 43.382 H 2.861 c -0.828 0 -1.5 0.671 -1.5 1.5 c 0 0.829 0.672 1.5 1.5 1.5 H 43.52 c 0.828 0 1.5 -0.671 1.5 -1.5 C 45.02 44.053 44.349 43.382 43.52 43.382 Z M 9.147 39.345 V 19.42 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 h 33.233 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 h -2.573 v 19.925 h 2.573 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 H 9.147 Z M 25.872 39.345 V 19.42 H 20.51 v 19.925 H 25.872 Z M 34.234 19.42 h -5.362 v 19.925 h 5.362 V 19.42 Z M 12.147 39.345 h 5.362 V 19.42 h -5.362 V 39.345 Z",
+                type: 'image',
+                url: '/assets/RedMuseum.png',
                 width: 10,
                 height: 10,
                 attrs:
@@ -470,7 +582,7 @@ function areas(dfAreas: any){
           //// CLEAN FROM HERE
           "AF" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Afghanistan<\/span><br\/>Población : 38928346<br\/>Área: 647500 Km² <br\/> Capital: Kabul <br\/> Moneda: Afghan afghani"
+              "content": "<span style=\"font-weight:bold;\">Afganistán<\/span><br\/>Población : 38928346<br\/>Área: 647500 Km² <br\/> Capital: Kabul <br\/> Moneda: Afgani afgano"
             },
             'attrs':
             {
@@ -479,7 +591,7 @@ function areas(dfAreas: any){
           },
           "AL" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Albania<\/span><br\/>Población : 2877797<br\/>Área: 28748 Km² <br\/> Capital: Tirana <br\/> Moneda: Albanian lek"
+              "content": "<span style=\"font-weight:bold;\">Albania<\/span><br\/>Población : 2877797<br\/>Área: 28748 Km² <br\/> Capital: Tirana <br\/> Moneda: Lek albanés"
             },
             'attrs':
             {
@@ -488,7 +600,7 @@ function areas(dfAreas: any){
           },
           "DZ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Algeria<\/span><br\/>Población : 43851044<br\/>Área: 2381740 Km² <br\/> Capital: Algiers <br\/> Moneda: Algerian dinar"
+              "content": "<span style=\"font-weight:bold;\">Argelia<\/span><br\/>Población : 43851044<br\/>Área: 2381740 Km² <br\/> Capital: Algiers [El Djazaïr] <br\/> Moneda: Naira nigeriana"
             },
             'attrs':
             {
@@ -497,7 +609,7 @@ function areas(dfAreas: any){
           },
           "AS" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">American Samoa<\/span><br\/>Población : 55191<br\/>Área: 199 Km² <br\/> Capital: Pago Pago <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">Samoa Americana<\/span><br\/>Población : 55191<br\/>Área: 199 Km² <br\/> Capital: Pago Pago <br\/> Moneda: Tālā"
             },
             'attrs':
             {
@@ -506,7 +618,7 @@ function areas(dfAreas: any){
           },
           "AD" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Andorra<\/span><br\/>Población : 77265<br\/>Área: 468 Km² <br\/> Capital: Andorra la Vella <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Andorra<\/span><br\/>Población : 77265<br\/>Área: 468 Km² <br\/> Capital: Andorra La Vieja <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -515,7 +627,7 @@ function areas(dfAreas: any){
           },
           "AO" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Angola<\/span><br\/>Población : 32866272<br\/>Área: 1246700 Km² <br\/> Capital: Luanda <br\/> Moneda: Angolan kwanza"
+              "content": "<span style=\"font-weight:bold;\">Angola<\/span><br\/>Población : 32866272<br\/>Área: 1246700 Km² <br\/> Capital: Luanda <br\/> Moneda: Kwanza angoleño"
             },
             'attrs':
             {
@@ -524,7 +636,7 @@ function areas(dfAreas: any){
           },
           "AI" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Anguilla<\/span><br\/>Población : 15003<br\/>Área: 102 Km² <br\/> Capital: The Valley <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Anguilla<\/span><br\/>Población : 15003<br\/>Área: 102 Km² <br\/> Capital: El Valle <br\/> Moneda: Dólar del Caribe Oriental"
             },
             'attrs':
             {
@@ -533,7 +645,7 @@ function areas(dfAreas: any){
           },
           "AG" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Antigua & Barbuda<\/span><br\/>Población : 97929<br\/>Área: 443 Km² <br\/> Capital: Saint John's <br\/> Moneda: East Caribbean dollar"
+              "content": "<span style=\"font-weight:bold;\">Antigua y Barbuda<\/span><br\/>Población : 97929<br\/>Área: 443 Km² <br\/> Capital: Saint John'S <br\/> Moneda: Dólar del Caribe Oriental"
             },
             'attrs':
             {
@@ -542,7 +654,7 @@ function areas(dfAreas: any){
           },
           "AR" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Argentina<\/span><br\/>Población : 45195774<br\/>Área: 2766890 Km² <br\/> Capital: Buenos Aires <br\/> Moneda: Argentine peso"
+              "content": "<span style=\"font-weight:bold;\">Argentina<\/span><br\/>Población : 45195774<br\/>Área: 2766890 Km² <br\/> Capital: Buenos Aires <br\/> Moneda: Peso"
             },
             'attrs':
             {
@@ -551,7 +663,7 @@ function areas(dfAreas: any){
           },
           "AM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Armenia<\/span><br\/>Población : 2963243<br\/>Área: 29800 Km² <br\/> Capital: Yerevan <br\/> Moneda: Armenian dram"
+              "content": "<span style=\"font-weight:bold;\">Armenia<\/span><br\/>Población : 2963243<br\/>Área: 29800 Km² <br\/> Capital: Ereván <br\/> Moneda: Dram armenio"
             },
             'attrs':
             {
@@ -560,7 +672,7 @@ function areas(dfAreas: any){
           },
           "AW" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Aruba<\/span><br\/>Población : 106766<br\/>Área: 193 Km² <br\/> Capital: Oranjestad <br\/> Moneda: Aruban florin"
+              "content": "<span style=\"font-weight:bold;\">Aruba<\/span><br\/>Población : 106766<br\/>Área: 193 Km² <br\/> Capital: Oranjestad <br\/> Moneda: florín"
             },
             'attrs':
             {
@@ -569,7 +681,7 @@ function areas(dfAreas: any){
           },
           "AU" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Australia<\/span><br\/>Población : 25499884<br\/>Área: 7686850 Km² <br\/> Capital: Canberra <br\/> Moneda: Australian dollar"
+              "content": "<span style=\"font-weight:bold;\">Australia<\/span><br\/>Población : 25499884<br\/>Área: 7686850 Km² <br\/> Capital: Canberra <br\/> Moneda: Dólar australiano"
             },
             'attrs':
             {
@@ -578,7 +690,7 @@ function areas(dfAreas: any){
           },
           "AT" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Austria<\/span><br\/>Población : 9006398<br\/>Área: 83870 Km² <br\/> Capital: Vienna <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Austria<\/span><br\/>Población : 9006398<br\/>Área: 83870 Km² <br\/> Capital: Viena <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -587,7 +699,7 @@ function areas(dfAreas: any){
           },
           "AZ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Azerbaijan<\/span><br\/>Población : 10139177<br\/>Área: 86600 Km² <br\/> Capital: Baku <br\/> Moneda: New Azeri manat"
+              "content": "<span style=\"font-weight:bold;\">Azerbaiyán<\/span><br\/>Población : 10139177<br\/>Área: 86600 Km² <br\/> Capital: Bakú <br\/> Moneda: Manat azerí"
             },
             'attrs':
             {
@@ -596,7 +708,7 @@ function areas(dfAreas: any){
           },
           "BS" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Bahamas<\/span><br\/>Población : 393244<br\/>Área: 13940 Km² <br\/> Capital: Nassau <br\/> Moneda: Bahamian dollar"
+              "content": "<span style=\"font-weight:bold;\">Bahamas<\/span><br\/>Población : 393244<br\/>Área: 13940 Km² <br\/> Capital: Nassau <br\/> Moneda: Dólar bahameño"
             },
             'attrs':
             {
@@ -605,7 +717,7 @@ function areas(dfAreas: any){
           },
           "BH" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Bahrain<\/span><br\/>Población : 1701575<br\/>Área: 665 Km² <br\/> Capital: Manama <br\/> Moneda: Bahraini dinar"
+              "content": "<span style=\"font-weight:bold;\">Baréin<\/span><br\/>Población : 1701575<br\/>Área: 665 Km² <br\/> Capital: Manamá <br\/> Moneda: Dinar bahreiní"
             },
             'attrs':
             {
@@ -614,7 +726,7 @@ function areas(dfAreas: any){
           },
           "BD" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Bangladesh<\/span><br\/>Población : 164689383<br\/>Área: 144000 Km² <br\/> Capital: Dhaka <br\/> Moneda: Bangladeshi taka"
+              "content": "<span style=\"font-weight:bold;\">Bangladés<\/span><br\/>Población : 164689383<br\/>Área: 144000 Km² <br\/> Capital: Daca <br\/> Moneda: Taka bangladeshí"
             },
             'attrs':
             {
@@ -623,7 +735,7 @@ function areas(dfAreas: any){
           },
           "BB" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Barbados<\/span><br\/>Población : 287375<br\/>Área: 431 Km² <br\/> Capital: Bridgetown <br\/> Moneda: Barbados dollar"
+              "content": "<span style=\"font-weight:bold;\">Barbados<\/span><br\/>Población : 287375<br\/>Área: 431 Km² <br\/> Capital: Bridgetown <br\/> Moneda: Dólar de Barbados"
             },
             'attrs':
             {
@@ -632,7 +744,7 @@ function areas(dfAreas: any){
           },
           "BY" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Belarus<\/span><br\/>Población : 9449323<br\/>Área: 207600 Km² <br\/> Capital: Minsk <br\/> Moneda: Belarusian rubel"
+              "content": "<span style=\"font-weight:bold;\">Bielorrusia<\/span><br\/>Población : 9449323<br\/>Área: 207600 Km² <br\/> Capital: Minsk <br\/> Moneda: Rublo bielorruso"
             },
             'attrs':
             {
@@ -641,7 +753,7 @@ function areas(dfAreas: any){
           },
           "BE" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Belgium<\/span><br\/>Población : 11589623<br\/>Área: 30528 Km² <br\/> Capital: Brussels <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Bélgica<\/span><br\/>Población : 11589623<br\/>Área: 30528 Km² <br\/> Capital: Bruselas <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -650,7 +762,7 @@ function areas(dfAreas: any){
           },
           "BZ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Belize<\/span><br\/>Población : 397628<br\/>Área: 22966 Km² <br\/> Capital: Belmopan <br\/> Moneda: Belize dollar"
+              "content": "<span style=\"font-weight:bold;\">Belice<\/span><br\/>Población : 397628<br\/>Área: 22966 Km² <br\/> Capital: Belmopán <br\/> Moneda: Dólar beliceño"
             },
             'attrs':
             {
@@ -659,7 +771,7 @@ function areas(dfAreas: any){
           },
           "BJ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Benin<\/span><br\/>Población : 12123200<br\/>Área: 112620 Km² <br\/> Capital: Porto-Novo <br\/> Moneda: West African CFA franc"
+              "content": "<span style=\"font-weight:bold;\">Benín<\/span><br\/>Población : 12123200<br\/>Área: 112620 Km² <br\/> Capital: Porto Novo  <br\/> Moneda: Franco CFA de África Occidental"
             },
             'attrs':
             {
@@ -668,7 +780,7 @@ function areas(dfAreas: any){
           },
           "BM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Bermuda<\/span><br\/>Población : 62278<br\/>Área: 53 Km² <br\/> Capital: Hamilton <br\/> Moneda: Bermuda dollar"
+              "content": "<span style=\"font-weight:bold;\">islas Bermudas<\/span><br\/>Población : 62278<br\/>Área: 53 Km² <br\/> Capital: Hamilton <br\/> Moneda: dólar bermudeño"
             },
             'attrs':
             {
@@ -677,7 +789,7 @@ function areas(dfAreas: any){
           },
           "BT" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Bhutan<\/span><br\/>Población : 771608<br\/>Área: 47000 Km² <br\/> Capital: Thimphu <br\/> Moneda: Bhutanese ngultrum"
+              "content": "<span style=\"font-weight:bold;\">Bután<\/span><br\/>Población : 771608<br\/>Área: 47000 Km² <br\/> Capital: Timbu <br\/> Moneda: Ngultrum butanés"
             },
             'attrs':
             {
@@ -686,7 +798,7 @@ function areas(dfAreas: any){
           },
           "BO" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Bolivia<\/span><br\/>Población : 11673021<br\/>Área: 1098580 Km² <br\/> Capital: La Paz <br\/> Moneda: Bolivian Boliviano"
+              "content": "<span style=\"font-weight:bold;\">Bolivia<\/span><br\/>Población : 11673021<br\/>Área: 1098580 Km² <br\/> Capital: Sucre, La Paz <br\/> Moneda: Boliviano"
             },
             'attrs':
             {
@@ -695,7 +807,7 @@ function areas(dfAreas: any){
           },
           "BA" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Bosnia and Herzegovina<\/span><br\/>Población : 3280819<br\/>Área: 51129 Km² <br\/> Capital: Sarajevo <br\/> Moneda: Bosnia and Herzegovina convertible mark"
+              "content": "<span style=\"font-weight:bold;\">Bosnia y Herzegovina<\/span><br\/>Población : 3280819<br\/>Área: 51129 Km² <br\/> Capital: Sarajevo <br\/> Moneda: Marco bosnioherzegovino"
             },
             'attrs':
             {
@@ -704,7 +816,7 @@ function areas(dfAreas: any){
           },
           "BW" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Botswana<\/span><br\/>Población : 2351627<br\/>Área: 600370 Km² <br\/> Capital: Gaborone <br\/> Moneda: Botswana pula"
+              "content": "<span style=\"font-weight:bold;\">Botsuana<\/span><br\/>Población : 2351627<br\/>Área: 600370 Km² <br\/> Capital: Gaberones <br\/> Moneda: Pula"
             },
             'attrs':
             {
@@ -713,7 +825,7 @@ function areas(dfAreas: any){
           },
           "BR" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Brazil<\/span><br\/>Población : 212559417<br\/>Área: 8511965 Km² <br\/> Capital: Brasilia <br\/> Moneda: Brazilian real"
+              "content": "<span style=\"font-weight:bold;\">Brasil<\/span><br\/>Población : 212559417<br\/>Área: 8511965 Km² <br\/> Capital: Brasilia <br\/> Moneda: Real brasileño"
             },
             'attrs':
             {
@@ -722,7 +834,7 @@ function areas(dfAreas: any){
           },
           "VG" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">British Virgin Islands<\/span><br\/>Población : 30231<br\/>Área: 153 Km² <br\/> Capital: Road Town <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Islas Vírgenes Británicas<\/span><br\/>Población : 30231<br\/>Área: 153 Km² <br\/> Capital: Road Town <br\/> Moneda:  Dólar estadounidense"
             },
             'attrs':
             {
@@ -731,7 +843,7 @@ function areas(dfAreas: any){
           },
           "BN" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Brunei<\/span><br\/>Población : 437479<br\/>Área: 5770 Km² <br\/> Capital: Bandar Seri Begawan <br\/> Moneda: Brunei dollar"
+              "content": "<span style=\"font-weight:bold;\">Brunéi<\/span><br\/>Población : 437479<br\/>Área: 5770 Km² <br\/> Capital: Sultanato Islámico De Brunei <br\/> Moneda: Dólar de Brunéi"
             },
             'attrs':
             {
@@ -740,7 +852,7 @@ function areas(dfAreas: any){
           },
           "BG" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Bulgaria<\/span><br\/>Población : 6948445<br\/>Área: 110910 Km² <br\/> Capital: Sofia <br\/> Moneda: Bulgarian lev"
+              "content": "<span style=\"font-weight:bold;\">Bulgaria<\/span><br\/>Población : 6948445<br\/>Área: 110910 Km² <br\/> Capital: Sofía <br\/> Moneda: Lev búlgaro"
             },
             'attrs':
             {
@@ -749,7 +861,7 @@ function areas(dfAreas: any){
           },
           "BF" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Burkina Faso<\/span><br\/>Población : 20903273<br\/>Área: 274200 Km² <br\/> Capital: Ouagadougou <br\/> Moneda: West African CFA franc"
+              "content": "<span style=\"font-weight:bold;\">Burkina Faso<\/span><br\/>Población : 20903273<br\/>Área: 274200 Km² <br\/> Capital: Uagadugú <br\/> Moneda: Franco CFA de África Occidental"
             },
             'attrs':
             {
@@ -758,7 +870,7 @@ function areas(dfAreas: any){
           },
           "MM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Burma<\/span><br\/>Población : 54409800<br\/>Área: 678500 Km² <br\/> Capital: null <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Birmania<\/span><br\/>Población : 54409800<br\/>Área: 678500 Km² <br\/> Capital: Naypidó <br\/> Moneda: Kyat birmano"
             },
             'attrs':
             {
@@ -767,7 +879,7 @@ function areas(dfAreas: any){
           },
           "BI" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Burundi<\/span><br\/>Población : 11890784<br\/>Área: 27830 Km² <br\/> Capital: Bujumbura <br\/> Moneda: Burundi franc"
+              "content": "<span style=\"font-weight:bold;\">Burundi<\/span><br\/>Población : 11890784<br\/>Área: 27830 Km² <br\/> Capital: Buyumbura <br\/> Moneda: Franco de Burundi"
             },
             'attrs':
             {
@@ -776,7 +888,7 @@ function areas(dfAreas: any){
           },
           "KH" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Cambodia<\/span><br\/>Población : 16718965<br\/>Área: 181040 Km² <br\/> Capital: Phnom Penh <br\/> Moneda: Cambodian riel"
+              "content": "<span style=\"font-weight:bold;\">Camboya<\/span><br\/>Población : 16718965<br\/>Área: 181040 Km² <br\/> Capital: Pnon Pehn <br\/> Moneda: Riel camboyano"
             },
             'attrs':
             {
@@ -785,7 +897,7 @@ function areas(dfAreas: any){
           },
           "CM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Cameroon<\/span><br\/>Población : 26545863<br\/>Área: 475440 Km² <br\/> Capital: Yaounde <br\/> Moneda: Central African CFA franc"
+              "content": "<span style=\"font-weight:bold;\">Camerún<\/span><br\/>Población : 26545863<br\/>Área: 475440 Km² <br\/> Capital: Yaundé <br\/> Moneda: Franco CFA de África Central"
             },
             'attrs':
             {
@@ -794,7 +906,7 @@ function areas(dfAreas: any){
           },
           "CA" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Canada<\/span><br\/>Población : 37742154<br\/>Área: 9984670 Km² <br\/> Capital: Ottawa <br\/> Moneda: Canadian dollar"
+              "content": "<span style=\"font-weight:bold;\">Canadá<\/span><br\/>Población : 37742154<br\/>Área: 9984670 Km² <br\/> Capital: Ottawa <br\/> Moneda: Dólar canadiense"
             },
             'attrs':
             {
@@ -803,7 +915,7 @@ function areas(dfAreas: any){
           },
           "CV" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Cabo Verde<\/span><br\/>Población : 555987<br\/>Área: 4033 Km² <br\/> Capital: Praia <br\/> Moneda: Cabo Verde escudo"
+              "content": "<span style=\"font-weight:bold;\">Cabo Verde<\/span><br\/>Población : 555987<br\/>Área: 4033 Km² <br\/> Capital: Praia <br\/> Moneda: Escudo caboverdiano"
             },
             'attrs':
             {
@@ -812,7 +924,7 @@ function areas(dfAreas: any){
           },
           "KY" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Cayman Islands<\/span><br\/>Población : 65722<br\/>Área: 262 Km² <br\/> Capital: George Town <br\/> Moneda: Cayman Islands dollar"
+              "content": "<span style=\"font-weight:bold;\">Islas Caimán<\/span><br\/>Población : 65722<br\/>Área: 262 Km² <br\/> Capital: George Town <br\/> Moneda: Dólar De Las Islas Caimán"
             },
             'attrs':
             {
@@ -821,7 +933,7 @@ function areas(dfAreas: any){
           },
           "CF" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Central African Republic<\/span><br\/>Población : 4829767<br\/>Área: 622984 Km² <br\/> Capital: Bangui <br\/> Moneda: Central African CFA franc"
+              "content": "<span style=\"font-weight:bold;\">República Centroafricana<\/span><br\/>Población : 4829767<br\/>Área: 622984 Km² <br\/> Capital: Bangui <br\/> Moneda: Franco CFA de África Central"
             },
             'attrs':
             {
@@ -830,7 +942,7 @@ function areas(dfAreas: any){
           },
           "TD" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Chad<\/span><br\/>Población : 16425864<br\/>Área: 1284000 Km² <br\/> Capital: N'Djamena <br\/> Moneda: Central African CFA franc"
+              "content": "<span style=\"font-weight:bold;\">República del Chad<\/span><br\/>Población : 16425864<br\/>Área: 1284000 Km² <br\/> Capital: Yamena  <br\/> Moneda: Franco CFA"
             },
             'attrs':
             {
@@ -839,7 +951,7 @@ function areas(dfAreas: any){
           },
           "CL" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Chile<\/span><br\/>Población : 19116201<br\/>Área: 756950 Km² <br\/> Capital: Santiago <br\/> Moneda: Chilean peso"
+              "content": "<span style=\"font-weight:bold;\">Chile<\/span><br\/>Población : 19116201<br\/>Área: 756950 Km² <br\/> Capital: Santiago De Chile <br\/> Moneda: Peso chileno"
             },
             'attrs':
             {
@@ -848,7 +960,7 @@ function areas(dfAreas: any){
           },
           "CN" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">China<\/span><br\/>Población : 1439323776<br\/>Área: 9596960 Km² <br\/> Capital: Beijing <br\/> Moneda: Chinese yuan"
+              "content": "<span style=\"font-weight:bold;\">China<\/span><br\/>Población : 1439323776<br\/>Área: 9596960 Km² <br\/> Capital: Pekín <br\/> Moneda: Yuan chino"
             },
             'attrs':
             {
@@ -857,7 +969,7 @@ function areas(dfAreas: any){
           },
           "CO" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Colombia<\/span><br\/>Población : 50882891<br\/>Área: 1138910 Km² <br\/> Capital: Bogota <br\/> Moneda: Colombian peso"
+              "content": "<span style=\"font-weight:bold;\">Colombia<\/span><br\/>Población : 50882891<br\/>Área: 1138910 Km² <br\/> Capital: Bogotá <br\/> Moneda: Peso colombiano"
             },
             'attrs':
             {
@@ -866,7 +978,7 @@ function areas(dfAreas: any){
           },
           "KM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Comoros<\/span><br\/>Población : 869601<br\/>Área: 2170 Km² <br\/> Capital: Moroni <br\/> Moneda: Comorian franc"
+              "content": "<span style=\"font-weight:bold;\">Comoras<\/span><br\/>Población : 869601<br\/>Área: 2170 Km² <br\/> Capital: Moroni <br\/> Moneda: Franco comorano"
             },
             'attrs':
             {
@@ -875,7 +987,7 @@ function areas(dfAreas: any){
           },
           "CD" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Congo, Dem. Rep.<\/span><br\/>Población : 89561403<br\/>Área: 2345410 Km² <br\/> Capital: Kinshasa <br\/> Moneda: Congolese franc"
+              "content": "<span style=\"font-weight:bold;\">República Democrática del Congo<\/span><br\/>Población : 89561403<br\/>Área: 2345410 Km² <br\/> Capital: Kinshasa <br\/> Moneda: Franco congoleño"
             },
             'attrs':
             {
@@ -884,7 +996,7 @@ function areas(dfAreas: any){
           },
           "CG" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Congo, Repub. of the<\/span><br\/>Población : 5518087<br\/>Área: 342000 Km² <br\/> Capital: Brazzaville <br\/> Moneda: Central African CFA franc"
+              "content": "<span style=\"font-weight:bold;\">República Del Congo<\/span><br\/>Población : 5518087<br\/>Área: 342000 Km² <br\/> Capital: Brazzaville <br\/> Moneda: Franco congoleño"
             },
             'attrs':
             {
@@ -893,7 +1005,7 @@ function areas(dfAreas: any){
           },
           "CK" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Cook Islands<\/span><br\/>Población : 17564<br\/>Área: 240 Km² <br\/> Capital: Avarua <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Islas Cook<\/span><br\/>Población : 17564<br\/>Área: 240 Km² <br\/> Capital: Avarua <br\/> Moneda: dólar de la Islas Cook"
             },
             'attrs':
             {
@@ -902,7 +1014,7 @@ function areas(dfAreas: any){
           },
           "CR" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Costa Rica<\/span><br\/>Población : 5094118<br\/>Área: 51100 Km² <br\/> Capital: San Jose <br\/> Moneda: Costa Rican colon"
+              "content": "<span style=\"font-weight:bold;\">Costa Rica<\/span><br\/>Población : 5094118<br\/>Área: 51100 Km² <br\/> Capital: San José <br\/> Moneda: Colón costarricense"
             },
             'attrs':
             {
@@ -911,7 +1023,7 @@ function areas(dfAreas: any){
           },
           "CI" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Côte d'Ivoire<\/span><br\/>Población : 26378274<br\/>Área: 322460 Km² <br\/> Capital: Yamoussoukro <br\/> Moneda: West African CFA franc"
+              "content": "<span style=\"font-weight:bold;\">Costa de marfil<\/span><br\/>Población : 26378274<br\/>Área: 322460 Km² <br\/> Capital: Yamusukro, Abiyán <br\/> Moneda: Franco CFA de África Occidental"
             },
             'attrs':
             {
@@ -920,7 +1032,7 @@ function areas(dfAreas: any){
           },
           "HR" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Croatia<\/span><br\/>Población : 4105267<br\/>Área: 56542 Km² <br\/> Capital: Zagreb <br\/> Moneda: Croatian kuna"
+              "content": "<span style=\"font-weight:bold;\">Croacia<\/span><br\/>Población : 4105267<br\/>Área: 56542 Km² <br\/> Capital: Zagreb <br\/> Moneda: Kuna croata"
             },
             'attrs':
             {
@@ -929,7 +1041,7 @@ function areas(dfAreas: any){
           },
           "CU" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Cuba<\/span><br\/>Población : 11326616<br\/>Área: 110860 Km² <br\/> Capital: Havana <br\/> Moneda: Cuban peso"
+              "content": "<span style=\"font-weight:bold;\">Cuba<\/span><br\/>Población : 11326616<br\/>Área: 110860 Km² <br\/> Capital: La Habana <br\/> Moneda: Peso cubano"
             },
             'attrs':
             {
@@ -938,7 +1050,7 @@ function areas(dfAreas: any){
           },
           "CY" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Cyprus<\/span><br\/>Población : 1207359<br\/>Área: 9250 Km² <br\/> Capital: Nicosia <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Chipre<\/span><br\/>Población : 1207359<br\/>Área: 9250 Km² <br\/> Capital: Nicosia <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -947,7 +1059,7 @@ function areas(dfAreas: any){
           },
           "CZ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Czech Republic (Czechia)<\/span><br\/>Población : 10708981<br\/>Área: 78866 Km² <br\/> Capital: Prague <br\/> Moneda: Czech koruna"
+              "content": "<span style=\"font-weight:bold;\">República Checa (Chequia)<\/span><br\/>Población : 10708981<br\/>Área: 78866 Km² <br\/> Capital: Praga <br\/> Moneda: Corona Checa"
             },
             'attrs':
             {
@@ -956,7 +1068,7 @@ function areas(dfAreas: any){
           },
           "DK" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Denmark<\/span><br\/>Población : 5792202<br\/>Área: 43094 Km² <br\/> Capital: Copenhagen <br\/> Moneda: Danish krone"
+              "content": "<span style=\"font-weight:bold;\">Dinamarca<\/span><br\/>Población : 5792202<br\/>Área: 43094 Km² <br\/> Capital: Copenhague <br\/> Moneda: Corona danesa"
             },
             'attrs':
             {
@@ -965,7 +1077,7 @@ function areas(dfAreas: any){
           },
           "DJ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Djibouti<\/span><br\/>Población : 988000<br\/>Área: 23000 Km² <br\/> Capital: Djibouti <br\/> Moneda: Djibouti franc"
+              "content": "<span style=\"font-weight:bold;\">Yibuti<\/span><br\/>Población : 988000<br\/>Área: 23000 Km² <br\/> Capital: Yibuti <br\/> Moneda: Franco yibutiano"
             },
             'attrs':
             {
@@ -974,7 +1086,7 @@ function areas(dfAreas: any){
           },
           "DM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Dominica<\/span><br\/>Población : 71986<br\/>Área: 754 Km² <br\/> Capital: Roseau <br\/> Moneda: East Caribbean dollar"
+              "content": "<span style=\"font-weight:bold;\">Dominica<\/span><br\/>Población : 71986<br\/>Área: 754 Km² <br\/> Capital: Roseau <br\/> Moneda: Dólar del Caribe Oriental"
             },
             'attrs':
             {
@@ -983,7 +1095,7 @@ function areas(dfAreas: any){
           },
           "DO" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Dominican Republic<\/span><br\/>Población : 10847910<br\/>Área: 48730 Km² <br\/> Capital: Santo Domingo <br\/> Moneda: Dominican peso"
+              "content": "<span style=\"font-weight:bold;\">República Dominicana<\/span><br\/>Población : 10847910<br\/>Área: 48730 Km² <br\/> Capital: Santo Domingo <br\/> Moneda: Peso dominicano"
             },
             'attrs':
             {
@@ -992,7 +1104,7 @@ function areas(dfAreas: any){
           },
           "TL" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Timor-Leste<\/span><br\/>Población : 1318445<br\/>Área: 15007 Km² <br\/> Capital: Dili <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">Timor Oriental<\/span><br\/>Población : 1318445<br\/>Área: 15007 Km² <br\/> Capital: Dili <br\/> Moneda: Dólar estadounidense"
             },
             'attrs':
             {
@@ -1001,7 +1113,7 @@ function areas(dfAreas: any){
           },
           "EC" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Ecuador<\/span><br\/>Población : 17643054<br\/>Área: 283560 Km² <br\/> Capital: Quito <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">Ecuador<\/span><br\/>Población : 17643054<br\/>Área: 283560 Km² <br\/> Capital: Quito <br\/> Moneda: Dólar estadounidense"
             },
             'attrs':
             {
@@ -1010,7 +1122,7 @@ function areas(dfAreas: any){
           },
           "EG" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Egypt<\/span><br\/>Población : 102334404<br\/>Área: 1001450 Km² <br\/> Capital: Cairo <br\/> Moneda: Egyptian pound"
+              "content": "<span style=\"font-weight:bold;\">Egipto<\/span><br\/>Población : 102334404<br\/>Área: 1001450 Km² <br\/> Capital: El Cairo <br\/> Moneda: Libra egipcia"
             },
             'attrs':
             {
@@ -1019,7 +1131,7 @@ function areas(dfAreas: any){
           },
           "SV" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">El Salvador<\/span><br\/>Población : 6486205<br\/>Área: 21040 Km² <br\/> Capital: San Salvador <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">El Salvador<\/span><br\/>Población : 6486205<br\/>Área: 21040 Km² <br\/> Capital: San Salvador <br\/> Moneda: Dólar estadounidense"
             },
             'attrs':
             {
@@ -1028,7 +1140,7 @@ function areas(dfAreas: any){
           },
           "GQ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Equatorial Guinea<\/span><br\/>Población : 1402985<br\/>Área: 28051 Km² <br\/> Capital: Malabo <br\/> Moneda: Central African CFA franc"
+              "content": "<span style=\"font-weight:bold;\">Guinea Ecuatorial<\/span><br\/>Población : 1402985<br\/>Área: 28051 Km² <br\/> Capital: Malabo <br\/> Moneda: Franco CFA de África Central"
             },
             'attrs':
             {
@@ -1037,7 +1149,7 @@ function areas(dfAreas: any){
           },
           "ER" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Eritrea<\/span><br\/>Población : 3546421<br\/>Área: 121320 Km² <br\/> Capital: Asmara <br\/> Moneda: Eritrean nakfa"
+              "content": "<span style=\"font-weight:bold;\">Eritrea<\/span><br\/>Población : 3546421<br\/>Área: 121320 Km² <br\/> Capital: Asmara <br\/> Moneda: Nakfa"
             },
             'attrs':
             {
@@ -1046,7 +1158,7 @@ function areas(dfAreas: any){
           },
           "EE" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Estonia<\/span><br\/>Población : 1326535<br\/>Área: 45226 Km² <br\/> Capital: Tallinn <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Estonia<\/span><br\/>Población : 1326535<br\/>Área: 45226 Km² <br\/> Capital: Tallín <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1055,7 +1167,7 @@ function areas(dfAreas: any){
           },
           "ET" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Ethiopia<\/span><br\/>Población : 114963588<br\/>Área: 1127127 Km² <br\/> Capital: Addis Ababa <br\/> Moneda: Ethiopian birr"
+              "content": "<span style=\"font-weight:bold;\">Etiopía<\/span><br\/>Población : 114963588<br\/>Área: 1127127 Km² <br\/> Capital: Adís Abeba <br\/> Moneda: Birr etíope"
             },
             'attrs':
             {
@@ -1064,7 +1176,7 @@ function areas(dfAreas: any){
           },
           "FO" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Faroe Islands<\/span><br\/>Población : 49053<br\/>Área: 1399 Km² <br\/> Capital: Torshavn <br\/> Moneda: Danish krone"
+              "content": "<span style=\"font-weight:bold;\">Islas Faroe<\/span><br\/>Población : 49053<br\/>Área: 1399 Km² <br\/> Capital: Tórshavn <br\/> Moneda: Corona Feroesa"
             },
             'attrs':
             {
@@ -1073,7 +1185,7 @@ function areas(dfAreas: any){
           },
           "FJ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Fiji<\/span><br\/>Población : 896445<br\/>Área: 18270 Km² <br\/> Capital: Suva <br\/> Moneda: Fijian dollar"
+              "content": "<span style=\"font-weight:bold;\">Fiyi<\/span><br\/>Población : 896445<br\/>Área: 18270 Km² <br\/> Capital: Suva <br\/> Moneda: Dólar fiyiano"
             },
             'attrs':
             {
@@ -1082,7 +1194,7 @@ function areas(dfAreas: any){
           },
           "FI" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Finland<\/span><br\/>Población : 5540720<br\/>Área: 338145 Km² <br\/> Capital: Helsinki <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Finlandia<\/span><br\/>Población : 5540720<br\/>Área: 338145 Km² <br\/> Capital: Helsinki <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1091,7 +1203,7 @@ function areas(dfAreas: any){
           },
           "FR" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">France<\/span><br\/>Población : 65273511<br\/>Área: 547030 Km² <br\/> Capital: Paris <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Francia<\/span><br\/>Población : 65273511<br\/>Área: 547030 Km² <br\/> Capital: París <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1100,7 +1212,7 @@ function areas(dfAreas: any){
           },
           "GF" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">French Guiana<\/span><br\/>Población : 298682<br\/>Área: 91000 Km² <br\/> Capital: null <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Guayana Francesa<\/span><br\/>Población : 298682<br\/>Área: 91000 Km² <br\/> Capital: Cayena <br\/> Moneda: Euro "
             },
             'attrs':
             {
@@ -1109,7 +1221,7 @@ function areas(dfAreas: any){
           },
           "PF" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">French Polynesia<\/span><br\/>Población : 280908<br\/>Área: 4167 Km² <br\/> Capital: Papeete <br\/> Moneda: CFP franc"
+              "content": "<span style=\"font-weight:bold;\">Polinesia francesa<\/span><br\/>Población : 280908<br\/>Área: 4167 Km² <br\/> Capital:  Papeete <br\/> Moneda: franco del Pacífico"
             },
             'attrs':
             {
@@ -1118,7 +1230,7 @@ function areas(dfAreas: any){
           },
           "GA" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Gabon<\/span><br\/>Población : 2225734<br\/>Área: 267667 Km² <br\/> Capital: Libreville <br\/> Moneda: Central African CFA franc"
+              "content": "<span style=\"font-weight:bold;\">Gabón<\/span><br\/>Población : 2225734<br\/>Área: 267667 Km² <br\/> Capital: Libreville <br\/> Moneda: Franco CFA de África Central"
             },
             'attrs':
             {
@@ -1127,7 +1239,7 @@ function areas(dfAreas: any){
           },
           "GM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Gambia<\/span><br\/>Población : 2416668<br\/>Área: 11300 Km² <br\/> Capital: Banjul <br\/> Moneda: Gambian dalasi"
+              "content": "<span style=\"font-weight:bold;\">Gambia<\/span><br\/>Población : 2416668<br\/>Área: 11300 Km² <br\/> Capital: Banjul <br\/> Moneda: Dalasi"
             },
             'attrs':
             {
@@ -1136,7 +1248,7 @@ function areas(dfAreas: any){
           },
           "PS" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Gaza Strip<\/span><br\/>Población : 2048000<br\/>Área: 360 Km² <br\/> Capital: Jerusalem <br\/> Moneda: Israeli new shekel"
+              "content": "<span style=\"font-weight:bold;\">Franja de Gaza<\/span><br\/>Población : 2048000<br\/>Área: 360 Km² <br\/> Capital: Gaza <br\/> Moneda: sheqel israelí"
             },
             'attrs':
             {
@@ -1145,7 +1257,7 @@ function areas(dfAreas: any){
           },
           "GE" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Georgia<\/span><br\/>Población : 3989167<br\/>Área: 69700 Km² <br\/> Capital: Tbilisi <br\/> Moneda: Georgian lari"
+              "content": "<span style=\"font-weight:bold;\">Georgia<\/span><br\/>Población : 3989167<br\/>Área: 69700 Km² <br\/> Capital: Tiflis <br\/> Moneda: Lari georgiano"
             },
             'attrs':
             {
@@ -1154,7 +1266,7 @@ function areas(dfAreas: any){
           },
           "DE" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Germany<\/span><br\/>Población : 83783942<br\/>Área: 357021 Km² <br\/> Capital: Berlin <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Alemania<\/span><br\/>Población : 83783942<br\/>Área: 357021 Km² <br\/> Capital: Berlín <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1163,7 +1275,7 @@ function areas(dfAreas: any){
           },
           "GH" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Ghana<\/span><br\/>Población : 31072940<br\/>Área: 239460 Km² <br\/> Capital: Accra <br\/> Moneda: New Ghanaian cedi"
+              "content": "<span style=\"font-weight:bold;\">Ghana<\/span><br\/>Población : 31072940<br\/>Área: 239460 Km² <br\/> Capital: Accra <br\/> Moneda: Cedi"
             },
             'attrs':
             {
@@ -1172,7 +1284,7 @@ function areas(dfAreas: any){
           },
           "GI" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Gibraltar<\/span><br\/>Población : 33691<br\/>Área: 7 Km² <br\/> Capital: Gibraltar <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Gibraltar<\/span><br\/>Población : 33691<br\/>Área: 7 Km² <br\/> Capital: Gibraltar <br\/> Moneda: Libra de Gibraltar"
             },
             'attrs':
             {
@@ -1181,7 +1293,7 @@ function areas(dfAreas: any){
           },
           "GR" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Greece<\/span><br\/>Población : 10423054<br\/>Área: 131940 Km² <br\/> Capital: Athens <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Grecia<\/span><br\/>Población : 10423054<br\/>Área: 131940 Km² <br\/> Capital: Atenas <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1190,7 +1302,7 @@ function areas(dfAreas: any){
           },
           "GL" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Greenland<\/span><br\/>Población : 56770<br\/>Área: 2166086 Km² <br\/> Capital: Nuuk <br\/> Moneda: Danish krone"
+              "content": "<span style=\"font-weight:bold;\">Groenlandia<\/span><br\/>Población : 56770<br\/>Área: 2166086 Km² <br\/> Capital: Nuuk <br\/> Moneda: corona danesa"
             },
             'attrs':
             {
@@ -1199,7 +1311,7 @@ function areas(dfAreas: any){
           },
           "GD" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Grenada<\/span><br\/>Población : 112523<br\/>Área: 344 Km² <br\/> Capital: Saint George's <br\/> Moneda: East Caribbean dollar"
+              "content": "<span style=\"font-weight:bold;\">Granada<\/span><br\/>Población : 112523<br\/>Área: 344 Km² <br\/> Capital: Saint George'S <br\/> Moneda: Dólar del Caribe Oriental"
             },
             'attrs':
             {
@@ -1208,7 +1320,7 @@ function areas(dfAreas: any){
           },
           "GP" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Guadeloupe<\/span><br\/>Población : 400124<br\/>Área: 1780 Km² <br\/> Capital: null <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Guadalupe<\/span><br\/>Población : 400124<br\/>Área: 1780 Km² <br\/> Capital:  Basse-Terre <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1217,7 +1329,7 @@ function areas(dfAreas: any){
           },
           "GU" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Guam<\/span><br\/>Población : 168775<br\/>Área: 541 Km² <br\/> Capital: Hagatna <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">Guam<\/span><br\/>Población : 168775<br\/>Área: 541 Km² <br\/> Capital: Agaña <br\/> Moneda: dólar estadounidense"
             },
             'attrs':
             {
@@ -1226,7 +1338,7 @@ function areas(dfAreas: any){
           },
           "GT" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Guatemala<\/span><br\/>Población : 17915568<br\/>Área: 108890 Km² <br\/> Capital: Guatemala City <br\/> Moneda: Guatemalan quetzal"
+              "content": "<span style=\"font-weight:bold;\">Guatemala<\/span><br\/>Población : 17915568<br\/>Área: 108890 Km² <br\/> Capital: Ciudad De Guatemala <br\/> Moneda: Quetzal guatemalteco"
             },
             'attrs':
             {
@@ -1235,7 +1347,7 @@ function areas(dfAreas: any){
           },
           "GG" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Guernsey<\/span><br\/>Población : 62792<br\/>Área: 78 Km² <br\/> Capital: Saint Peter Port <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Guernsey<\/span><br\/>Población : 62792<br\/>Área: 78 Km² <br\/> Capital: Saint Peter Port <br\/> Moneda: Libra de Guernsey"
             },
             'attrs':
             {
@@ -1244,7 +1356,7 @@ function areas(dfAreas: any){
           },
           "GN" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Guinea<\/span><br\/>Población : 13132795<br\/>Área: 245857 Km² <br\/> Capital: Conakry <br\/> Moneda: Guinean franc"
+              "content": "<span style=\"font-weight:bold;\">Guinea<\/span><br\/>Población : 13132795<br\/>Área: 245857 Km² <br\/> Capital: Conakry <br\/> Moneda: Franco guineano"
             },
             'attrs':
             {
@@ -1253,7 +1365,7 @@ function areas(dfAreas: any){
           },
           "GW" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Guinea-Bissau<\/span><br\/>Población : 1968001<br\/>Área: 36120 Km² <br\/> Capital: Bissau <br\/> Moneda: West African CFA franc"
+              "content": "<span style=\"font-weight:bold;\">Guinea-Bisáu<\/span><br\/>Población : 1968001<br\/>Área: 36120 Km² <br\/> Capital: Bissau <br\/> Moneda: Franco CFA de África Occidental"
             },
             'attrs':
             {
@@ -1262,7 +1374,7 @@ function areas(dfAreas: any){
           },
           "GY" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Guyana<\/span><br\/>Población : 786552<br\/>Área: 214970 Km² <br\/> Capital: Georgetown <br\/> Moneda: Guyana dollar"
+              "content": "<span style=\"font-weight:bold;\">Guyana<\/span><br\/>Población : 786552<br\/>Área: 214970 Km² <br\/> Capital: Georgetown <br\/> Moneda: Dólar guyanés"
             },
             'attrs':
             {
@@ -1271,7 +1383,7 @@ function areas(dfAreas: any){
           },
           "HT" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Haiti<\/span><br\/>Población : 11402528<br\/>Área: 27750 Km² <br\/> Capital: Port-au-Prince <br\/> Moneda: Haitian gourde"
+              "content": "<span style=\"font-weight:bold;\">Haití<\/span><br\/>Población : 11402528<br\/>Área: 27750 Km² <br\/> Capital: Puerto Príncipe <br\/> Moneda: Gourde haitiano"
             },
             'attrs':
             {
@@ -1280,25 +1392,16 @@ function areas(dfAreas: any){
           },
           "HN" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Honduras<\/span><br\/>Población : 9904607<br\/>Área: 112090 Km² <br\/> Capital: Tegucigalpa <br\/> Moneda: Honduran lempira"
+              "content": "<span style=\"font-weight:bold;\">Honduras<\/span><br\/>Población : 9904607<br\/>Área: 112090 Km² <br\/> Capital: Tegucigalpa <br\/> Moneda: Lempira hondureño"
             },
             'attrs':
             {
               'fill': "#43BBCC"
             }
           },
-          "HK" : {
-            "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Hong Kong<\/span><br\/>Población : 7496981<br\/>Área: 1092 Km² <br\/> Capital: null <br\/> Moneda: Hong Kong dollar"
-            },
-            'attrs':
-            {
-              'fill': "#F76624"
-            }
-          },
           "HU" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Hungary<\/span><br\/>Población : 9660351<br\/>Área: 93030 Km² <br\/> Capital: Budapest <br\/> Moneda: Hungarian forint"
+              "content": "<span style=\"font-weight:bold;\">Hungría<\/span><br\/>Población : 9660351<br\/>Área: 93030 Km² <br\/> Capital: Budapest <br\/> Moneda: Forinto húngaro"
             },
             'attrs':
             {
@@ -1307,7 +1410,7 @@ function areas(dfAreas: any){
           },
           "IS" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Iceland<\/span><br\/>Población : 341243<br\/>Área: 103000 Km² <br\/> Capital: Reykjavik <br\/> Moneda: Iceland krona"
+              "content": "<span style=\"font-weight:bold;\">Islandia<\/span><br\/>Población : 341243<br\/>Área: 103000 Km² <br\/> Capital: Reikiavik <br\/> Moneda: Corona islandes"
             },
             'attrs':
             {
@@ -1316,7 +1419,7 @@ function areas(dfAreas: any){
           },
           "IN" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">India<\/span><br\/>Población : 1380004385<br\/>Área: 3287590 Km² <br\/> Capital: New Delhi <br\/> Moneda: Indian rupee"
+              "content": "<span style=\"font-weight:bold;\">India<\/span><br\/>Población : 1380004385<br\/>Área: 3287590 Km² <br\/> Capital: Nueva Delhi <br\/> Moneda: Rupia india"
             },
             'attrs':
             {
@@ -1325,7 +1428,7 @@ function areas(dfAreas: any){
           },
           "ID" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Indonesia<\/span><br\/>Población : 273523615<br\/>Área: 1919440 Km² <br\/> Capital: Jakarta <br\/> Moneda: Indonesian rupiah"
+              "content": "<span style=\"font-weight:bold;\">Indonesia<\/span><br\/>Población : 273523615<br\/>Área: 1919440 Km² <br\/> Capital: Yakarta <br\/> Moneda: Rupia indonesia"
             },
             'attrs':
             {
@@ -1334,7 +1437,7 @@ function areas(dfAreas: any){
           },
           "IR" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Iran<\/span><br\/>Población : 83992949<br\/>Área: 1648000 Km² <br\/> Capital: Tehran <br\/> Moneda: Iranian rial"
+              "content": "<span style=\"font-weight:bold;\">Irán<\/span><br\/>Población : 83992949<br\/>Área: 1648000 Km² <br\/> Capital: Teherán <br\/> Moneda: Rial iraní"
             },
             'attrs':
             {
@@ -1343,7 +1446,7 @@ function areas(dfAreas: any){
           },
           "IQ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Iraq<\/span><br\/>Población : 40222493<br\/>Área: 437072 Km² <br\/> Capital: Baghdad <br\/> Moneda: Iraqi dinar"
+              "content": "<span style=\"font-weight:bold;\">Irak<\/span><br\/>Población : 40222493<br\/>Área: 437072 Km² <br\/> Capital: Bagdad <br\/> Moneda: Dinar iraquí"
             },
             'attrs':
             {
@@ -1352,7 +1455,7 @@ function areas(dfAreas: any){
           },
           "IE" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Ireland<\/span><br\/>Población : 4937786<br\/>Área: 70280 Km² <br\/> Capital: Dublin <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Irlanda<\/span><br\/>Población : 4937786<br\/>Área: 70280 Km² <br\/> Capital: Dublín <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1361,7 +1464,7 @@ function areas(dfAreas: any){
           },
           "IM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Isle of Man<\/span><br\/>Población : 85033<br\/>Área: 572 Km² <br\/> Capital: Douglas <br\/> Moneda: Pound sterling"
+              "content": "<span style=\"font-weight:bold;\">Isla del hombre<\/span><br\/>Población : 85033<br\/>Área: 572 Km² <br\/> Capital:  Douglas <br\/> Moneda: Libra manesa"
             },
             'attrs':
             {
@@ -1370,7 +1473,7 @@ function areas(dfAreas: any){
           },
           "IL" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Israel<\/span><br\/>Población : 8655535<br\/>Área: 20770 Km² <br\/> Capital: Jerusalem <br\/> Moneda: Israeli new shekel"
+              "content": "<span style=\"font-weight:bold;\">Israel<\/span><br\/>Población : 8655535<br\/>Área: 20770 Km² <br\/> Capital: Jerusalén <br\/> Moneda: Nuevo shéquel"
             },
             'attrs':
             {
@@ -1379,7 +1482,7 @@ function areas(dfAreas: any){
           },
           "IT" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Italy<\/span><br\/>Población : 60461826<br\/>Área: 301230 Km² <br\/> Capital: Rome <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Italia<\/span><br\/>Población : 60461826<br\/>Área: 301230 Km² <br\/> Capital: Roma <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1388,7 +1491,7 @@ function areas(dfAreas: any){
           },
           "JM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Jamaica<\/span><br\/>Población : 2961167<br\/>Área: 10991 Km² <br\/> Capital: Kingston <br\/> Moneda: Jamaican dollar"
+              "content": "<span style=\"font-weight:bold;\">Jamaica<\/span><br\/>Población : 2961167<br\/>Área: 10991 Km² <br\/> Capital: Kingston <br\/> Moneda: Dólar jamaiquino"
             },
             'attrs':
             {
@@ -1397,7 +1500,7 @@ function areas(dfAreas: any){
           },
           "JP" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Japan<\/span><br\/>Población : 126476461<br\/>Área: 377835 Km² <br\/> Capital: Tokyo <br\/> Moneda: Japanese yen"
+              "content": "<span style=\"font-weight:bold;\">Japón<\/span><br\/>Población : 126476461<br\/>Área: 377835 Km² <br\/> Capital: Tokio <br\/> Moneda: Yen"
             },
             'attrs':
             {
@@ -1406,7 +1509,7 @@ function areas(dfAreas: any){
           },
           "JE" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Jersey<\/span><br\/>Población : ​115800<br\/>Área: 116 Km² <br\/> Capital: Saint Helier <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Jersey<\/span><br\/>Población : ​115800<br\/>Área: 116 Km² <br\/> Capital: Saint Helier <br\/> Moneda:  Libra de Jersey"
             },
             'attrs':
             {
@@ -1415,7 +1518,7 @@ function areas(dfAreas: any){
           },
           "JO" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Jordan<\/span><br\/>Población : 10203134<br\/>Área: 92300 Km² <br\/> Capital: Amman <br\/> Moneda: Jordanian dinar"
+              "content": "<span style=\"font-weight:bold;\">Jordán<\/span><br\/>Población : 10203134<br\/>Área: 92300 Km² <br\/> Capital: Amán <br\/> Moneda: Dinar jordano"
             },
             'attrs':
             {
@@ -1424,7 +1527,7 @@ function areas(dfAreas: any){
           },
           "KZ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Kazakhstan<\/span><br\/>Población : 18776707<br\/>Área: 2717300 Km² <br\/> Capital: Astana <br\/> Moneda: Kazakh tenge"
+              "content": "<span style=\"font-weight:bold;\">Kazajstán<\/span><br\/>Población : 18776707<br\/>Área: 2717300 Km² <br\/> Capital: Nursultán <br\/> Moneda: Tenge kazajo"
             },
             'attrs':
             {
@@ -1433,7 +1536,7 @@ function areas(dfAreas: any){
           },
           "KE" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Kenya<\/span><br\/>Población : 53771296<br\/>Área: 582650 Km² <br\/> Capital: Nairobi <br\/> Moneda: Kenyan shilling"
+              "content": "<span style=\"font-weight:bold;\">Kenia<\/span><br\/>Población : 53771296<br\/>Área: 582650 Km² <br\/> Capital: Nairobi <br\/> Moneda: Chelín keniano"
             },
             'attrs':
             {
@@ -1442,7 +1545,7 @@ function areas(dfAreas: any){
           },
           "KI" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Kiribati<\/span><br\/>Población : 119449<br\/>Área: 811 Km² <br\/> Capital: Tarawa <br\/> Moneda: Australian dollar"
+              "content": "<span style=\"font-weight:bold;\">Kiribati<\/span><br\/>Población : 119449<br\/>Área: 811 Km² <br\/> Capital: Tarawa <br\/> Moneda: Dólar australiano"
             },
             'attrs':
             {
@@ -1451,7 +1554,7 @@ function areas(dfAreas: any){
           },
           "KP" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">North Korea<\/span><br\/>Población : 25778816<br\/>Área: 120540 Km² <br\/> Capital: Pyongyang <br\/> Moneda: Democratic People's Republic of Korean won"
+              "content": "<span style=\"font-weight:bold;\">Corea del Norte<\/span><br\/>Población : 25778816<br\/>Área: 120540 Km² <br\/> Capital: Pyongyang <br\/> Moneda: Won norcoreano"
             },
             'attrs':
             {
@@ -1460,7 +1563,7 @@ function areas(dfAreas: any){
           },
           "KR" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">South Korea<\/span><br\/>Población : 51269185<br\/>Área: 98480 Km² <br\/> Capital: Seoul <br\/> Moneda: Korean won"
+              "content": "<span style=\"font-weight:bold;\">Corea del Sur<\/span><br\/>Población : 51269185<br\/>Área: 98480 Km² <br\/> Capital: Seúl <br\/> Moneda: Won surcoreano"
             },
             'attrs':
             {
@@ -1469,7 +1572,7 @@ function areas(dfAreas: any){
           },
           "KW" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Kuwait<\/span><br\/>Población : 4270571<br\/>Área: 17820 Km² <br\/> Capital: Kuwait City <br\/> Moneda: Kuwaiti dinar"
+              "content": "<span style=\"font-weight:bold;\">Kuwait<\/span><br\/>Población : 4270571<br\/>Área: 17820 Km² <br\/> Capital: Ciudad De Kuwait <br\/> Moneda: Dinar kuwaití"
             },
             'attrs':
             {
@@ -1478,7 +1581,7 @@ function areas(dfAreas: any){
           },
           "KG" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Kyrgyzstan<\/span><br\/>Población : 6524195<br\/>Área: 198500 Km² <br\/> Capital: Bishkek <br\/> Moneda: Kyrgyz som"
+              "content": "<span style=\"font-weight:bold;\">Kirguistán<\/span><br\/>Población : 6524195<br\/>Área: 198500 Km² <br\/> Capital: Biskek <br\/> Moneda: Som kirguís"
             },
             'attrs':
             {
@@ -1487,7 +1590,7 @@ function areas(dfAreas: any){
           },
           "LA" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Laos<\/span><br\/>Población : 7275560<br\/>Área: 236800 Km² <br\/> Capital: Vientiane <br\/> Moneda: Lao kip"
+              "content": "<span style=\"font-weight:bold;\">Laos<\/span><br\/>Población : 7275560<br\/>Área: 236800 Km² <br\/> Capital: Vientián <br\/> Moneda: Kip laosiano"
             },
             'attrs':
             {
@@ -1496,7 +1599,7 @@ function areas(dfAreas: any){
           },
           "LV" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Latvia<\/span><br\/>Población : 1886198<br\/>Área: 64589 Km² <br\/> Capital: Riga <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">letonia<\/span><br\/>Población : 1886198<br\/>Área: 64589 Km² <br\/> Capital: Riga <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1505,7 +1608,7 @@ function areas(dfAreas: any){
           },
           "LB" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Lebanon<\/span><br\/>Población : 6825445<br\/>Área: 10400 Km² <br\/> Capital: Beirut <br\/> Moneda: Lebanese pound"
+              "content": "<span style=\"font-weight:bold;\">Líbano<\/span><br\/>Población : 6825445<br\/>Área: 10400 Km² <br\/> Capital: Beirut <br\/> Moneda: Libra libanesa"
             },
             'attrs':
             {
@@ -1514,7 +1617,7 @@ function areas(dfAreas: any){
           },
           "LS" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Lesotho<\/span><br\/>Población : 2142249<br\/>Área: 30355 Km² <br\/> Capital: Maseru <br\/> Moneda: Lesotho loti"
+              "content": "<span style=\"font-weight:bold;\">Lesoto<\/span><br\/>Población : 2142249<br\/>Área: 30355 Km² <br\/> Capital: Maseru <br\/> Moneda: Loti"
             },
             'attrs':
             {
@@ -1523,7 +1626,7 @@ function areas(dfAreas: any){
           },
           "LR" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Liberia<\/span><br\/>Población : 5057681<br\/>Área: 111370 Km² <br\/> Capital: Monrovia <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">Liberia<\/span><br\/>Población : 5057681<br\/>Área: 111370 Km² <br\/> Capital: Monrovia <br\/> Moneda: Dólar liberiano"
             },
             'attrs':
             {
@@ -1532,7 +1635,7 @@ function areas(dfAreas: any){
           },
           "LY" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Libya<\/span><br\/>Población : 6871292<br\/>Área: 1759540 Km² <br\/> Capital: Tripoli <br\/> Moneda: Libyan dinar"
+              "content": "<span style=\"font-weight:bold;\">Libia<\/span><br\/>Población : 6871292<br\/>Área: 1759540 Km² <br\/> Capital: Trípoli <br\/> Moneda: Dinar libio"
             },
             'attrs':
             {
@@ -1541,7 +1644,7 @@ function areas(dfAreas: any){
           },
           "LI" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Liechtenstein<\/span><br\/>Población : 38128<br\/>Área: 160 Km² <br\/> Capital: Vaduz <br\/> Moneda: Swiss franc"
+              "content": "<span style=\"font-weight:bold;\">Liechtenstein<\/span><br\/>Población : 38128<br\/>Área: 160 Km² <br\/> Capital: Vaduz <br\/> Moneda: Franco suizo"
             },
             'attrs':
             {
@@ -1550,7 +1653,7 @@ function areas(dfAreas: any){
           },
           "LT" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Lithuania<\/span><br\/>Población : 2722289<br\/>Área: 65200 Km² <br\/> Capital: Vilnius <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Lituania<\/span><br\/>Población : 2722289<br\/>Área: 65200 Km² <br\/> Capital: Vilna <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1559,7 +1662,7 @@ function areas(dfAreas: any){
           },
           "LU" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Luxembourg<\/span><br\/>Población : 625978<br\/>Área: 2586 Km² <br\/> Capital: Luxembourg <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">luxemburgo<\/span><br\/>Población : 625978<br\/>Área: 2586 Km² <br\/> Capital: Luxemburgo <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1568,7 +1671,7 @@ function areas(dfAreas: any){
           },
           "MO" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Macao<\/span><br\/>Población : 658391<br\/>Área: 28 Km² <br\/> Capital: null <br\/> Moneda: Macao pataca"
+              "content": "<span style=\"font-weight:bold;\">Macao<\/span><br\/>Población : 658391<br\/>Área: 28 Km² <br\/> Capital: Ciudad De Macao <br\/> Moneda: Pataca macaense"
             },
             'attrs':
             {
@@ -1577,7 +1680,7 @@ function areas(dfAreas: any){
           },
           "MK" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Macedonia<\/span><br\/>Población : 2065000<br\/>Área: 25333 Km² <br\/> Capital: Skopje <br\/> Moneda: Macedonian denar"
+              "content": "<span style=\"font-weight:bold;\">Macedonia<\/span><br\/>Población : 2065000<br\/>Área: 25333 Km² <br\/> Capital: Tesalónica <br\/> Moneda: Denar macedonio"
             },
             'attrs':
             {
@@ -1586,7 +1689,7 @@ function areas(dfAreas: any){
           },
           "MG" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Madagascar<\/span><br\/>Población : 27691018<br\/>Área: 587040 Km² <br\/> Capital: Antananarivo <br\/> Moneda: Malagasy ariary"
+              "content": "<span style=\"font-weight:bold;\">Madagascar<\/span><br\/>Población : 27691018<br\/>Área: 587040 Km² <br\/> Capital: Antananarivo <br\/> Moneda: Ariary malgache"
             },
             'attrs':
             {
@@ -1595,7 +1698,7 @@ function areas(dfAreas: any){
           },
           "MW" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Malawi<\/span><br\/>Población : 19129952<br\/>Área: 118480 Km² <br\/> Capital: Lilongwe <br\/> Moneda: Malawi kwacha"
+              "content": "<span style=\"font-weight:bold;\">Malaui<\/span><br\/>Población : 19129952<br\/>Área: 118480 Km² <br\/> Capital: Lilongüe <br\/> Moneda: Kwacha malauí"
             },
             'attrs':
             {
@@ -1604,7 +1707,7 @@ function areas(dfAreas: any){
           },
           "MY" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Malaysia<\/span><br\/>Población : 32365999<br\/>Área: 329750 Km² <br\/> Capital: Kuala Lumpur <br\/> Moneda: Malaysian ringgit"
+              "content": "<span style=\"font-weight:bold;\">Malasia<\/span><br\/>Población : 32365999<br\/>Área: 329750 Km² <br\/> Capital: Kuala Lumpur <br\/> Moneda: Ringgit malayo"
             },
             'attrs':
             {
@@ -1613,7 +1716,7 @@ function areas(dfAreas: any){
           },
           "MV" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Maldives<\/span><br\/>Población : 540544<br\/>Área: 300 Km² <br\/> Capital: Male <br\/> Moneda: Maldivian rufiyaa"
+              "content": "<span style=\"font-weight:bold;\">Maldivas<\/span><br\/>Población : 540544<br\/>Área: 300 Km² <br\/> Capital: Malé <br\/> Moneda: Rupia de Maldivas"
             },
             'attrs':
             {
@@ -1622,7 +1725,7 @@ function areas(dfAreas: any){
           },
           "ML" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Mali<\/span><br\/>Población : 20250833<br\/>Área: 1240000 Km² <br\/> Capital: Bamako <br\/> Moneda: West African CFA franc"
+              "content": "<span style=\"font-weight:bold;\">Malí<\/span><br\/>Población : 20250833<br\/>Área: 1240000 Km² <br\/> Capital: Bamako <br\/> Moneda: Franco CFA de África Occidental"
             },
             'attrs':
             {
@@ -1631,7 +1734,7 @@ function areas(dfAreas: any){
           },
           "MT" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Malta<\/span><br\/>Población : 441543<br\/>Área: 316 Km² <br\/> Capital: Valletta <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Malta<\/span><br\/>Población : 441543<br\/>Área: 316 Km² <br\/> Capital: La Valeta <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1640,7 +1743,7 @@ function areas(dfAreas: any){
           },
           "MH" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Marshall Islands<\/span><br\/>Población : 59190<br\/>Área: 11854 Km² <br\/> Capital: Majuro <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">Islas Marshall<\/span><br\/>Población : 59190<br\/>Área: 11854 Km² <br\/> Capital: Majuro <br\/> Moneda: Dólar estadounidense"
             },
             'attrs':
             {
@@ -1649,7 +1752,7 @@ function areas(dfAreas: any){
           },
           "MQ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Martinique<\/span><br\/>Población : 375265<br\/>Área: 1100 Km² <br\/> Capital: null <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Martinica<\/span><br\/>Población : 375265<br\/>Área: 1100 Km² <br\/> Capital: Fort-De-France <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1658,7 +1761,7 @@ function areas(dfAreas: any){
           },
           "MR" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Mauritania<\/span><br\/>Población : 4649658<br\/>Área: 1030700 Km² <br\/> Capital: Nouakchott <br\/> Moneda: Mauritanian ouguiya"
+              "content": "<span style=\"font-weight:bold;\">Mauritania<\/span><br\/>Población : 4649658<br\/>Área: 1030700 Km² <br\/> Capital: Nuakchot <br\/> Moneda: Uguiya"
             },
             'attrs':
             {
@@ -1667,7 +1770,7 @@ function areas(dfAreas: any){
           },
           "MU" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Mauritius<\/span><br\/>Población : 1271768<br\/>Área: 2040 Km² <br\/> Capital: Port Louis <br\/> Moneda: Mauritian rupee"
+              "content": "<span style=\"font-weight:bold;\">Mauricio<\/span><br\/>Población : 1271768<br\/>Área: 2040 Km² <br\/> Capital: Port Louis <br\/> Moneda: Rupia de Mauricio"
             },
             'attrs':
             {
@@ -1676,7 +1779,7 @@ function areas(dfAreas: any){
           },
           "YT" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Mayotte<\/span><br\/>Población : 272815<br\/>Área: 374 Km² <br\/> Capital: null <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Mayotte<\/span><br\/>Población : 272815<br\/>Área: 374 Km² <br\/> Capital: Mamoudzou <br\/> Moneda: Europa"
             },
             'attrs':
             {
@@ -1685,7 +1788,7 @@ function areas(dfAreas: any){
           },
           "MX" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Mexico<\/span><br\/>Población : 128932753<br\/>Área: 1972550 Km² <br\/> Capital: Mexico City <br\/> Moneda: Mexican peso"
+              "content": "<span style=\"font-weight:bold;\">México<\/span><br\/>Población : 128932753<br\/>Área: 1972550 Km² <br\/> Capital: México D. F. <br\/> Moneda: Peso mexicano"
             },
             'attrs':
             {
@@ -1694,7 +1797,7 @@ function areas(dfAreas: any){
           },
           "FM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Micronesia<\/span><br\/>Población : 548914<br\/>Área: 702 Km² <br\/> Capital: Palikir <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">Micronesia<\/span><br\/>Población : 548914<br\/>Área: 702 Km² <br\/> Capital: Palikir <br\/> Moneda: Dólar estadounidense"
             },
             'attrs':
             {
@@ -1703,7 +1806,7 @@ function areas(dfAreas: any){
           },
           "MD" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Moldova<\/span><br\/>Población : 4033963<br\/>Área: 33843 Km² <br\/> Capital: Chisinau <br\/> Moneda: Moldovan leu"
+              "content": "<span style=\"font-weight:bold;\">Moldavia<\/span><br\/>Población : 4033963<br\/>Área: 33843 Km² <br\/> Capital: Chisinau <br\/> Moneda: Leu moldavo"
             },
             'attrs':
             {
@@ -1712,7 +1815,7 @@ function areas(dfAreas: any){
           },
           "MC" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Monaco<\/span><br\/>Población : 39242<br\/>Área: 2 Km² <br\/> Capital: Monaco <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Mónaco<\/span><br\/>Población : 39242<br\/>Área: 2 Km² <br\/> Capital: Mónaco <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1721,7 +1824,7 @@ function areas(dfAreas: any){
           },
           "MN" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Mongolia<\/span><br\/>Población : 3278290<br\/>Área: 1564116 Km² <br\/> Capital: Ulaanbaatar <br\/> Moneda: Mongolian tugrik"
+              "content": "<span style=\"font-weight:bold;\">Mongolia<\/span><br\/>Población : 3278290<br\/>Área: 1564116 Km² <br\/> Capital: Ulan Bator <br\/> Moneda: Tugrik mongol"
             },
             'attrs':
             {
@@ -1730,7 +1833,7 @@ function areas(dfAreas: any){
           },
           "MS" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Montserrat<\/span><br\/>Población : 4992<br\/>Área: 102 Km² <br\/> Capital: Plymouth <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Montserrat<\/span><br\/>Población : 4992<br\/>Área: 102 Km² <br\/> Capital: Plymouth <br\/> Moneda: Dólar del Caribe Oriental"
             },
             'attrs':
             {
@@ -1739,7 +1842,7 @@ function areas(dfAreas: any){
           },
           "MA" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Morocco<\/span><br\/>Población : 36910560<br\/>Área: 446550 Km² <br\/> Capital: Rabat <br\/> Moneda: Moroccan dirham"
+              "content": "<span style=\"font-weight:bold;\">Marruecos<\/span><br\/>Población : 36910560<br\/>Área: 446550 Km² <br\/> Capital: Rabat <br\/> Moneda: Dirham marroquí"
             },
             'attrs':
             {
@@ -1748,16 +1851,16 @@ function areas(dfAreas: any){
           },
           "MZ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Mozambique<\/span><br\/>Población : 31255435<br\/>Área: 801590 Km² <br\/> Capital: Maputo <br\/> Moneda: New Mozambican metical"
+              "content": "<span style=\"font-weight:bold;\">Mozambique<\/span><br\/>Población : 31255435<br\/>Área: 801590 Km² <br\/> Capital: Maputo <br\/> Moneda: Metical mozambiqueño"
             },
             'attrs':
             {
               'fill': "#E9A713"
             }
           },
-          "NA" : {
+          "null" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Namibia<\/span><br\/>Población : 2540905<br\/>Área: 825418 Km² <br\/> Capital: Windhoek <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Namibia<\/span><br\/>Población : 2540905<br\/>Área: 825418 Km² <br\/> Capital: Windhoek <br\/> Moneda: Dólar namibio"
             },
             'attrs':
             {
@@ -1766,7 +1869,7 @@ function areas(dfAreas: any){
           },
           "NR" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Nauru<\/span><br\/>Población : 10824<br\/>Área: 21 Km² <br\/> Capital: Yaren <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Nauru<\/span><br\/>Población : 10824<br\/>Área: 21 Km² <br\/> Capital: Yaren <br\/> Moneda: Dólar australiano"
             },
             'attrs':
             {
@@ -1775,7 +1878,7 @@ function areas(dfAreas: any){
           },
           "NP" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Nepal<\/span><br\/>Población : 29136808<br\/>Área: 147181 Km² <br\/> Capital: Kathmandu <br\/> Moneda: Nepalese rupee"
+              "content": "<span style=\"font-weight:bold;\">Nepal<\/span><br\/>Población : 29136808<br\/>Área: 147181 Km² <br\/> Capital: Katmandú <br\/> Moneda: Rupia nepalí"
             },
             'attrs':
             {
@@ -1784,7 +1887,7 @@ function areas(dfAreas: any){
           },
           "NL" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Netherlands<\/span><br\/>Población : 17134872<br\/>Área: 41526 Km² <br\/> Capital: Amsterdam <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Países Bajos<\/span><br\/>Población : 17134872<br\/>Área: 41526 Km² <br\/> Capital: Amsterdam <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1793,7 +1896,7 @@ function areas(dfAreas: any){
           },
           "AN" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Netherlands Antilles<\/span><br\/>Población : 17134872<br\/>Área: 960 Km² <br\/> Capital: null <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Antillas Holandesas<\/span><br\/>Población : 17134872<br\/>Área: 960 Km² <br\/> Capital: Willemstad <br\/> Moneda: Florín"
             },
             'attrs':
             {
@@ -1802,7 +1905,7 @@ function areas(dfAreas: any){
           },
           "NC" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">New Caledonia<\/span><br\/>Población : 285498<br\/>Área: 19060 Km² <br\/> Capital: Noumea <br\/> Moneda: CFP franc"
+              "content": "<span style=\"font-weight:bold;\">Nueva Caledonia<\/span><br\/>Población : 285498<br\/>Área: 19060 Km² <br\/> Capital: Numea <br\/> Moneda: Franco del Pacífico"
             },
             'attrs':
             {
@@ -1811,7 +1914,7 @@ function areas(dfAreas: any){
           },
           "NZ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">New Zealand<\/span><br\/>Población : 4822233<br\/>Área: 268680 Km² <br\/> Capital: Wellington <br\/> Moneda: New Zealand dollar"
+              "content": "<span style=\"font-weight:bold;\">Nueva Zelanda<\/span><br\/>Población : 4822233<br\/>Área: 268680 Km² <br\/> Capital: Wellington <br\/> Moneda: Dólar neozelandés"
             },
             'attrs':
             {
@@ -1820,7 +1923,7 @@ function areas(dfAreas: any){
           },
           "NI" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Nicaragua<\/span><br\/>Población : 6624554<br\/>Área: 129494 Km² <br\/> Capital: Managua <br\/> Moneda: Nicaraguan gold cordoba"
+              "content": "<span style=\"font-weight:bold;\">Nicaragua<\/span><br\/>Población : 6624554<br\/>Área: 129494 Km² <br\/> Capital: Managua <br\/> Moneda: Córdoba nicaragüense"
             },
             'attrs':
             {
@@ -1829,7 +1932,7 @@ function areas(dfAreas: any){
           },
           "NE" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Niger<\/span><br\/>Población : 24206644<br\/>Área: 1267000 Km² <br\/> Capital: Niamey <br\/> Moneda: West African CFA franc"
+              "content": "<span style=\"font-weight:bold;\">Níger<\/span><br\/>Población : 24206644<br\/>Área: 1267000 Km² <br\/> Capital: Niamey <br\/> Moneda: Franco CFA de África Occidental"
             },
             'attrs':
             {
@@ -1838,7 +1941,7 @@ function areas(dfAreas: any){
           },
           "NG" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Nigeria<\/span><br\/>Población : 206139589<br\/>Área: 923768 Km² <br\/> Capital: Abuja <br\/> Moneda: Nigerian naira"
+              "content": "<span style=\"font-weight:bold;\">Nigeria<\/span><br\/>Población : 206139589<br\/>Área: 923768 Km² <br\/> Capital: Abuya <br\/> Moneda: Naira"
             },
             'attrs':
             {
@@ -1847,7 +1950,7 @@ function areas(dfAreas: any){
           },
           "MP" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Northern Mariana Islands<\/span><br\/>Población : 57559<br\/>Área: 477 Km² <br\/> Capital: Saipan <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">Islas Marianas del Norte<\/span><br\/>Población : 57559<br\/>Área: 477 Km² <br\/> Capital: Saipán <br\/> Moneda: Dólar estadounidense"
             },
             'attrs':
             {
@@ -1856,7 +1959,7 @@ function areas(dfAreas: any){
           },
           "NO" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Norway<\/span><br\/>Población : 5421241<br\/>Área: 323802 Km² <br\/> Capital: Oslo <br\/> Moneda: Norwegian krone"
+              "content": "<span style=\"font-weight:bold;\">Noruega<\/span><br\/>Población : 5421241<br\/>Área: 323802 Km² <br\/> Capital: Oslo <br\/> Moneda: Corona noruega"
             },
             'attrs':
             {
@@ -1865,7 +1968,7 @@ function areas(dfAreas: any){
           },
           "OM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Oman<\/span><br\/>Población : 5106626<br\/>Área: 212460 Km² <br\/> Capital: Muscat <br\/> Moneda: Rial Omani"
+              "content": "<span style=\"font-weight:bold;\">Omán<\/span><br\/>Población : 5106626<br\/>Área: 212460 Km² <br\/> Capital: Mascate <br\/> Moneda: Rial omaní"
             },
             'attrs':
             {
@@ -1874,7 +1977,7 @@ function areas(dfAreas: any){
           },
           "PK" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Pakistan<\/span><br\/>Población : 220892340<br\/>Área: 803940 Km² <br\/> Capital: Islamabad <br\/> Moneda: Pakistani rupee"
+              "content": "<span style=\"font-weight:bold;\">Pakistán<\/span><br\/>Población : 220892340<br\/>Área: 803940 Km² <br\/> Capital: Islamabad <br\/> Moneda: Rupia pakistaní"
             },
             'attrs':
             {
@@ -1883,7 +1986,7 @@ function areas(dfAreas: any){
           },
           "PW" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Palau<\/span><br\/>Población : 18094<br\/>Área: 458 Km² <br\/> Capital: Melekeok <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">Palaos<\/span><br\/>Población : 18094<br\/>Área: 458 Km² <br\/> Capital: Melekeok <br\/> Moneda: Dólar estadounidense"
             },
             'attrs':
             {
@@ -1892,7 +1995,7 @@ function areas(dfAreas: any){
           },
           "PA" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Panama<\/span><br\/>Población : 4314767<br\/>Área: 78200 Km² <br\/> Capital: Panama City <br\/> Moneda: Panamanian balboa"
+              "content": "<span style=\"font-weight:bold;\">Panamá<\/span><br\/>Población : 4314767<br\/>Área: 78200 Km² <br\/> Capital: Ciudad De Panamá <br\/> Moneda: Balboa panameño"
             },
             'attrs':
             {
@@ -1901,7 +2004,7 @@ function areas(dfAreas: any){
           },
           "PG" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Papua New Guinea<\/span><br\/>Población : 8947024<br\/>Área: 462840 Km² <br\/> Capital: Port Moresby <br\/> Moneda: Papua New Guinea kina"
+              "content": "<span style=\"font-weight:bold;\">Papúa Nueva Guinea<\/span><br\/>Población : 8947024<br\/>Área: 462840 Km² <br\/> Capital: Port Moresby <br\/> Moneda: Kina"
             },
             'attrs':
             {
@@ -1910,7 +2013,7 @@ function areas(dfAreas: any){
           },
           "PY" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Paraguay<\/span><br\/>Población : 7132538<br\/>Área: 406750 Km² <br\/> Capital: Asuncion <br\/> Moneda: Paraguayan guarani"
+              "content": "<span style=\"font-weight:bold;\">Paraguay<\/span><br\/>Población : 7132538<br\/>Área: 406750 Km² <br\/> Capital: Asunción <br\/> Moneda: Guaraní"
             },
             'attrs':
             {
@@ -1919,7 +2022,7 @@ function areas(dfAreas: any){
           },
           "PE" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Peru<\/span><br\/>Población : 32971854<br\/>Área: 1285220 Km² <br\/> Capital: Lima <br\/> Moneda: Peruvian new sol"
+              "content": "<span style=\"font-weight:bold;\">Perú<\/span><br\/>Población : 32971854<br\/>Área: 1285220 Km² <br\/> Capital: Lima <br\/> Moneda: Nuevo sol"
             },
             'attrs':
             {
@@ -1928,7 +2031,7 @@ function areas(dfAreas: any){
           },
           "PH" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Philippines<\/span><br\/>Población : 109581078<br\/>Área: 300000 Km² <br\/> Capital: Manila <br\/> Moneda: Philippine peso"
+              "content": "<span style=\"font-weight:bold;\">Filipinas<\/span><br\/>Población : 109581078<br\/>Área: 300000 Km² <br\/> Capital: Manila <br\/> Moneda: Peso filipino"
             },
             'attrs':
             {
@@ -1937,7 +2040,7 @@ function areas(dfAreas: any){
           },
           "PL" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Poland<\/span><br\/>Población : 37846611<br\/>Área: 312685 Km² <br\/> Capital: Warsaw <br\/> Moneda: Polish zloty"
+              "content": "<span style=\"font-weight:bold;\">Polonia<\/span><br\/>Población : 37846611<br\/>Área: 312685 Km² <br\/> Capital: Varsovia <br\/> Moneda: Zloty"
             },
             'attrs':
             {
@@ -1946,7 +2049,7 @@ function areas(dfAreas: any){
           },
           "PT" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Portugal<\/span><br\/>Población : 10196709<br\/>Área: 92391 Km² <br\/> Capital: Lisbon <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Portugal<\/span><br\/>Población : 10196709<br\/>Área: 92391 Km² <br\/> Capital: Lisboa <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1955,7 +2058,7 @@ function areas(dfAreas: any){
           },
           "PR" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Puerto Rico<\/span><br\/>Población : 2860853<br\/>Área: 13790 Km² <br\/> Capital: San Juan <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">Puerto Rico<\/span><br\/>Población : 2860853<br\/>Área: 13790 Km² <br\/> Capital: San Juan <br\/> Moneda: Dólar estadounidense"
             },
             'attrs':
             {
@@ -1964,7 +2067,7 @@ function areas(dfAreas: any){
           },
           "QA" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Qatar<\/span><br\/>Población : 2881053<br\/>Área: 11437 Km² <br\/> Capital: Doha <br\/> Moneda: Qatari riyal"
+              "content": "<span style=\"font-weight:bold;\">Katar<\/span><br\/>Población : 2881053<br\/>Área: 11437 Km² <br\/> Capital: Doha <br\/> Moneda: Riyal catarí"
             },
             'attrs':
             {
@@ -1973,7 +2076,7 @@ function areas(dfAreas: any){
           },
           "RE" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Réunion<\/span><br\/>Población : 895312<br\/>Área: 2517 Km² <br\/> Capital: null <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Réunion<\/span><br\/>Población : 895312<br\/>Área: 2517 Km² <br\/> Capital: Saint-Denis <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -1982,7 +2085,7 @@ function areas(dfAreas: any){
           },
           "RO" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Romania<\/span><br\/>Población : 19237691<br\/>Área: 237500 Km² <br\/> Capital: Bucharest <br\/> Moneda: New Romanian leu"
+              "content": "<span style=\"font-weight:bold;\">Rumania<\/span><br\/>Población : 19237691<br\/>Área: 237500 Km² <br\/> Capital: Bucarest <br\/> Moneda: Leu rumano"
             },
             'attrs':
             {
@@ -1991,7 +2094,7 @@ function areas(dfAreas: any){
           },
           "RU" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Russia<\/span><br\/>Población : 145934462<br\/>Área: 17075200 Km² <br\/> Capital: Moscow <br\/> Moneda: Russian ruble"
+              "content": "<span style=\"font-weight:bold;\">Rusia<\/span><br\/>Población : 145934462<br\/>Área: 17075200 Km² <br\/> Capital: Moscú <br\/> Moneda: Rublo ruso"
             },
             'attrs':
             {
@@ -2000,7 +2103,7 @@ function areas(dfAreas: any){
           },
           "RW" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Rwanda<\/span><br\/>Población : 12952218<br\/>Área: 26338 Km² <br\/> Capital: Kigali <br\/> Moneda: Rwandan franc"
+              "content": "<span style=\"font-weight:bold;\">Ruanda<\/span><br\/>Población : 12952218<br\/>Área: 26338 Km² <br\/> Capital: Kigali <br\/> Moneda: Franco ruandés"
             },
             'attrs':
             {
@@ -2009,7 +2112,7 @@ function areas(dfAreas: any){
           },
           "SH" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Saint Helena<\/span><br\/>Población : 6077<br\/>Área: 413 Km² <br\/> Capital: Jamestown <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Santa Elena<\/span><br\/>Población : 6077<br\/>Área: 413 Km² <br\/> Capital: Jamestown <br\/> Moneda: Libra de Santa Elena"
             },
             'attrs':
             {
@@ -2018,7 +2121,7 @@ function areas(dfAreas: any){
           },
           "KN" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Saint Kitts & Nevis<\/span><br\/>Población : 53199<br\/>Área: 261 Km² <br\/> Capital: Basseterre <br\/> Moneda: East Caribbean dollar"
+              "content": "<span style=\"font-weight:bold;\">San Cristóbal y Nieves<\/span><br\/>Población : 53199<br\/>Área: 261 Km² <br\/> Capital: Basseterre <br\/> Moneda: Dólar del Caribe Oriental"
             },
             'attrs':
             {
@@ -2027,7 +2130,7 @@ function areas(dfAreas: any){
           },
           "LC" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Saint Lucia<\/span><br\/>Población : 183627<br\/>Área: 616 Km² <br\/> Capital: Castries <br\/> Moneda: East Caribbean dollar"
+              "content": "<span style=\"font-weight:bold;\">Santa Lucía<\/span><br\/>Población : 183627<br\/>Área: 616 Km² <br\/> Capital: Castries <br\/> Moneda: Dólar del Caribe Oriental"
             },
             'attrs':
             {
@@ -2036,7 +2139,7 @@ function areas(dfAreas: any){
           },
           "PM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Saint Pierre & Miquelon<\/span><br\/>Población : 5794<br\/>Área: 242 Km² <br\/> Capital: Saint-Pierre <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">San Pedro y Miquelón<\/span><br\/>Población : 5794<br\/>Área: 242 Km² <br\/> Capital: Saint-Pierre <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -2045,7 +2148,7 @@ function areas(dfAreas: any){
           },
           "VC" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Saint Vincent and the Grenadines<\/span><br\/>Población : 110940<br\/>Área: 389 Km² <br\/> Capital: Kingstown <br\/> Moneda: East Caribbean dollar"
+              "content": "<span style=\"font-weight:bold;\">San Vicente y las Granadinas<\/span><br\/>Población : 110940<br\/>Área: 389 Km² <br\/> Capital: Kingstown <br\/> Moneda: Dólar del Caribe Oriental"
             },
             'attrs':
             {
@@ -2054,7 +2157,7 @@ function areas(dfAreas: any){
           },
           "WS" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Samoa<\/span><br\/>Población : 198414<br\/>Área: 2944 Km² <br\/> Capital: Apia <br\/> Moneda: Samoan tala"
+              "content": "<span style=\"font-weight:bold;\">Samoa<\/span><br\/>Población : 198414<br\/>Área: 2944 Km² <br\/> Capital: Apia <br\/> Moneda: Tala"
             },
             'attrs':
             {
@@ -2063,7 +2166,7 @@ function areas(dfAreas: any){
           },
           "SM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">San Marino<\/span><br\/>Población : 33931<br\/>Área: 61 Km² <br\/> Capital: San Marino <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">San Marino<\/span><br\/>Población : 33931<br\/>Área: 61 Km² <br\/> Capital: Ciudad De San Marino <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -2072,7 +2175,7 @@ function areas(dfAreas: any){
           },
           "ST" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Sao Tome & Principe<\/span><br\/>Población : 219159<br\/>Área: 1001 Km² <br\/> Capital: Sao Tome <br\/> Moneda: SÃ£o TomÃ© and Principe dobra"
+              "content": "<span style=\"font-weight:bold;\">Santo Tomé y Príncipe<\/span><br\/>Población : 219159<br\/>Área: 1001 Km² <br\/> Capital: Santo Tomé <br\/> Moneda: Dobra"
             },
             'attrs':
             {
@@ -2081,7 +2184,7 @@ function areas(dfAreas: any){
           },
           "SA" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Saudi Arabia<\/span><br\/>Población : 34813871<br\/>Área: 1960582 Km² <br\/> Capital: Riyadh <br\/> Moneda: Saudi Arabian riyal"
+              "content": "<span style=\"font-weight:bold;\">Arabia Saudita<\/span><br\/>Población : 34813871<br\/>Área: 1960582 Km² <br\/> Capital: Riad <br\/> Moneda: Riyal saudí"
             },
             'attrs':
             {
@@ -2090,7 +2193,7 @@ function areas(dfAreas: any){
           },
           "SN" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Senegal<\/span><br\/>Población : 16743927<br\/>Área: 196190 Km² <br\/> Capital: Dakar <br\/> Moneda: West African CFA franc"
+              "content": "<span style=\"font-weight:bold;\">Senegal<\/span><br\/>Población : 16743927<br\/>Área: 196190 Km² <br\/> Capital: Dakar <br\/> Moneda: Franco CFA de África Occidental"
             },
             'attrs':
             {
@@ -2099,7 +2202,7 @@ function areas(dfAreas: any){
           },
           "RS" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Serbia<\/span><br\/>Población : 8737371<br\/>Área: 88361 Km² <br\/> Capital: Belgrade <br\/> Moneda: New Serbian dinar"
+              "content": "<span style=\"font-weight:bold;\">Serbia<\/span><br\/>Población : 8737371<br\/>Área: 88361 Km² <br\/> Capital: Belgrado <br\/> Moneda: Dinar serbio"
             },
             'attrs':
             {
@@ -2108,7 +2211,7 @@ function areas(dfAreas: any){
           },
           "SC" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Seychelles<\/span><br\/>Población : 98347<br\/>Área: 455 Km² <br\/> Capital: Victoria <br\/> Moneda: Seychelles rupee"
+              "content": "<span style=\"font-weight:bold;\">Seychelles<\/span><br\/>Población : 98347<br\/>Área: 455 Km² <br\/> Capital: Victoria <br\/> Moneda: Rupia de Seychelles"
             },
             'attrs':
             {
@@ -2117,7 +2220,7 @@ function areas(dfAreas: any){
           },
           "SL" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Sierra Leone<\/span><br\/>Población : 7976983<br\/>Área: 71740 Km² <br\/> Capital: Freetown <br\/> Moneda: Sierra Leonean leone"
+              "content": "<span style=\"font-weight:bold;\">Sierra Leona<\/span><br\/>Población : 7976983<br\/>Área: 71740 Km² <br\/> Capital: Freetown <br\/> Moneda: Leone"
             },
             'attrs':
             {
@@ -2126,7 +2229,7 @@ function areas(dfAreas: any){
           },
           "SG" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Singapore<\/span><br\/>Población : 5850342<br\/>Área: 693 Km² <br\/> Capital: Singapore <br\/> Moneda: Singapore dollar"
+              "content": "<span style=\"font-weight:bold;\">Singapur<\/span><br\/>Población : 5850342<br\/>Área: 693 Km² <br\/> Capital: Singapur <br\/> Moneda: Dólar de Singapur"
             },
             'attrs':
             {
@@ -2135,7 +2238,7 @@ function areas(dfAreas: any){
           },
           "SK" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Slovakia<\/span><br\/>Población : 5459642<br\/>Área: 48845 Km² <br\/> Capital: Bratislava <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Eslovaquia<\/span><br\/>Población : 5459642<br\/>Área: 48845 Km² <br\/> Capital: Bratislava <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -2144,7 +2247,7 @@ function areas(dfAreas: any){
           },
           "SI" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Slovenia<\/span><br\/>Población : 2078938<br\/>Área: 20273 Km² <br\/> Capital: Ljubljana <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">Eslovenia<\/span><br\/>Población : 2078938<br\/>Área: 20273 Km² <br\/> Capital: Lublijana <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -2153,7 +2256,7 @@ function areas(dfAreas: any){
           },
           "SB" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Solomon Islands<\/span><br\/>Población : 686884<br\/>Área: 28450 Km² <br\/> Capital: Honiara <br\/> Moneda: Solomon Islands dollar"
+              "content": "<span style=\"font-weight:bold;\">Islas Salomón<\/span><br\/>Población : 686884<br\/>Área: 28450 Km² <br\/> Capital: Honiara <br\/> Moneda: Dólar de las Islas Salomón"
             },
             'attrs':
             {
@@ -2162,7 +2265,7 @@ function areas(dfAreas: any){
           },
           "SO" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Somalia<\/span><br\/>Población : 15893222<br\/>Área: 637657 Km² <br\/> Capital: Mogadishu <br\/> Moneda: Somali shilling"
+              "content": "<span style=\"font-weight:bold;\">Somalia<\/span><br\/>Población : 15893222<br\/>Área: 637657 Km² <br\/> Capital: Mogadiscio <br\/> Moneda: Chelín somalí"
             },
             'attrs':
             {
@@ -2171,7 +2274,7 @@ function areas(dfAreas: any){
           },
           "ZA" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">South Africa<\/span><br\/>Población : 59308690<br\/>Área: 1219912 Km² <br\/> Capital: Pretoria <br\/> Moneda: South African rand"
+              "content": "<span style=\"font-weight:bold;\">Sudáfrica<\/span><br\/>Población : 59308690<br\/>Área: 1219912 Km² <br\/> Capital: Pretoria, Ciudad Del Cabo, Bloemfontein <br\/> Moneda: Rand sudafricano"
             },
             'attrs':
             {
@@ -2180,7 +2283,7 @@ function areas(dfAreas: any){
           },
           "ES" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Spain<\/span><br\/>Población : 46754778<br\/>Área: 504782 Km² <br\/> Capital: Madrid <br\/> Moneda: Euro"
+              "content": "<span style=\"font-weight:bold;\">España<\/span><br\/>Población : 46754778<br\/>Área: 504782 Km² <br\/> Capital: Madrid <br\/> Moneda: Euro"
             },
             'attrs':
             {
@@ -2189,7 +2292,7 @@ function areas(dfAreas: any){
           },
           "LK" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Sri Lanka<\/span><br\/>Población : 21413249<br\/>Área: 65610 Km² <br\/> Capital: Colombo <br\/> Moneda: Sri Lankan rupee"
+              "content": "<span style=\"font-weight:bold;\">Sri Lanka<\/span><br\/>Población : 21413249<br\/>Área: 65610 Km² <br\/> Capital: Colombo <br\/> Moneda: Rupia de Sri Lanka"
             },
             'attrs':
             {
@@ -2198,7 +2301,7 @@ function areas(dfAreas: any){
           },
           "SD" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Sudan<\/span><br\/>Población : 43849260<br\/>Área: 2505810 Km² <br\/> Capital: Khartoum <br\/> Moneda: Sudanese pound"
+              "content": "<span style=\"font-weight:bold;\">Sudán<\/span><br\/>Población : 43849260<br\/>Área: 2505810 Km² <br\/> Capital: Jartum <br\/> Moneda: Libra sudanesa"
             },
             'attrs':
             {
@@ -2207,7 +2310,7 @@ function areas(dfAreas: any){
           },
           "SS" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">South Sudan<\/span><br\/>Población : 11193725<br\/>Área: 644329 Km² <br\/> Capital: Juba <br\/> Moneda: South Sudanese pound"
+              "content": "<span style=\"font-weight:bold;\">Sudán del Sur<\/span><br\/>Población : 11193725<br\/>Área: 644329 Km² <br\/> Capital: Yuba <br\/> Moneda: Libra sursudanesa"
             },
             'attrs':
             {
@@ -2216,7 +2319,7 @@ function areas(dfAreas: any){
           },
           "SR" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Suriname<\/span><br\/>Población : 586632<br\/>Área: 163270 Km² <br\/> Capital: Paramaribo <br\/> Moneda: Suriname dollar"
+              "content": "<span style=\"font-weight:bold;\">Surinam<\/span><br\/>Población : 586632<br\/>Área: 163270 Km² <br\/> Capital: Paramaribo <br\/> Moneda: Dólar surinamés"
             },
             'attrs':
             {
@@ -2225,7 +2328,7 @@ function areas(dfAreas: any){
           },
           "SZ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Swaziland<\/span><br\/>Población : 1172000<br\/>Área: 17363 Km² <br\/> Capital: Mbabane <br\/> Moneda: Swaziland lilangeni"
+              "content": "<span style=\"font-weight:bold;\">Suazilandia<\/span><br\/>Población : 1172000<br\/>Área: 17363 Km² <br\/> Capital: Mbabane <br\/> Moneda: Lilangeni"
             },
             'attrs':
             {
@@ -2234,7 +2337,7 @@ function areas(dfAreas: any){
           },
           "SE" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Sweden<\/span><br\/>Población : 10099265<br\/>Área: 449964 Km² <br\/> Capital: Stockholm <br\/> Moneda: Swedish krona"
+              "content": "<span style=\"font-weight:bold;\">Suecia<\/span><br\/>Población : 10099265<br\/>Área: 449964 Km² <br\/> Capital: Estocolmo <br\/> Moneda: Corona sueca"
             },
             'attrs':
             {
@@ -2243,7 +2346,7 @@ function areas(dfAreas: any){
           },
           "CH" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Switzerland<\/span><br\/>Población : 8654622<br\/>Área: 41290 Km² <br\/> Capital: Bern <br\/> Moneda: Swiss franc"
+              "content": "<span style=\"font-weight:bold;\">Suiza<\/span><br\/>Población : 8654622<br\/>Área: 41290 Km² <br\/> Capital: Berna <br\/> Moneda: Franco suizo"
             },
             'attrs':
             {
@@ -2252,7 +2355,7 @@ function areas(dfAreas: any){
           },
           "SY" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Syria<\/span><br\/>Población : 17500658<br\/>Área: 185180 Km² <br\/> Capital: Damascus <br\/> Moneda: Syrian pound"
+              "content": "<span style=\"font-weight:bold;\">Siria<\/span><br\/>Población : 17500658<br\/>Área: 185180 Km² <br\/> Capital: Damasco <br\/> Moneda: Libra siria"
             },
             'attrs':
             {
@@ -2261,7 +2364,7 @@ function areas(dfAreas: any){
           },
           "TW" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Taiwan<\/span><br\/>Población : 23816775<br\/>Área: 35980 Km² <br\/> Capital: Taipei <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Taiwán<\/span><br\/>Población : 23816775<br\/>Área: 35980 Km² <br\/> Capital: Taipéi <br\/> Moneda: Nuevo dólar taiwanés"
             },
             'attrs':
             {
@@ -2270,7 +2373,7 @@ function areas(dfAreas: any){
           },
           "TJ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Tajikistan<\/span><br\/>Población : 9537645<br\/>Área: 143100 Km² <br\/> Capital: Dushanbe <br\/> Moneda: Tajik somoni"
+              "content": "<span style=\"font-weight:bold;\">Tayikistán<\/span><br\/>Población : 9537645<br\/>Área: 143100 Km² <br\/> Capital: Dusambé <br\/> Moneda: Somoni tayiko"
             },
             'attrs':
             {
@@ -2279,7 +2382,7 @@ function areas(dfAreas: any){
           },
           "TZ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Tanzania<\/span><br\/>Población : 59734218<br\/>Área: 945087 Km² <br\/> Capital: Dar es Salaam <br\/> Moneda: Tanzanian shilling"
+              "content": "<span style=\"font-weight:bold;\">Tanzania<\/span><br\/>Población : 59734218<br\/>Área: 945087 Km² <br\/> Capital: Dodoma <br\/> Moneda: Chelín tanzano"
             },
             'attrs':
             {
@@ -2288,7 +2391,7 @@ function areas(dfAreas: any){
           },
           "TH" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Thailand<\/span><br\/>Población : 69799978<br\/>Área: 514000 Km² <br\/> Capital: Bangkok <br\/> Moneda: Thai baht"
+              "content": "<span style=\"font-weight:bold;\">Tailandia<\/span><br\/>Población : 69799978<br\/>Área: 514000 Km² <br\/> Capital: Bangkok <br\/> Moneda: Baht tailandés"
             },
             'attrs':
             {
@@ -2297,7 +2400,7 @@ function areas(dfAreas: any){
           },
           "TG" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Togo<\/span><br\/>Población : 8278724<br\/>Área: 56785 Km² <br\/> Capital: Lome <br\/> Moneda: West African CFA franc"
+              "content": "<span style=\"font-weight:bold;\">Togo<\/span><br\/>Población : 8278724<br\/>Área: 56785 Km² <br\/> Capital: Lomé <br\/> Moneda: Franco CFA de África Occidental"
             },
             'attrs':
             {
@@ -2306,7 +2409,7 @@ function areas(dfAreas: any){
           },
           "TO" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Tonga<\/span><br\/>Población : 105695<br\/>Área: 748 Km² <br\/> Capital: Nuku'alofa <br\/> Moneda: Tongan pa'anga"
+              "content": "<span style=\"font-weight:bold;\">Tonga<\/span><br\/>Población : 105695<br\/>Área: 748 Km² <br\/> Capital: Nuku'Alofa <br\/> Moneda: Pa'anga"
             },
             'attrs':
             {
@@ -2315,7 +2418,7 @@ function areas(dfAreas: any){
           },
           "TT" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Trinidad and Tobago<\/span><br\/>Población : 1399488<br\/>Área: 5128 Km² <br\/> Capital: Port of Spain <br\/> Moneda: Trinidad and Tobago dollar"
+              "content": "<span style=\"font-weight:bold;\">Trinidad y Tobago<\/span><br\/>Población : 1399488<br\/>Área: 5128 Km² <br\/> Capital: Puerto España <br\/> Moneda: Dólar trinitense"
             },
             'attrs':
             {
@@ -2324,7 +2427,7 @@ function areas(dfAreas: any){
           },
           "TN" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Tunisia<\/span><br\/>Población : 11818619<br\/>Área: 163610 Km² <br\/> Capital: Tunis <br\/> Moneda: Tunisian dinar"
+              "content": "<span style=\"font-weight:bold;\">Túnez<\/span><br\/>Población : 11818619<br\/>Área: 163610 Km² <br\/> Capital: Túnez <br\/> Moneda: Dinar tunecino"
             },
             'attrs':
             {
@@ -2333,7 +2436,7 @@ function areas(dfAreas: any){
           },
           "TR" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Turkey<\/span><br\/>Población : 84339067<br\/>Área: 780580 Km² <br\/> Capital: Ankara <br\/> Moneda: New Turkish lira"
+              "content": "<span style=\"font-weight:bold;\">Turquía <\/span><br\/>Población : 84339067<br\/>Área: 780580 Km² <br\/> Capital: Estambul <br\/> Moneda: Lira turca"
             },
             'attrs':
             {
@@ -2342,7 +2445,7 @@ function areas(dfAreas: any){
           },
           "TM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Turkmenistan<\/span><br\/>Población : 6031200<br\/>Área: 488100 Km² <br\/> Capital: Ashgabat <br\/> Moneda: New Turkmen manat"
+              "content": "<span style=\"font-weight:bold;\">Turkmenistán<\/span><br\/>Población : 6031200<br\/>Área: 488100 Km² <br\/> Capital: Asjabad <br\/> Moneda: Manat turcomano"
             },
             'attrs':
             {
@@ -2351,7 +2454,7 @@ function areas(dfAreas: any){
           },
           "TC" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Turks and Caicos<\/span><br\/>Población : 38717<br\/>Área: 430 Km² <br\/> Capital: Grand Turk <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">Las Islas Turcas y Caicos​<\/span><br\/>Población : 38717<br\/>Área: 430 Km² <br\/> Capital: Cockburn Town <br\/> Moneda: Dólar estadounidense"
             },
             'attrs':
             {
@@ -2360,7 +2463,7 @@ function areas(dfAreas: any){
           },
           "TV" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Tuvalu<\/span><br\/>Población : 11792<br\/>Área: 26 Km² <br\/> Capital: Funafuti <br\/> Moneda: Australian dollar"
+              "content": "<span style=\"font-weight:bold;\">Tuvalu <\/span><br\/>Población : 11792<br\/>Área: 26 Km² <br\/> Capital: Funafuti <br\/> Moneda: Dólar estadounidense"
             },
             'attrs':
             {
@@ -2369,7 +2472,7 @@ function areas(dfAreas: any){
           },
           "UG" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Uganda<\/span><br\/>Población : 45741007<br\/>Área: 236040 Km² <br\/> Capital: Kampala <br\/> Moneda: Ugandan shilling"
+              "content": "<span style=\"font-weight:bold;\">Uganda<\/span><br\/>Población : 45741007<br\/>Área: 236040 Km² <br\/> Capital: Kampala <br\/> Moneda: Chelín ugandés"
             },
             'attrs':
             {
@@ -2378,7 +2481,7 @@ function areas(dfAreas: any){
           },
           "UA" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Ukraine<\/span><br\/>Población : 43733762<br\/>Área: 603700 Km² <br\/> Capital: Kyiv <br\/> Moneda: Ukrainian hryvnia"
+              "content": "<span style=\"font-weight:bold;\">Ucrania<\/span><br\/>Población : 43733762<br\/>Área: 603700 Km² <br\/> Capital: Kiev <br\/> Moneda: Grivna"
             },
             'attrs':
             {
@@ -2387,7 +2490,7 @@ function areas(dfAreas: any){
           },
           "AE" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">United Arab Emirates<\/span><br\/>Población : 9890402<br\/>Área: 82880 Km² <br\/> Capital: Abu Dhabi <br\/> Moneda: U.A.E. dirham"
+              "content": "<span style=\"font-weight:bold;\">Emiratos Árabes Unidos<\/span><br\/>Población : 9890402<br\/>Área: 82880 Km² <br\/> Capital: Abu Dhabi <br\/> Moneda: Dirham de los Emiratos Árabes Unidos"
             },
             'attrs':
             {
@@ -2396,7 +2499,7 @@ function areas(dfAreas: any){
           },
           "GB" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">United Kingdom<\/span><br\/>Población : 67886011<br\/>Área: 244820 Km² <br\/> Capital: London <br\/> Moneda: Pound sterling"
+              "content": "<span style=\"font-weight:bold;\">Reino Unido<\/span><br\/>Población : 67886011<br\/>Área: 244820 Km² <br\/> Capital: Londres <br\/> Moneda: Libra británica"
             },
             'attrs':
             {
@@ -2405,7 +2508,7 @@ function areas(dfAreas: any){
           },
           "US" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">United States<\/span><br\/>Población : 331002651<br\/>Área: 9631420 Km² <br\/> Capital: Washington <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">Estados Unidos<\/span><br\/>Población : 331002651<br\/>Área: 9631420 Km² <br\/> Capital: Washington D. C. <br\/> Moneda: Dólar estadounidense"
             },
             'attrs':
             {
@@ -2414,7 +2517,7 @@ function areas(dfAreas: any){
           },
           "UY" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Uruguay<\/span><br\/>Población : 3473730<br\/>Área: 176220 Km² <br\/> Capital: Montevideo <br\/> Moneda: Uruguayan peso"
+              "content": "<span style=\"font-weight:bold;\">Uruguay<\/span><br\/>Población : 3473730<br\/>Área: 176220 Km² <br\/> Capital: Montevideo <br\/> Moneda: Peso uruguayo"
             },
             'attrs':
             {
@@ -2423,7 +2526,7 @@ function areas(dfAreas: any){
           },
           "UZ" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Uzbekistan<\/span><br\/>Población : 33469203<br\/>Área: 447400 Km² <br\/> Capital: Tashkent <br\/> Moneda: Uzbek sum"
+              "content": "<span style=\"font-weight:bold;\">Uzbekistán<\/span><br\/>Población : 33469203<br\/>Área: 447400 Km² <br\/> Capital: Tashkent <br\/> Moneda: Som uzbeko"
             },
             'attrs':
             {
@@ -2432,7 +2535,7 @@ function areas(dfAreas: any){
           },
           "VU" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Vanuatu<\/span><br\/>Población : 307145<br\/>Área: 12200 Km² <br\/> Capital: Port-Vila <br\/> Moneda: Vanuatu vatu"
+              "content": "<span style=\"font-weight:bold;\">Vanuatu<\/span><br\/>Población : 307145<br\/>Área: 12200 Km² <br\/> Capital: Port Vila <br\/> Moneda: Vatu"
             },
             'attrs':
             {
@@ -2441,7 +2544,7 @@ function areas(dfAreas: any){
           },
           "VE" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Venezuela<\/span><br\/>Población : 28435940<br\/>Área: 912050 Km² <br\/> Capital: Caracas <br\/> Moneda: Venezuelan bolivar fuerte"
+              "content": "<span style=\"font-weight:bold;\">Venezuela<\/span><br\/>Población : 28435940<br\/>Área: 912050 Km² <br\/> Capital: Caracas <br\/> Moneda: Bolívar fuerte"
             },
             'attrs':
             {
@@ -2450,7 +2553,7 @@ function areas(dfAreas: any){
           },
           "VN" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Vietnam<\/span><br\/>Población : 97338579<br\/>Área: 329560 Km² <br\/> Capital: Hanoi <br\/> Moneda: Vietnamese dong"
+              "content": "<span style=\"font-weight:bold;\">Vietnam<\/span><br\/>Población : 97338579<br\/>Área: 329560 Km² <br\/> Capital: Hanoi <br\/> Moneda: Dong vietnamita"
             },
             'attrs':
             {
@@ -2459,7 +2562,7 @@ function areas(dfAreas: any){
           },
           "VI" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">U.S. Virgin Islands<\/span><br\/>Población : 104425<br\/>Área: 1910 Km² <br\/> Capital: Charlotte Amalie <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">Islas Vírgenes de EE.UU<\/span><br\/>Población : 104425<br\/>Área: 1910 Km² <br\/> Capital: Charlotte Amalie <br\/> Moneda: Dólar estadounidense"
             },
             'attrs':
             {
@@ -2468,7 +2571,7 @@ function areas(dfAreas: any){
           },
           "WF" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Wallis and Futuna<\/span><br\/>Población : 11239<br\/>Área: 274 Km² <br\/> Capital: Mata-Utu <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Wallis y Futuna<\/span><br\/>Población : 11239<br\/>Área: 274 Km² <br\/> Capital: Matā'Utu <br\/> Moneda: Franco del Pacífico"
             },
             'attrs':
             {
@@ -2477,7 +2580,7 @@ function areas(dfAreas: any){
           },
           "EH" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Western Sahara<\/span><br\/>Población : 597339<br\/>Área: 266000 Km² <br\/> Capital: El-AaiÃºn <br\/> Moneda: null"
+              "content": "<span style=\"font-weight:bold;\">Sahara Occidental<\/span><br\/>Población : 597339<br\/>Área: 266000 Km² <br\/> Capital: Laayoune <br\/> Moneda: Dirham marroquí"
             },
             'attrs':
             {
@@ -2486,7 +2589,7 @@ function areas(dfAreas: any){
           },
           "YE" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Yemen<\/span><br\/>Población : 29825964<br\/>Área: 527970 Km² <br\/> Capital: Sanaa <br\/> Moneda: Yemeni rial"
+              "content": "<span style=\"font-weight:bold;\">Yemen<\/span><br\/>Población : 29825964<br\/>Área: 527970 Km² <br\/> Capital: Saná <br\/> Moneda: Rial yemení"
             },
             'attrs':
             {
@@ -2495,7 +2598,7 @@ function areas(dfAreas: any){
           },
           "ZM" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Zambia<\/span><br\/>Población : 18383955<br\/>Área: 752614 Km² <br\/> Capital: Lusaka <br\/> Moneda: New Zambian kwacha"
+              "content": "<span style=\"font-weight:bold;\">Zambia<\/span><br\/>Población : 18383955<br\/>Área: 752614 Km² <br\/> Capital: Lusaka <br\/> Moneda: Kwacha zambiano"
             },
             'attrs':
             {
@@ -2504,7 +2607,7 @@ function areas(dfAreas: any){
           },
           "ZW" : {
             "tooltip": {
-              "content": "<span style=\"font-weight:bold;\">Zimbabwe<\/span><br\/>Población : 14862924<br\/>Área: 390580 Km² <br\/> Capital: Harare <br\/> Moneda: U.S. dollar"
+              "content": "<span style=\"font-weight:bold;\">Zimbabue<\/span><br\/>Población : 14862924<br\/>Área: 390580 Km² <br\/> Capital: Harare <br\/> Moneda: Dólar estadounidense"
             },
             'attrs':
             {
@@ -2520,6 +2623,8 @@ function areas(dfAreas: any){
       const modalBtn:any = document.querySelector('#modal-btn');
       const closeBtn:any = document.querySelector('.btnCloseDescripcion');
       let x = document.querySelectorAll('svg')[1];
+      let xy = document.querySelectorAll('svg')[0];
+      xy.setAttribute('style','width: 220px');
       x.setAttribute('style','height: 100vh');
     
       modalBtn.addEventListener('click', openModal);
@@ -2562,7 +2667,7 @@ function areas(dfAreas: any){
     
     
     
-      function shittt(){
+      function shittt() {
         // console.log('simón');
         x.setAttribute('height','100vh');
       }
@@ -2661,7 +2766,7 @@ function mapaChico(plots:any, newplots?:any) {
             
             click: function(e: any, id: any, mapElem: any, textElem: any, elemOptions: any)
             {
-              console.log('working shit');
+              // console.log('working shit');
               openModal();
               if (typeof elemOptions.Descripcion != 'undefined')
               {
@@ -2691,13 +2796,14 @@ function mapaChico(plots:any, newplots?:any) {
           titleAttrs:
           {
             // 'font-family': "Comic Sans MS",
-            'font-family': "MV Boli",
-            'font-size':  25,
+            'font-family': "Goldplay_Black",
+            'font-size':  20,
             // fill-opacity: "",
-            fill: "#F76624"
+            fill: "#907BFF"
           },
           labelAttrs: {
-            fill: "#F76624"
+            'font-family': "Goldplay_SemiBold",
+            fill: "#001D54"
           },
           slices:
           [{
@@ -4852,6 +4958,10 @@ function mapaChico(plots:any, newplots?:any) {
     }
   
     let x = document.querySelectorAll('svg')[1];
+
+    let xy = document.querySelectorAll('svg')[0];
+    xy.setAttribute('style','width: 220px');
+
     // x?.addEventListener('click',this.shit);
     
     ojo: 'this shit is working setting the height to 100 vh'
@@ -4906,6 +5016,4 @@ function mapaChico(plots:any, newplots?:any) {
     });
   }
   
-  
-  
-  
+
