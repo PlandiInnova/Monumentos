@@ -7,15 +7,16 @@
 /* ************* this sections is for the draggable component ********** */
 .example-box {
   position: absolute !important;
-  width: 50px;
-  height: 50px;
-  border: solid #ccc;
+  width: 48px;
+  height: 48px;
+  /* border: solid #ccc; */
   color: rgba(0, 0, 0, 0.87);
   /* display: inline-flex; */
   /* justify-content: center; */
   /* align-items: center; */
   /* -align: center; */
-  background: #fff;
+  background: whitesmoke;
+  /* es necesario tener el mismo color que abajo */
   border-radius: 10px !important;
   /* margin-right: 25px; */
   /* position: relative; */
@@ -26,13 +27,13 @@
   padding: 0;
   /* padding: 10px; */
   transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+  /* box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
   0 2px 2px 0 rgba(0, 0, 0, 0.14),
-  0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  0 1px 5px 0 rgba(0, 0, 0, 0.12); */
   
   border-radius: 4px;
   overflow: hidden;
-  transition: width 0.5s, height 0.5s;
+  transition: width 0.5s ,height 0.5s;
   transition-delay: 0s, 0.75s;
 }
 .example-box .toggle{
@@ -45,8 +46,9 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  background: #ff4081;
-  transition: 0.5s;
+  /* border: solid 1px blue; */
+  transition: 100ms;
+  background: whitesmoke; /* este es el mismo color que debe llevar que arriba */
   
   /* cursor: move; */
 }
@@ -54,8 +56,9 @@
   width: 250px; 
   height: 280px;
   transition: height 0.5s,width 0.5s;
-  /* transition: width 0.5s,height 0.5s; */
   transition-delay: 0s, 0.75s;
+  /* transition: width 0.5s,height 0.5s; */
+  background: white;
 }
 
 .example-box .toggle.active{
@@ -262,8 +265,9 @@
 }
 
 .responsive {
-  width: 80% !important;
-  height: 80% !important;
+  width: 90% !important;
+  /* max-height: ; */
+  height: 100% !important;
 }
 
 /* ********** button to join into the app after the portrait ********** */

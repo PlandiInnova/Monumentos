@@ -16,6 +16,7 @@ margin: 0 !important;
 
   
 .mapael .mapTooltip {
+  min-width: 220px;
   position: absolute;
   background-color: #474c4b;
   -moz-opacity: 0.80;
@@ -36,7 +37,7 @@ margin: 0 !important;
   width: 100px !important;
   height: 100px !important;
   /* position: absolute; */
-  transform: translateX(2.5vw);
+  transform: translateX(40%);
 }
 /* ********** IMAGE TOOLTIP ********** */
 
@@ -54,13 +55,13 @@ margin: 0 !important;
 
 .responsive {
   width: 60%;
-  height: 60%;
+  max-height: 45vh;
+  /* max-height: 70vh; */
 
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
 
 .plotLegend{
   padding: 15px;
