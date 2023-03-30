@@ -5,12 +5,12 @@ import dfByRecords from '../../assets/dfByRecords.json';
 import dfCountries from '../../assets/dfCountries.json';
 
 // ----------------------------------------------------
-// THESE VARIABLES WORK'S AS ENVIRONMENT
-// THIS VARIABLE IS USED TO BE ABLE TO WORK WITH JQUERY
+// ! THESE VARIABLES WORK'S AS ENVIRONMENT
+// ? THIS VARIABLE IS USED TO BE ABLE TO WORK WITH JQUERY
 declare var $: any;
-// THIS VARIABLE IS USED TO BE ABLE TO WORK WITH html2pdf
+// ? THIS VARIABLE IS USED TO BE ABLE TO WORK WITH html2pdf
 declare let html2pdf: any;
-// THESE VARIABLES WORK'S AS ENVIRONMENT
+// ! THESE VARIABLES WORK'S AS ENVIRONMENT
 // ----------------------------------------------------
 
 @Component({
@@ -20,16 +20,16 @@ declare let html2pdf: any;
 })
 export class PrincipalPageComponent implements OnInit {
 
-  // HERE WILL BE ALL THE PLOTS THAT WILL BE PLOTTED IN MAP
+  // ? HERE WILL BE ALL THE PLOTS THAT WILL BE PLOTTED IN MAP
   plots: any = [];
 
 
-  // THIS VARIABLE NEED TO BE IN FALSE TO CAN BE ABLE TO GET INTO CONTENT
+  // ! THIS VARIABLE NEED TO BE IN FALSE TO CAN BE ABLE TO GET INTO CONTENT
   dentroDelContenido: any = false;
 
-  // IN THIS VARIABLE IS LOCATED ALL THE MONUMENTS FROM THE JSON FILE
+  // *  IN THIS VARIABLE IS LOCATED ALL THE MONUMENTS FROM THE JSON FILE
   monumentosDataRecords: any;
-  // IN THIS VARIABLE IS LOCATED ALL THE COUNTRYS FROM THE JSON FILE
+  // * IN THIS VARIABLE IS LOCATED ALL THE COUNTRYS FROM THE JSON FILE
   dataCountries: any;
 
   constructor() {
@@ -53,7 +53,7 @@ export class PrincipalPageComponent implements OnInit {
     // this.entrarAlContenidoByClick();
   }
 
-  // THIS FUNCT IS USED TO JUMP THE FRONT PAGE
+  //  THIS FUNCT IS USED TO JUMP THE FRONT PAGE
   entrarAlContenidoByClick() {
     this.dentroDelContenido = true;
     setTimeout(() => {
@@ -68,19 +68,10 @@ export class PrincipalPageComponent implements OnInit {
     var options = {
       filename: 'Monumento.pdf',
       margin: [10, 10, 10, 10],
-      // enableLinks: true,
-      // image: {type: 'jpeg', quality: 0.95}
       jsPDF: {
-        // encryption: {userPassword: 123,ownerPassword: 234}
       }
     };
-    // var exporter = new
     html2pdf(element, options);
-    // exporter.getPdf(true);
-    // exporter.getPdf(true);
-    // options.source = element
-    // options.download = false;
-    // html2pdf.getPdf(options).then((pdf))
   }
 
 
@@ -89,18 +80,14 @@ export class PrincipalPageComponent implements OnInit {
     let toggleDiv = <HTMLDivElement>document.getElementById('toggleDiv');
     let navigationDiv = <HTMLDivElement>document.getElementById('navigationDiv');
     let CursorToMoveDiceDiv = <HTMLDivElement>document.getElementById('CursorToMoveDice');
-    // console.log(CursorToMoveDiceDiv.getBoundingClientRect());
 
     setTimeout(() => {
       let x = CursorToMoveDiceDiv.getBoundingClientRect();
       let xx = navigationDiv.getBoundingClientRect();
       var w = window.innerWidth;
       var h = window.innerHeight;
-      // console.log(x, w, h);
-      // console.log(x,w,h);
+
       if (x.right > w + 20 || xx.bottom > h) {
-        // console.log('c salió');
-        // navigationDiv.click();
         CursorToMoveDiceDiv.click();
       }
     }, 2000);
@@ -112,28 +99,18 @@ export class PrincipalPageComponent implements OnInit {
       toggleDiv.classList.add('active');
       navigationDiv.classList.add('active');
       CursorToMoveDiceDiv.classList.add('active');
-      // toggleOpenClose.classList.add('active');
     } else {
       toggleDiv.classList.remove('active');
       navigationDiv.classList.remove('active');
       CursorToMoveDiceDiv.classList.remove('active');
-      // toggleOpenClose.classList.remove('active');
     }
   }
 
 
   // WITH THIS FUNC WE CREATE THE FORMAT OF EACH PLOT, HIS TOOLTIP AND HIS DESCRIPTION
   dataToPlots(monumentos: any) {
-    console.log("🚀 ~ file: principal-page.component.ts:127 ~ PrincipalPageComponent ~ dataToPlots ~ monumentos", monumentos)
-    console.log("🚀 ~ file: principal-page.component.ts:128 ~ PrincipalPageComponent ~ dataToPlots ~ console", console)
-
-console.assert(console)
-console.count();
-console.debug();
-console
 
     formula: 'CONCATENAR("<li>",Y2,"</li>","<li>",Z2,"</li>","<li>",AA2,"</li>","<li>",AB2,"</li>","<li>",AC2,"</li>","<li>",AD2,"</li>","<li>",AE2,"</li>")'
-
     Alpha_code_2: "EC"
     Area_hec: 14066514
     CatByDanger: 1
@@ -196,10 +173,6 @@ console
     contener los hábitats naturales más importantes y significativos para la conservación in situ de la diversidad biológica, incluidos aquellos que contienen especies amenazadas de valor universal excepcional desde el punto de vista de la ciencia o la conservación.
     `
 
-
-
-
-    // console.log(monumentos);
     for (let monumento of monumentos) {
 
       let criterioConcatendoAlv: any = [];
@@ -223,6 +196,7 @@ console
         dateDanger = ``
       }
 
+      // ! Cada Tooltip de cada país tiene este formato
       plot.tooltip = {
         content:
           `
@@ -231,11 +205,7 @@ console
         `
       };
 
-      // style="background: blue;
-      // <b>Descripción:</b>
-      // <span style="font-size: 25px;">Monumento:</span>
-      // style="background: #E6E8F4"
-      // p-2 b-2 m-2
+      // ! Cada descripción tiene este formato, desde aquí se modifica
       plot.Descripcion =
         `
       <div class="" style="">
@@ -255,7 +225,6 @@ console
         </div>
       `;
 
-      // <ul>${monumento.criterio_concat}</ul>
       plot.site = monumento.site;
       plot.longitude = monumento.longitude;
       plot.latitude = monumento.latitude;
@@ -271,7 +240,6 @@ console
 
 // WITH THIS FUNC WE CREATE THE FORMAT OF EACH COUNTRIE, HIS TOOLTIP WHICH HAS ALL INF ABOUT IT
 function areas(dfAreas: any) {
-  // console.log(dfAreas);
   AC_2: "AF"
   Area: 647500
   Capital: "Kabul"
@@ -283,21 +251,7 @@ function areas(dfAreas: any) {
   Population: 31056997
   Region: "Asia"
 
-  // regiones:
-  let America = '#43BBCC';
-  let Asia = '#F76624';
-  let Europe = '#B9D516';
-  let Africa = '#E9A713';
-  let Oceania = '#E93546';
-
-  // America	#43BBCC
-  // Asia	#F76624
-  // Europe	#B9D516
-  // Africa	#E9A713
-  // Oceania	#E93546
-
   for (let country of dfAreas) {
-    // console.log(country);
     console.log(
       `
       "${country.AC_2}" : {
@@ -316,13 +270,6 @@ function areas(dfAreas: any) {
 
 // HERE WE DRAW THE MAP WITH JQUERY-MAPAEL WITH THE SVG LARGE SIZE (10)
 function mapaGrande(plots: any, newplots?: any) {
-  // console.log(plots);
-  // console.log(newplots);
-  // console.log(plots, newplots);
-  // let x = <HTMLDivElement>document.getElementById('map');
-  // x.appendChild(btn);
-  // x.appendChild(btn);
-
   $(".mapcontainer").mapael({
     map: {
       name: "world_countries",
@@ -334,7 +281,6 @@ function mapaGrande(plots: any, newplots?: any) {
       defaultArea: {
         attrs:
         {
-          // fill: "#4199B2",
           stroke: "#030233",
           "stroke-width": 1
         },
@@ -345,27 +291,16 @@ function mapaGrande(plots: any, newplots?: any) {
         },
         eventHandlers: {
           click: function (e: any, id: any, mapElem: any, textElem: any, elemOptions: any) {
-            // console.log(id);
             var newPlots: any = [];
             for (let plotByCountry of plots) {
-              // console.log(plotByCountry.CountryCode);
               if (plotByCountry.CountryCode == id) {
                 newPlots.push(plotByCountry);
               }
             }
+
+            // ! aquí llamanmos a la función MapaChico que crea un mapa nuevo con los nuevos plots que se pondrán, se ponen
+            //  ! dos  plots, los que ya trae dibujados y los que dibujará
             mapaChico(plots, newPlots);
-            // var opt:any = {
-            // mapOptions: {
-            // 'areas' : {},
-            // 'plots' : newPlots,
-            // },
-            // replaceOptions: true,
-            // newPlots: newPlots,
-            // deletePlotKeys : 'all',
-            // afterUpdate : function(container:any, paper:any, areas:any, options:any) {
-            // }
-            // }
-            // $(".mapcontainer").trigger('update', [opt]);
 
             if (id === 'US') {
               $(".mapcontainer").trigger('zoom', { level: 10, latitude: 36.43889, longitude: -105.54167 });
@@ -380,19 +315,12 @@ function mapaGrande(plots: any, newplots?: any) {
         size: 3,
         eventHandlers: {
           click: function (e: any, id: any, mapElem: any, textElem: any, elemOptions: any) {
-            // console.log(elemOptions);
-            // console.log(elemOptions.tooltip);
-            // console.log('working shit');
             openModal();
             if (typeof elemOptions.Descripcion != 'undefined') {
               $('.Descripcion').html(elemOptions.Descripcion).css(
                 {
                   display: 'none'
                 }).fadeIn('slow');
-              // $('.titleDescripcion').html(elemOptions.site).css(
-              // {
-              //   display: 'none'
-              // }).fadeIn('slow');
             }
           }
         }
@@ -410,10 +338,8 @@ function mapaGrande(plots: any, newplots?: any) {
         title: "Tipo de monumento",
         titleAttrs:
         {
-          // 'font-family': "Comic Sans MS",
           'font-family': "Goldplay_Black",
           'font-size': 20,
-          // fill-opacity: "",
           fill: "#907BFF"
         },
         labelAttrs: {
@@ -437,8 +363,6 @@ function mapaGrande(plots: any, newplots?: any) {
           {
             label: "Cultural",
             sliceValue: "2",
-            // type: "svg",
-            // path: "M 38.654 15.571 H 7.728 C 7.728 6.971 14.651 0 23.191 0 S 38.654 6.971 38.654 15.571 Z M 43.52 43.382 H 2.861 c -0.828 0 -1.5 0.671 -1.5 1.5 c 0 0.829 0.672 1.5 1.5 1.5 H 43.52 c 0.828 0 1.5 -0.671 1.5 -1.5 C 45.02 44.053 44.349 43.382 43.52 43.382 Z M 9.147 39.345 V 19.42 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 h 33.233 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 h -2.573 v 19.925 h 2.573 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 H 9.147 Z M 25.872 39.345 V 19.42 H 20.51 v 19.925 H 25.872 Z M 34.234 19.42 h -5.362 v 19.925 h 5.362 V 19.42 Z M 12.147 39.345 h 5.362 V 19.42 h -5.362 V 39.345 Z",
             type: 'image',
             url: '/assets/BlueMuseum.png',
             width: 10,
@@ -447,22 +371,18 @@ function mapaGrande(plots: any, newplots?: any) {
             {
               fill: "#0083FF"
             },
-            // clicked: true
           },
           {
             label: "Cultural / Natural",
             sliceValue: "3",
             type: 'image',
             url: '/assets/culturaNa.png',
-            // type: "svg",
-            // path: "M 21 5 c -1.802 0 -3.499 0.442 -5 1.21 C 14.499 5.442 12.802 5 11 5 C 4.925 5 0 9.925 0 16 s 4.925 11 11 11 c 1.802 0 3.499 -0.442 5 -1.21 c 1.501 0.768 3.198 1.21 5 1.21 c 6.075 0 11 -4.925 11 -11 S 27.075 5 21 5 Z M 15.426 8.941 c 0.342 -0.269 0.84 -0.267 1.18 0.004 c 0.735 0.587 1.36 1.285 1.873 2.055 h -4.95 C 14.047 10.228 14.679 9.528 15.426 8.941 Z M 12.514 13 h 6.974 c 0.226 0.642 0.379 1.312 0.455 2 h -7.886 C 12.133 14.312 12.287 13.642 12.514 13 Z M 12.057 17 h 7.886 c -0.076 0.688 -0.23 1.358 -0.457 2 h -6.973 C 12.287 18.358 12.133 17.688 12.057 17 Z M 16.589 23.047 c -0.341 0.269 -0.838 0.269 -1.178 0 c -0.74 -0.585 -1.367 -1.28 -1.881 -2.047 h 4.941 C 17.956 21.766 17.329 22.462 16.589 23.047 Z M 21 25 c -1.05 0 -2.054 -0.191 -2.991 -0.523 C 20.446 22.46 22 19.412 22 16 c 0 -3.413 -1.555 -6.462 -3.994 -8.48 C 18.944 7.188 19.95 7 21 7 c 4.963 0 9 4.037 9 9 C 30 20.963 25.963 25 21 25 Z",
             width: 10,
             height: 10,
             attrs:
             {
               fill: "#4200FF"
             },
-            // clicked: true
           },
           {
             label: "Natural (Peligro)",
@@ -475,13 +395,10 @@ function mapaGrande(plots: any, newplots?: any) {
             {
               fill: "#FF0000"
             },
-            // clicked: true
           },
           {
             label: "Cultural (Peligro)",
             sliceValue: "5",
-            // type: "svg",
-            // path: "M 38.654 15.571 H 7.728 C 7.728 6.971 14.651 0 23.191 0 S 38.654 6.971 38.654 15.571 Z M 43.52 43.382 H 2.861 c -0.828 0 -1.5 0.671 -1.5 1.5 c 0 0.829 0.672 1.5 1.5 1.5 H 43.52 c 0.828 0 1.5 -0.671 1.5 -1.5 C 45.02 44.053 44.349 43.382 43.52 43.382 Z M 9.147 39.345 V 19.42 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 h 33.233 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 h -2.573 v 19.925 h 2.573 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 H 9.147 Z M 25.872 39.345 V 19.42 H 20.51 v 19.925 H 25.872 Z M 34.234 19.42 h -5.362 v 19.925 h 5.362 V 19.42 Z M 12.147 39.345 h 5.362 V 19.42 h -5.362 V 39.345 Z",
             type: 'image',
             url: '/assets/RedMuseum.png',
             width: 10,
@@ -490,7 +407,6 @@ function mapaGrande(plots: any, newplots?: any) {
             {
               fill: "#FF0000"
             },
-            // clicked: true v
           }]
       }
     },
@@ -2317,51 +2233,29 @@ function mapaGrande(plots: any, newplots?: any) {
 
   modalBtn.addEventListener('click', openModal);
   closeBtn.addEventListener('click', closeModal);
-  // window.addEventListener('click', outsideClick);
   window.addEventListener('resize', shittt);
 
-  // const navigation = document.querySelector('.navigation');
-  // const toggleDiv: any = document.querySelector('.toggle');
-  // toggleDiv.addEventListener('click',openMenu);
-  // function openMenu(){
-  // let navigationState: any = navigation?.classList;
-  // console.warn(navigationState);
-  // console.log('si');
-  // toggleDiv.classList.toggle('active');
-  // console.log('si2');
-  // navigation?.classList.toggle('active');
-  // }
-  // let toggle = <HTMLDivElement>document.getElementById('toggle');
-  // toggle.onclick();
-  // toggle.addEventListener('click', openMenu);
 
   function shittt() {
-    // console.log('simón');
     x.setAttribute('height', '100vh');
   }
+
   function openModal() {
     modal.style.display = 'block';
   }
-  // Close
+
   function closeModal() {
     modal.style.display = 'none';
   }
-  // Close If Outside Click
+
   function outsideClick(e: any) {
     if (e.target == modal) {
       modal.style.display = 'none';
     }
   }
 }
-// x?.addEventListener('click',this.shit);
-// x.setAttribute('id','svgMap');
-// x.setAttribute('height','100vh');
-// console.log(`this shit is woorking 2`);
 
 function mapaChico(plots: any, newplots?: any) {
-  // let x = <HTMLDivElement>document.getElementById('map');
-  // x.appendChild(btn);
-  // x.appendChild(btn);
 
   $(".mapcontainer").mapael({
     map: {
@@ -2374,7 +2268,6 @@ function mapaChico(plots: any, newplots?: any) {
       defaultArea: {
         attrs:
         {
-          // fill: "#4199B2",
           stroke: "#030233",
           "stroke-width": 1
         },
@@ -2387,30 +2280,13 @@ function mapaChico(plots: any, newplots?: any) {
           click: function (e: any, id: any, mapElem: any, textElem: any, elemOptions: any) {
             var newPlots: any = [];
             for (let plotByCountry of plots) {
-              // console.log(plotByCountry.CountryCode);
               if (plotByCountry.CountryCode == id) {
                 newPlots.push(plotByCountry);
               }
             }
-            // console.log(newPlots);
             if (newPlots < 1) {
-              // console.log('no hay nada cainal');
             }
             mapaChico(plots, newPlots);
-            // var opt:any = {
-            // mapOptions: {
-            // 'areas' : {},
-            // 'plots' : newPlots,
-            // },
-            // replaceOptions: true,
-            // newPlots: newPlots,
-            // deletePlotKeys : 'all',
-            // afterUpdate : function(container:any, paper:any, areas:any, options:any) {
-            // }
-            // }
-
-            // $(".mapcontainer").trigger('update', [opt]);
-
             if (id === 'US') {
               $(".mapcontainer").trigger('zoom', { level: 10, latitude: 36.43889, longitude: -105.54167 });
             }
@@ -2425,7 +2301,6 @@ function mapaChico(plots: any, newplots?: any) {
         eventHandlers: {
 
           click: function (e: any, id: any, mapElem: any, textElem: any, elemOptions: any) {
-            // console.log('working shit');
             openModal();
             if (typeof elemOptions.Descripcion != 'undefined') {
               $('.Descripcion').html(elemOptions.Descripcion).css(
@@ -2449,10 +2324,8 @@ function mapaChico(plots: any, newplots?: any) {
         title: "Tipo de monumento",
         titleAttrs:
         {
-          // 'font-family': "Comic Sans MS",
           'font-family': "Goldplay_Black",
           'font-size': 20,
-          // fill-opacity: "",
           fill: "#907BFF"
         },
         labelAttrs: {
@@ -2463,7 +2336,6 @@ function mapaChico(plots: any, newplots?: any) {
           [{
             label: "Natural",
             sliceValue: "1",
-
             type: "svg",
             path: "M 55.513 72.889 c 6.368 0 11.662 -4.466 12.963 -10.435 c 6.338 -1.01 11.194 -6.447 11.194 -13.072 c 0 -2.738 -0.832 -5.284 -2.263 -7.4 c 0.746 -1.651 1.171 -3.474 1.171 -5.4 c 0 -5.701 -3.607 -10.526 -8.662 -12.412 c 1.058 -1.903 1.711 -4.062 1.711 -6.393 c 0 -7.33 -5.943 -13.276 -13.284 -13.276 c -2.614 0 -5.048 0.787 -7.108 2.094 C 48.928 2.667 44.71 0 39.822 0 c -6.283 0 -11.51 4.374 -12.898 10.229 c -5.713 0.887 -10.402 5.407 -11.151 11.432 c -0.39 3.164 0.406 6.167 1.987 8.668 c -2.736 2.437 -4.504 5.944 -4.504 9.897 c 0 4.702 2.461 8.807 6.148 11.168 c -0.561 1.469 -0.905 3.053 -0.905 4.716 c 0 5.729 3.645 10.568 8.73 12.43 c 2.431 2.655 5.889 4.35 9.77 4.35 c 2.334 0 4.492 -0.654 6.398 -1.701 v 19.391 h -25.42 v 2.347 h 55.136 v -2.347 h -25.44 V 70.277 C 49.876 71.899 52.576 72.889 55.513 72.889 Z",
             width: 3,
@@ -2477,8 +2349,6 @@ function mapaChico(plots: any, newplots?: any) {
           {
             label: "Cultural",
             sliceValue: "2",
-            // type: "svg",
-            // path: "M 38.654 15.571 H 7.728 C 7.728 6.971 14.651 0 23.191 0 S 38.654 6.971 38.654 15.571 Z M 43.52 43.382 H 2.861 c -0.828 0 -1.5 0.671 -1.5 1.5 c 0 0.829 0.672 1.5 1.5 1.5 H 43.52 c 0.828 0 1.5 -0.671 1.5 -1.5 C 45.02 44.053 44.349 43.382 43.52 43.382 Z M 9.147 39.345 V 19.42 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 h 33.233 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 h -2.573 v 19.925 h 2.573 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 H 9.147 Z M 25.872 39.345 V 19.42 H 20.51 v 19.925 H 25.872 Z M 34.234 19.42 h -5.362 v 19.925 h 5.362 V 19.42 Z M 12.147 39.345 h 5.362 V 19.42 h -5.362 V 39.345 Z",
             type: 'image',
             url: '/assets/BlueMuseum.png',
             width: 3,
@@ -2487,22 +2357,18 @@ function mapaChico(plots: any, newplots?: any) {
             {
               fill: "#0083FF"
             },
-            // clicked: true
           },
           {
             label: "Cultural / Natural",
             sliceValue: "3",
             type: 'image',
             url: '/assets/culturaNa.png',
-            // type: "svg",
-            // path: "M 21 5 c -1.802 0 -3.499 0.442 -5 1.21 C 14.499 5.442 12.802 5 11 5 C 4.925 5 0 9.925 0 16 s 4.925 11 11 11 c 1.802 0 3.499 -0.442 5 -1.21 c 1.501 0.768 3.198 1.21 5 1.21 c 6.075 0 11 -4.925 11 -11 S 27.075 5 21 5 Z M 15.426 8.941 c 0.342 -0.269 0.84 -0.267 1.18 0.004 c 0.735 0.587 1.36 1.285 1.873 2.055 h -4.95 C 14.047 10.228 14.679 9.528 15.426 8.941 Z M 12.514 13 h 6.974 c 0.226 0.642 0.379 1.312 0.455 2 h -7.886 C 12.133 14.312 12.287 13.642 12.514 13 Z M 12.057 17 h 7.886 c -0.076 0.688 -0.23 1.358 -0.457 2 h -6.973 C 12.287 18.358 12.133 17.688 12.057 17 Z M 16.589 23.047 c -0.341 0.269 -0.838 0.269 -1.178 0 c -0.74 -0.585 -1.367 -1.28 -1.881 -2.047 h 4.941 C 17.956 21.766 17.329 22.462 16.589 23.047 Z M 21 25 c -1.05 0 -2.054 -0.191 -2.991 -0.523 C 20.446 22.46 22 19.412 22 16 c 0 -3.413 -1.555 -6.462 -3.994 -8.48 C 18.944 7.188 19.95 7 21 7 c 4.963 0 9 4.037 9 9 C 30 20.963 25.963 25 21 25 Z",
             width: 3,
             height: 3,
             attrs:
             {
               fill: "#4200FF"
             },
-            // clicked: true
           },
           {
             label: "Natural (Peligro)",
@@ -2515,13 +2381,10 @@ function mapaChico(plots: any, newplots?: any) {
             {
               fill: "#FF0000"
             },
-            // clicked: true
           },
           {
             label: "Cultural (Peligro)",
             sliceValue: "5",
-            // type: "svg",
-            // path: "M 38.654 15.571 H 7.728 C 7.728 6.971 14.651 0 23.191 0 S 38.654 6.971 38.654 15.571 Z M 43.52 43.382 H 2.861 c -0.828 0 -1.5 0.671 -1.5 1.5 c 0 0.829 0.672 1.5 1.5 1.5 H 43.52 c 0.828 0 1.5 -0.671 1.5 -1.5 C 45.02 44.053 44.349 43.382 43.52 43.382 Z M 9.147 39.345 V 19.42 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 h 33.233 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 h -2.573 v 19.925 h 2.573 c 0.828 0 1.5 0.671 1.5 1.5 c 0 0.829 -0.672 1.5 -1.5 1.5 H 6.574 c -0.828 0 -1.5 -0.671 -1.5 -1.5 c 0 -0.829 0.672 -1.5 1.5 -1.5 H 9.147 Z M 25.872 39.345 V 19.42 H 20.51 v 19.925 H 25.872 Z M 34.234 19.42 h -5.362 v 19.925 h 5.362 V 19.42 Z M 12.147 39.345 h 5.362 V 19.42 h -5.362 V 39.345 Z",
             type: 'image',
             url: '/assets/RedMuseum.png',
             width: 3,
@@ -2530,7 +2393,6 @@ function mapaChico(plots: any, newplots?: any) {
             {
               fill: "#FF0000"
             },
-            // clicked: true v
           }]
       }
     },
@@ -4354,7 +4216,6 @@ function mapaChico(plots: any, newplots?: any) {
 
   modalBtn.addEventListener('click', openModal);
   closeBtn.addEventListener('click', closeModal);
-  // window.addEventListener('click', outsideClick);
   window.addEventListener('resize', changeHeightOnResize);
 
   function openModal() { modal.style.display = 'block'; }
@@ -4371,14 +4232,11 @@ function mapaChico(plots: any, newplots?: any) {
   let toggleSVG = document.querySelectorAll('svg')[0];
   toggleSVG.setAttribute('style', 'width: 220px');
 
-  // mapSVG?.addEventListener('click',this.shit);
 
   ojo: 'this shit is working setting the height to 100 vh';
 
   mapSVG.setAttribute('id', 'svgMap');
   mapSVG.setAttribute('style', 'height: 100vh');
-
-  // let x = document.querySelectorAll('svg')[1];
 
   let respuestas: any = [];
   let respuesta: any;
@@ -4387,13 +4245,6 @@ function mapaChico(plots: any, newplots?: any) {
   let pathPlots = document.querySelectorAll('path.plot');
   let imagePlots = document.querySelectorAll('image.plot');
 
-
-  // x.setAttribute('style','height: 100vh');
-  // console.log(x);
-  // console.log(pathAreas);
-  // console.log(pathPlots);
-  // console.log(imagePlots);
-
   mapSVG?.addEventListener('click', (e) => {
     for (let pathArea in pathAreas) {
       if (e.target == pathAreas[pathArea]) {
@@ -4401,23 +4252,19 @@ function mapaChico(plots: any, newplots?: any) {
       }
       else {
         respuestas.push('no');
-        // console.log('no');
       }
     }
     for (let imagePlot in imagePlots) {
       if (e.target == imagePlots[imagePlot]) {
-        // console.log('si');
         respuestas.push('si');
       }
       else {
         respuestas.push('no');
-        // console.log('no');
       }
     }
 
     if (respuestas.includes('si')) {
       respuesta = 'si';
-      // mapaChico(plots, plots);
     } else {
       respuesta = 'no';
       mapaGrande(plots, plots);
