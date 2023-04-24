@@ -40,7 +40,9 @@ export class PrincipalPageComponent implements OnInit {
 
   ngOnInit(): void {
     // dataToPlots JUST CREATE THE PLOTS AS WE NEEDED AND WITH THE CORRECT FORM
-    this.dataToPlots(this.monumentosDataRecords);
+    setTimeout(() => {
+      this.dataToPlots(this.monumentosDataRecords);
+    }, 5);
 
     // THIS FUNC IS USED TO CREATE THE CORRECT FORMAT OF EACH COUNTRY FROM THE JSON FILE
     uniqueUsageToChangeInfoContries: '↓↓↓↓↓↓↓'
@@ -58,7 +60,7 @@ export class PrincipalPageComponent implements OnInit {
     this.dentroDelContenido = true;
     setTimeout(() => {
       mapaGrande(this.plots, this.plots);
-    }, 5);
+    }, 15);
   }
 
 
@@ -196,26 +198,31 @@ export class PrincipalPageComponent implements OnInit {
         dateDanger = ``
       }
 
+      // <img src = "/assets/all_images/site_${monumento.id_number}.jpg" class="imagenTooltip">
       // ! Cada Tooltip de cada país tiene este formato
+
       plot.tooltip = {
         content:
-          `
+        `
         <h3>${monumento.site} (${monumento.Pais})</h3>
-        <img src = ".././../assets/all_images/site_${monumento.id_number}.jpg" class="imagenTooltip">
+        <img src = "./../assets/all_images/site_${monumento.id_number}.jpg" class="imagenTooltip">
         `
       };
 
+
+      // console.log(monumento);
+      // console.log(monumento.id_number);
       // ! Cada descripción tiene este formato, desde aquí se modifica
       plot.Descripcion =
-        `
+      `
       <div class="" style="">
         <span style="font-size: 20px;  font-family: Goldplay_Black;">${monumento.site}</span>
         <span style="font-size: 20px; font-family: Goldplay_Bold;">(${monumento.Pais})</span>
         <br/>
         <span style="font-family: Goldplay_SemiBold;"> Tipo: <b style="font-family: Goldplay_Black;"> ${monumento.category}</b> </span>
         <br/>
-        <img src = ".././../assets/all_images/site_${monumento.id_number}.jpg" class="responsive">
         <br/>
+        <img src = "./../assets/all_images/site_${monumento.id_number}.jpg" class="responsive">
         ${dateDanger}
         <br/>
         <span style="font-size: 15px; font-family: Goldplay_Regular;">${monumento.short_description}</span>

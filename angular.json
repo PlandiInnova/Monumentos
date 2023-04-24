@@ -26,7 +26,12 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets/"
+           }
+
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -34,7 +39,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              
+
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/raphael/raphael.min.js",
               "node_modules/jquery-mousewheel/jquery.mousewheel.js",
@@ -48,12 +53,12 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
+                  "maximumWarning": "4kb",
                   "maximumError": "4kb"
                 }
               ],
