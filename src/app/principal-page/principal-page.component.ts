@@ -371,7 +371,7 @@ function mapaGrande(plots: any, newplots?: any) {
             label: "Cultural",
             sliceValue: "2",
             type: 'image',
-            url: '/assets/BlueMuseum.png',
+            url: './../assets/BlueMuseum.png',
             width: 10,
             height: 10,
             attrs:
@@ -383,7 +383,7 @@ function mapaGrande(plots: any, newplots?: any) {
             label: "Cultural / Natural",
             sliceValue: "3",
             type: 'image',
-            url: '/assets/culturaNa.png',
+            url: './../assets/culturaNa.png',
             width: 10,
             height: 10,
             attrs:
@@ -407,7 +407,7 @@ function mapaGrande(plots: any, newplots?: any) {
             label: "Cultural (Peligro)",
             sliceValue: "5",
             type: 'image',
-            url: '/assets/RedMuseum.png',
+            url: './../assets/RedMuseum.png',
             width: 10,
             height: 10,
             attrs:
@@ -2357,7 +2357,7 @@ function mapaChico(plots: any, newplots?: any) {
             label: "Cultural",
             sliceValue: "2",
             type: 'image',
-            url: '/assets/BlueMuseum.png',
+            url: './../assets/BlueMuseum.png',
             width: 3,
             height: 3,
             attrs:
@@ -2369,7 +2369,7 @@ function mapaChico(plots: any, newplots?: any) {
             label: "Cultural / Natural",
             sliceValue: "3",
             type: 'image',
-            url: '/assets/culturaNa.png',
+            url: './../assets/culturaNa.png',
             width: 3,
             height: 3,
             attrs:
@@ -2393,7 +2393,7 @@ function mapaChico(plots: any, newplots?: any) {
             label: "Cultural (Peligro)",
             sliceValue: "5",
             type: 'image',
-            url: '/assets/RedMuseum.png',
+            url: './../assets/RedMuseum.png',
             width: 3,
             height: 3,
             attrs:
