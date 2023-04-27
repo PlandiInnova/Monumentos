@@ -205,7 +205,7 @@ export class PrincipalPageComponent implements OnInit {
         content:
         `
         <h3>${monumento.site} (${monumento.Pais})</h3>
-        <img src = "./../assets/all_images/site_${monumento.id_number}.jpg" class="imagenTooltip">
+        <img src = "./assets/all_images/site_${monumento.id_number}.jpg" class="imagenTooltip">
         `
       };
 
@@ -222,7 +222,7 @@ export class PrincipalPageComponent implements OnInit {
         <span style="font-family: Goldplay_SemiBold;"> Tipo: <b style="font-family: Goldplay_Black;"> ${monumento.category}</b> </span>
         <br/>
         <br/>
-        <img src = "./../assets/all_images/site_${monumento.id_number}.jpg" class="responsive">
+        <img src = "./assets/all_images/site_${monumento.id_number}.jpg" class="responsive">
         ${dateDanger}
         <br/>
         <span style="font-size: 15px; font-family: Goldplay_Regular;">${monumento.short_description}</span>
@@ -371,7 +371,7 @@ function mapaGrande(plots: any, newplots?: any) {
             label: "Cultural",
             sliceValue: "2",
             type: 'image',
-            url: './../assets/BlueMuseum.png',
+            url: './assets/BlueMuseum.png',
             width: 10,
             height: 10,
             attrs:
@@ -383,7 +383,7 @@ function mapaGrande(plots: any, newplots?: any) {
             label: "Cultural / Natural",
             sliceValue: "3",
             type: 'image',
-            url: './../assets/culturaNa.png',
+            url: './assets/culturaNa.png',
             width: 10,
             height: 10,
             attrs:
@@ -407,7 +407,7 @@ function mapaGrande(plots: any, newplots?: any) {
             label: "Cultural (Peligro)",
             sliceValue: "5",
             type: 'image',
-            url: './../assets/RedMuseum.png',
+            url: './assets/RedMuseum.png',
             width: 10,
             height: 10,
             attrs:
@@ -2357,7 +2357,7 @@ function mapaChico(plots: any, newplots?: any) {
             label: "Cultural",
             sliceValue: "2",
             type: 'image',
-            url: './../assets/BlueMuseum.png',
+            url: './assets/BlueMuseum.png',
             width: 3,
             height: 3,
             attrs:
@@ -2369,7 +2369,7 @@ function mapaChico(plots: any, newplots?: any) {
             label: "Cultural / Natural",
             sliceValue: "3",
             type: 'image',
-            url: './../assets/culturaNa.png',
+            url: './assets/culturaNa.png',
             width: 3,
             height: 3,
             attrs:
@@ -2393,7 +2393,7 @@ function mapaChico(plots: any, newplots?: any) {
             label: "Cultural (Peligro)",
             sliceValue: "5",
             type: 'image',
-            url: './../assets/RedMuseum.png',
+            url: './assets/RedMuseum.png',
             width: 3,
             height: 3,
             attrs:
