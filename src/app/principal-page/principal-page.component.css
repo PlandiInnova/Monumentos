@@ -10,7 +10,7 @@
   width: 48px;
   height: 48px;
   color: rgba(0, 0, 0, 0.87);
-  background: whitesmoke;
+  background: rgba(245, 245, 245, 0.349);
   border-radius: 10px !important;
   z-index: 1;
   margin: 0;
@@ -21,6 +21,8 @@
   overflow: hidden;
   transition: width 0.5s ,height 0.5s;
   transition-delay: 0s, 0.75s;
+  bottom: 1rem;
+  left: 3rem;
 }
 
 .example-box .toggle{
@@ -34,23 +36,27 @@
   align-items: center;
   display: flex;
   transition: 100ms;
-  background: whitesmoke; /* este es el mismo color que debe llevar que arriba */
+  background: rgba(245, 245, 245, 0.349); /* este es el mismo color que debe llevar que arriba */
 }
 .example-box.active {
   width: 250px;
   height: 280px;
+  width: 90vw;
   transition: height 0.5s,width 0.5s;
   transition-delay: 0s, 0.75s;
-  background: white;
+  /* background: rgba(255, 255, 255, 0.39); */
+  /* background: #c7406d49; */
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .example-box .toggle.active{
   display: flex;
   justify-content: flex-end;
-  background: #FFFFFF;
+  /* background: #FFFFFF; */
 }
 
 .CursorToMoveDice {
+  left: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +70,7 @@
 }
 
 .CursorToMoveDice.active{
-  right: 5%;
+  /* right: 5%; */
   }
 
   /* ************* this sections is for the draggable component ********** */
@@ -239,44 +245,45 @@
 
 @font-face {
   font-family: 'Goldplay_Black';
-  src: url(/assets/fonts/Goldplay_Black.otf);
+  src: url(./../../assets/fonts/Goldplay_Black.otf);
+  /* src: url(C:/Users/PLANDI-02/Monumentos/src/assets/fonts/Goldplay_Light.otf); */
 }
 
 @font-face {
   font-family: 'Goldplay_Bold';
-  src: url(/assets/fonts/Goldplay_Bold.otf);
+  src: url(./../../assets/fonts/Goldplay_Bold.otf);
 }
 
 @font-face {
   font-family: 'Goldplay_Light';
-  src: url(/assets/fonts/Goldplay_Light.otf);
+  src: url(./../../assets/fonts/Goldplay_Light.otf);
 }
 
 @font-face {
   font-family: 'Goldplay_Medium';
-  src: url(/assets/fonts/Goldplay_Medium.otf);
+  src: url(./../../assets/fonts/Goldplay_Medium.otf);
 }
 
 @font-face {
   font-family: 'Goldplay_Regular';
-  src: url(/assets/fonts/Goldplay_Regular.otf);
+  src: url(./../../assets/fonts/Goldplay_Regular.otf);
 }
 
 
 @font-face {
   font-family: 'Goldplay_SemiBold';
-  src: url(/assets/fonts/Goldplay_SemiBold.otf);
+  src: url(./../../assets/fonts/Goldplay_SemiBold.otf);
 }
 
 
 @font-face {
   font-family: 'Goldplay_Thin';
-  src: url(/assets/fonts/Goldplay_Thin.otf);
+  src: url(./../../assets/fonts/Goldplay_Thin.otf);
 }
 
 
 @font-face {
   font-family: 'Pacifico_Regular';
-  src: url(/assets/fonts/Pacifico_Regular.ttf);
+  src: url(./../../assets/fonts/Pacifico_Regular.ttf);
 }
 

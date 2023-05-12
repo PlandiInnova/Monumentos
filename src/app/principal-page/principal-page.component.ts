@@ -1,8 +1,12 @@
+import { AfterViewInit, OnDestroy, ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import 'jquery-mapael';
 import 'jquery-mapael/js/maps/world_countries.js';
 import dfByRecords from '../../assets/dfByRecords.json';
 import dfCountries from '../../assets/dfCountries.json';
+// import { DataTableDirective, DataTablesModule } from 'angular-datatables';
+import { Subject } from 'rxjs';
+
 
 // ----------------------------------------------------
 // ! THESE VARIABLES WORK'S AS ENVIRONMENT
@@ -19,6 +23,12 @@ declare let html2pdf: any;
   styleUrls: ['./principal-page.component.css']
 })
 export class PrincipalPageComponent implements OnInit {
+
+
+
+
+
+dtTrigger: Subject<any> = new Subject<any>();
 
   // ? HERE WILL BE ALL THE PLOTS THAT WILL BE PLOTTED IN MAP
   plots: any = [];
@@ -77,6 +87,12 @@ export class PrincipalPageComponent implements OnInit {
   }
 
 
+  closePage(){
+    window.close();
+  }
+  restaurar(){
+    mapaGrande(this.plots, this.plots);
+  }
   // FUNC USED TO TOGGLE THE MENU, BE ABLE TO DRAG THE MENU AND OPEN IT
   openMenu() {
     let toggleDiv = <HTMLDivElement>document.getElementById('toggleDiv');
@@ -109,7 +125,7 @@ export class PrincipalPageComponent implements OnInit {
   }
 
 
-  // WITH THIS FUNC WE CREATE THE FORMAT OF EACH PLOT, HIS TOOLTIP AND HIS DESCRIPTION
+  //WITH THIS FUNCTION WE CREATE THE FORMAT FOR EACH PLOT, ITS TOOLTIP, AND ITS DESCRIPTION
   dataToPlots(monumentos: any) {
 
     formula: 'CONCATENAR("<li>",Y2,"</li>","<li>",Z2,"</li>","<li>",AA2,"</li>","<li>",AB2,"</li>","<li>",AC2,"</li>","<li>",AD2,"</li>","<li>",AE2,"</li>")'
@@ -245,7 +261,7 @@ export class PrincipalPageComponent implements OnInit {
   }
 }
 
-// WITH THIS FUNC WE CREATE THE FORMAT OF EACH COUNTRIE, HIS TOOLTIP WHICH HAS ALL INF ABOUT IT
+// WITH THIS FUNCTION WE CREATE THE FORMAT FOR EACH COUNTRY AND ITS TOOLTIP WHICH DISPLAYS ALL THE INFORMATION ABOUT IT
 function areas(dfAreas: any) {
   AC_2: "AF"
   Area: 647500
@@ -277,6 +293,8 @@ function areas(dfAreas: any) {
 
 // HERE WE DRAW THE MAP WITH JQUERY-MAPAEL WITH THE SVG LARGE SIZE (10)
 function mapaGrande(plots: any, newplots?: any) {
+
+  console.log(plots);
   $(".mapcontainer").mapael({
     map: {
       name: "world_countries",
@@ -347,7 +365,7 @@ function mapaGrande(plots: any, newplots?: any) {
         {
           'font-family': "Goldplay_Black",
           'font-size': 20,
-          fill: "#907BFF"
+          fill: "#202124"
         },
         labelAttrs: {
           'font-family': "Goldplay_SemiBold",
@@ -378,7 +396,9 @@ function mapaGrande(plots: any, newplots?: any) {
             {
               fill: "#0083FF"
             },
+            clicked: true
           },
+
           {
             label: "Cultural / Natural",
             sliceValue: "3",
@@ -390,6 +410,7 @@ function mapaGrande(plots: any, newplots?: any) {
             {
               fill: "#4200FF"
             },
+            clicked: true
           },
           {
             label: "Natural (Peligro)",
@@ -402,6 +423,7 @@ function mapaGrande(plots: any, newplots?: any) {
             {
               fill: "#FF0000"
             },
+            clicked: false
           },
           {
             label: "Cultural (Peligro)",
@@ -414,6 +436,7 @@ function mapaGrande(plots: any, newplots?: any) {
             {
               fill: "#FF0000"
             },
+            clicked: true
           }]
       }
     },
@@ -2243,6 +2266,7 @@ function mapaGrande(plots: any, newplots?: any) {
   window.addEventListener('resize', shittt);
 
 
+
   function shittt() {
     x.setAttribute('height', '100vh');
   }
@@ -2327,17 +2351,17 @@ function mapaChico(plots: any, newplots?: any) {
           enabled: true,
           opacity: 0
         },
-        mode: "vertical",
+        // mode: "vertical",
         title: "Tipo de monumento",
         titleAttrs:
         {
           'font-family': "Goldplay_Black",
           'font-size': 20,
-          fill: "#907BFF"
+          fill: "#202124"
         },
         labelAttrs: {
           'font-family': "Goldplay_SemiBold",
-          fill: "#001D54"
+          fill: "#202124"
         },
         slices:
           [{
@@ -4227,7 +4251,8 @@ function mapaChico(plots: any, newplots?: any) {
 
   function openModal() { modal.style.display = 'block'; }
 
-  function closeModal() { modal.style.display = 'none'; respuestas = []; }
+  function closeModal() { modal.style.display = 'none'; }
+  // respuestas = [];
 
   // Close If Outside Click
   function outsideClick(e: any) { if (e.target == modal) { modal.style.display = 'none'; } }
@@ -4245,36 +4270,5 @@ function mapaChico(plots: any, newplots?: any) {
   mapSVG.setAttribute('id', 'svgMap');
   mapSVG.setAttribute('style', 'height: 100vh');
 
-  let respuestas: any = [];
-  let respuesta: any;
 
-  let pathAreas = document.querySelectorAll('path');
-  let pathPlots = document.querySelectorAll('path.plot');
-  let imagePlots = document.querySelectorAll('image.plot');
-
-  mapSVG?.addEventListener('click', (e) => {
-    for (let pathArea in pathAreas) {
-      if (e.target == pathAreas[pathArea]) {
-        respuestas.push('si');
-      }
-      else {
-        respuestas.push('no');
-      }
-    }
-    for (let imagePlot in imagePlots) {
-      if (e.target == imagePlots[imagePlot]) {
-        respuestas.push('si');
-      }
-      else {
-        respuestas.push('no');
-      }
-    }
-
-    if (respuestas.includes('si')) {
-      respuesta = 'si';
-    } else {
-      respuesta = 'no';
-      mapaGrande(plots, plots);
-    }
-  });
 }

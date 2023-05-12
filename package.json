@@ -1,14 +1,35 @@
 {
   "name": "monumentos",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "app.js",
+  "author": "PLANDI",
+  "license": "MIT",
+  "description": "Mapamundi de los monumentos alrededor del mundo",
   "scripts": {
     "ng": "ng",
     "start": "ng build --base-href ./ && electron .",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dist": "electron-builder",
+    "pack": "electron-builder --ia32"
+  },
+  "build": {
+    "appId": "com.monumentos.mex",
+    "productName": "Mapapundi monumentos",
+    "copyright": "Copyright © ",
+    "mac": {
+      "target": [
+        "zip"
+      ]
+    },
+    "win": {
+      "publisherName": "Mapamundi 32Bits",
+      "target": [
+        "nsis"
+      ]
+    }
   },
   "private": true,
   "dependencies": {
@@ -24,10 +45,9 @@
     "@angular/router": "^14.2.0",
     "@ng-bootstrap/ng-bootstrap": "^13.1.1",
     "@popperjs/core": "^2.10.2",
-    "@types/jquery": "^3.5.14",
     "bootstrap": "^5.2.3",
+    "datatables.net-bs5": "^1.11.3",
     "html2pdf.js": "^0.10.1",
-    "jquery": "^3.6.1",
     "jquery-mapael": "^2.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
@@ -40,6 +60,7 @@
     "@angular/localize": "^14.2.0",
     "@types/jasmine": "~4.0.0",
     "electron": "^23.2.1",
+    "electron-builder": "^23.6.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",

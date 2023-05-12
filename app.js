@@ -6,10 +6,16 @@ const {app, BrowserWindow} = require('electron')
 
     function createWindow () {
       mainWindow = new BrowserWindow({
-        width: 1000,
-        height: 800,
+        // width: 1000,
+        // height: 800,
+        movable: true,
+        // resizable: false,
+        minHeight: "300px",
+        minWidth: "300px",
+        fullscreen : true,
+        autoHideMenuBar  : true,
         // frame: false
-        titleBarStyle: 'hidden',
+        // titleBarStyle: 'hidden',
         titleBarOverlay: {
           color: '#2f3241',
           symbolColor: '#74b1be',
@@ -20,13 +26,18 @@ const {app, BrowserWindow} = require('electron')
         // }
       })
 
+
+      // mainWindow.loadFile('./dist/monumentos/index.html');
+
+
       mainWindow.loadURL(
         url.format({
-          pathname: path.join(__dirname, `/dist/monumentos/index.html`),
+          pathname: path.join(__dirname, `./dist/monumentos/index.html`),
           protocol: "file:",
-          // slashes: true
+          slashes: true
         })
       );
+
       // Open the DevTools.
       // mainWindow.webContents.openDevTools()
 
