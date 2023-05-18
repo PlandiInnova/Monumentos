@@ -5,18 +5,20 @@ import { AppComponent } from './app.component';
 import { PrincipalPageComponent } from './principal-page/principal-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrincipalPageComponent,
-    
+
   ],
   imports: [
     BrowserModule,
     DragDropModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

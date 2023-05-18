@@ -1,4 +1,4 @@
-<div class="portadaPrincipal" *ngIf="!dentroDelContenido">
+<div class="portadaPrincipal" [hidden]="dentroDelContenido">
   <div class="paisesImagen">
   </div>
   <div class="titleTextInfoMundial">INFOMUNDIAL</div>
@@ -8,7 +8,7 @@
 </div>
 
 
-<div class="container-fluid" *ngIf="dentroDelContenido">
+<div class="container-fluid" [hidden]="!dentroDelContenido">
   <div class="mapcontainer">
     <div class="example-box active" cdkDragBoundary=".container-fluid" cdkDrag id="navigationDiv">
       <div class="toggle active" id="toggleDiv" cdkDragHandle>
@@ -18,12 +18,29 @@
 
       <!-- DIV with the SVG of slices about the clasifications of monuments  -->
       <div class="row">
-        <div class="col">
+        <div class="col-6">
+          <table datatable="ng" id="dataTable"  [dtOptions]="dtOptions"  class="table row-border hover" [dtTrigger]="dtTrigger">
+            <thead>
+              <tr>
+                <th>Monumento</th>
+                <th>País</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let dato of tituloListas; index as I">
+                <td><span (click)="funcionvacia(dato.id)">{{dato.nombre}}</span>
+                </td>
+                <td>{{dato.pais}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+
           <!-- <table datatable [dtOptions]="dtOptions" class="row-border hover"></table> -->
 
         </div>
-        <div class="col"><div class="plotLegend"><span>Alternative content for the legend</span></div></div>
-        <div class="col">
+        <div class="col-3"><div class="plotLegend"><span>Alternative content for the legend</span></div></div>
+        <div class="col-3">
           <button class="restaurar"(click)="restaurar()">restaurar</button>
           <button class="XClose" (click)="closePage()">cerrar</button>
         </div>
