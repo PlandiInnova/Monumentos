@@ -10,7 +10,7 @@
   width: 48px;
   height: 48px;
   color: rgba(0, 0, 0, 0.87);
-  background: rgba(245, 245, 245, 0.349);
+  background: rgba(245, 245, 245, 0.8);
   border-radius: 10px !important;
   z-index: 1;
   margin: 0;
@@ -40,13 +40,13 @@
 }
 .example-box.active {
   width: 250px;
-  height: 280px;
-  width: 90vw;
+  height: 320px;
+  width: 92vw;
   transition: height 0.5s,width 0.5s;
   transition-delay: 0s, 0.75s;
   /* background: rgba(255, 255, 255, 0.39); */
   /* background: #c7406d49; */
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255);
 }
 
 .example-box .toggle.active{
@@ -62,16 +62,16 @@
   align-items: center;
   position: absolute;
   cursor: pointer;
-  width: 29px;
-  height: 25px;
-  background-image: url(../../assets/burgerMenu.png);
+  width: 30px;
+  height: 30px;
+  background-image: url(../../assets/feclasDentro.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.CursorToMoveDice.active{
-  /* right: 5%; */
-  }
+.tableToPadding {
+  padding: 0.75rem;
+}
 
   /* ************* this sections is for the draggable component ********** */
 
@@ -170,7 +170,84 @@
 }
 /* ********** ↑↑↑↑↑↑↑↑  in this sections was the modal ↑↑↑↑↑↑↑↑ **********  */
 
+/* ***  botones minimizar y cerrar *** */
 
+#botonera {
+  z-index: 2;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #9c27b0;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.buttonControl {
+  color: white;
+  background-color: #ff4081;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.buttonControl:hover {
+  transform: scale(1.1);
+  background-color: #f50057;
+}
+
+.buttonControl:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 64, 129, 0.5);
+  transform: scale(1);
+}
+/* ***  botones minimizar y cerrar *** */
+
+/* *** botón minimizar menú ***  */
+.botonMin{
+  position: absolute;
+  z-index: 1;
+  background-color:#ABABBA;
+  width: 40px;
+  height: 40px;
+  bottom: 1rem;
+  left: 1rem;
+}
+.openMenu{
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  background-image: url(../../assets/feclasFuera.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* *** botón minimizar menú ***  */
+
+/* *** botón restaurar  *** */
+.restaurar {
+  color: white;
+  background-color: #009688; /* Color de fondo para el botón "Restaurar" */
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.restaurar:hover {
+  background-color: #00796b; /* Color de fondo al pasar el cursor sobre el botón "Restaurar" */
+}
+
+.restaurar:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 150, 136, 0.5); /* Sombra al enfocar el botón "Restaurar" */
+}
+
+
+/* *** botón restaurar  *** */
 
 .portadaPrincipal{
   height: 100vh;
@@ -229,6 +306,7 @@
 .buttonContainerText{
   font-size: 2em;
 }
+
 
 
 

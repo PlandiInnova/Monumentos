@@ -1,4 +1,4 @@
-import { AfterViewInit, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, OnDestroy, ViewChild, ElementRef,ChangeDetectorRef   } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import 'jquery-mapael';
 import 'jquery-mapael/js/maps/world_countries.js';
@@ -6,6 +6,8 @@ import dfByRecords from '../../assets/dfByRecords.json';
 import dfCountries from '../../assets/dfCountries.json';
 import { DataTableDirective, DataTablesModule } from 'angular-datatables';
 import { Subject } from 'rxjs';
+import { ipcRenderer } from 'electron';
+import { CdkDrag } from '@angular/cdk/drag-drop';
 
 
 // ----------------------------------------------------
@@ -34,6 +36,8 @@ export class PrincipalPageComponent implements AfterViewInit, OnDestroy,OnInit {
 
 @ViewChild(DataTableDirective, {static: false})dtElement!: DataTableDirective;
 
+menuabierto = true;
+
 dtOptions: DataTables.Settings = {};
 
 dtTrigger: Subject<any> = new Subject<any>();
@@ -45,6 +49,16 @@ dtTrigger: Subject<any> = new Subject<any>();
   tituloListas: any = [];
 
 
+  comboListDataTableLenght: any = 3;
+
+
+
+  topLimit = window.scrollY || window.pageYOffset;
+  bottomLimit = this.topLimit + window.innerHeight;
+  leftLimit = window.scrollX || window.pageXOffset;
+  rightLimit = this.leftLimit + window.innerWidth;
+
+
 
   // ! THIS VARIABLE NEED TO BE IN FALSE TO CAN BE ABLE TO GET INTO CONTENT
   dentroDelContenido: any = false;
@@ -54,7 +68,7 @@ dtTrigger: Subject<any> = new Subject<any>();
   // * IN THIS VARIABLE IS LOCATED ALL THE COUNTRYS FROM THE JSON FILE
   dataCountries: any;
 
-  constructor() {
+  constructor(private elementRef: ElementRef, private changeDetector: ChangeDetectorRef) {
     // SET THE VALUES OF THE JSON FILES TO OUR VARIABLES PREVIOUSLY DECLARETED ↑
     this.monumentosDataRecords = dfByRecords;
     this.dataCountries = dfCountries;
@@ -83,6 +97,7 @@ dtTrigger: Subject<any> = new Subject<any>();
       pagingType: 'full_numbers',
       responsive: true,
       lengthMenu: [3, 6, 12],
+
       pageLength: 3,
       // scrollX: true,
       language: {
@@ -106,7 +121,44 @@ dtTrigger: Subject<any> = new Subject<any>();
 
 
 
+
+
+
+
+
   }
+
+  minimizeWindow() {
+    window.Electron.ipcRenderer.send('minimize-window');
+  }
+
+  onDragMoved(event: any) {
+    const currentPosition = event.source.getFreeDragPosition();
+    const currentX = currentPosition.x;
+    const currentY = currentPosition.y;
+
+    console.log('Coordenadas actuales:');
+    console.log(event.source.getFreeDragPosition());
+    console.log('X:', currentX);
+    console.log('Y:', currentY);
+
+
+
+    const element = this.elementRef.nativeElement;
+
+    let toggleDiv = <HTMLDivElement>document.getElementById('toggleDiv');
+    let navigationDiv = <HTMLDivElement>document.getElementById('navigationDiv');
+    let CursorToMoveDiceDiv = <HTMLDivElement>document.getElementById('CursorToMoveDice');
+    let paginaActual =window;
+
+    const rect = navigationDiv.getBoundingClientRect();
+    const top = rect.top;
+
+    console.log(paginaActual);
+    console.log('Coordenada superior:', rect);
+  }
+
+
 
   funcionvacia(unvalor: any){
     console.log(unvalor);
@@ -134,42 +186,67 @@ dtTrigger: Subject<any> = new Subject<any>();
     this.dentroDelContenido = true;
     setTimeout(() => {
       mapaGrande(this.plots, this.plots);
-
-
-
-
-
-
-
-
     }, 15);
-
-    // setTimeout(() => {
-
-    // }, 25);
   }
 
   contenidoLista(){
-
-    console.log(this.plots);
-
     let tituloListasPivote: any = [];
     this.plots.forEach((element: any) => {
-
       tituloListasPivote.push({nombre: element.site, pais: element.Pais, id: element.id})
     });
 
-
-
-
     this.tituloListas = tituloListasPivote;
-
 
     $('#dataTable').DataTable().clear();
     //RERENDERING THE INFO DATATABLE
     this.rerender();
-  }
 
+    $('#dataTable').on('length.dt', (e: any, settings: any, len: any) => {
+      let divs = document.getElementsByClassName('example-box active');
+
+      if (divs.length > 0) {
+        var div = divs[0] as HTMLElement; // Conversión de tipo a
+
+        if (len === 3) {
+          div.style.height = '320px';
+          div.style.removeProperty('top');
+          console.log(this.comboListDataTableLenght);
+          console.log(div.getBoundingClientRect().bottom)
+        } else if (len === 6) {
+
+          div.style.height = '450px';
+          let posAct = div.getBoundingClientRect().top
+          if(div.getBoundingClientRect().bottom > this.bottomLimit) {
+            div.style.removeProperty('top');
+          }
+          else if(posAct < 120){
+            console.log(posAct);
+            div.style.top = 40 + 'rem';
+          }
+          console.log(this.bottomLimit);
+          console.log(this.comboListDataTableLenght);
+          console.log(div.getBoundingClientRect().bottom)
+
+
+        } else if (len === 12) {
+          div.style.height = '640px';
+          let posAct = div.getBoundingClientRect().top
+          if(div.getBoundingClientRect().bottom > this.bottomLimit-60) {
+            div.style.removeProperty('top');
+          }
+          else if(posAct < 300){
+            console.log(posAct);
+            div.style.top = 40 + 'rem';
+          }
+          console.log(this.bottomLimit);
+          console.log(this.comboListDataTableLenght);
+          console.log(div.getBoundingClientRect().bottom)
+        }
+      }
+
+      this.comboListDataTableLenght = len; // Anotación de tipo para 'this'
+    });
+  }
   // *************************************
   // FUNCTIONS TO WORK WITH DATA TABLE
   ngAfterViewInit(): void {
@@ -213,41 +290,19 @@ dtTrigger: Subject<any> = new Subject<any>();
   restaurar(){
     console.log(this.newUnicPlot);
     mapaGrande(this.plots,this.plots)
-
-
-
-
   }
+
   // FUNC USED TO TOGGLE THE MENU, BE ABLE TO DRAG THE MENU AND OPEN IT
   openMenu() {
-    let toggleDiv = <HTMLDivElement>document.getElementById('toggleDiv');
-    let navigationDiv = <HTMLDivElement>document.getElementById('navigationDiv');
-    let CursorToMoveDiceDiv = <HTMLDivElement>document.getElementById('CursorToMoveDice');
+  console.log('síabre');
+  this.menuabierto = !this.menuabierto;
 
-    setTimeout(() => {
-      let x = CursorToMoveDiceDiv.getBoundingClientRect();
-      let xx = navigationDiv.getBoundingClientRect();
-      var w = window.innerWidth;
-      var h = window.innerHeight;
 
-      if (x.right > w + 20 || xx.bottom > h) {
-        CursorToMoveDiceDiv.click();
-      }
-    }, 2000);
-
-    // console.log(toggleDiv.classList);
-    // let toggleOpenClose = <HTMLDivElement>document.getElementById('toggleOpenClose');
-    let toggleStatus = toggleDiv.classList.value;
-    if (toggleStatus === 'cdk-drag-handle toggle') {
-      toggleDiv.classList.add('active');
-      navigationDiv.classList.add('active');
-      CursorToMoveDiceDiv.classList.add('active');
-    } else {
-      toggleDiv.classList.remove('active');
-      navigationDiv.classList.remove('active');
-      CursorToMoveDiceDiv.classList.remove('active');
-    }
   }
+
+
+
+
 
 
   //WITH THIS FUNCTION WE CREATE THE FORMAT FOR EACH PLOT, ITS TOOLTIP, AND ITS DESCRIPTION
@@ -486,7 +541,7 @@ function mapaGrande(plots: any, newplots?: any) {
       plot: {
         hideElemsOnClick:
         {
-          enabled: true,
+          // enabled: true,
           opacity: 0
         },
         mode: "vertical",
@@ -567,7 +622,10 @@ function mapaGrande(plots: any, newplots?: any) {
               fill: "#FF0000"
             },
             clicked: true
-          }]
+          }],
+          attrs: {
+            class: "custom-legend"
+          }
       }
     },
     plots: newplots,

@@ -1,10 +1,12 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron')
     const url = require("url");
     const path = require("path");
 
     let mainWindow
 
     function createWindow () {
+
+
       mainWindow = new BrowserWindow({
         // width: 1000,
         // height: 800,
@@ -20,10 +22,11 @@ const {app, BrowserWindow} = require('electron')
           color: '#2f3241',
           symbolColor: '#74b1be',
           height: 40
+        },
+        webPreferences: {
+          // preload: path.join(__dirname, 'C:/Users/PLANDI-02/Monumentos/preload.js')
+          preload: path.join(__dirname, './preload.js')
         }
-        // webPreferences: {
-        //   nodeIntegration: true
-        // }
       })
 
 
@@ -44,6 +47,8 @@ const {app, BrowserWindow} = require('electron')
       mainWindow.on('closed', function () {
         mainWindow = null
       })
+
+
     }
 
     app.on('ready', createWindow)
@@ -55,3 +60,9 @@ const {app, BrowserWindow} = require('electron')
     app.on('activate', function () {
       if (mainWindow === null) createWindow()
     })
+
+
+    ipcMain.on('minimize-window', (event) => {
+      console.log(__dirname);
+      // BrowserWindow.getFocusedWindow().minimize();
+    });

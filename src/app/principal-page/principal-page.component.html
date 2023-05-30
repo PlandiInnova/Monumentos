@@ -10,7 +10,7 @@
 
 <div class="container-fluid" [hidden]="!dentroDelContenido">
   <div class="mapcontainer">
-    <div class="example-box active" cdkDragBoundary=".container-fluid" cdkDrag id="navigationDiv">
+    <div class="example-box active" [hidden]="!menuabierto" (cdkDragMoved)="onDragMoved($event)"  cdkDragBoundary=".container-fluid" cdkDrag id="navigationDiv">
       <div class="toggle active" id="toggleDiv" cdkDragHandle>
         <div class="CursorToMoveDice active" id="CursorToMoveDice" (click)="openMenu()"></div>
       </div>
@@ -18,7 +18,8 @@
 
       <!-- DIV with the SVG of slices about the clasifications of monuments  -->
       <div class="row">
-        <div class="col-6">
+        <div class="col-10">
+         <div class="tableToPadding">
           <table datatable="ng" id="dataTable"  [dtOptions]="dtOptions"  class="table row-border hover" [dtTrigger]="dtTrigger">
             <thead>
               <tr>
@@ -35,19 +36,27 @@
 
             </tbody>
           </table>
-
-          <!-- <table datatable [dtOptions]="dtOptions" class="row-border hover"></table> -->
-
+         </div>
         </div>
-        <div class="col-3"><div class="plotLegend"><span>Alternative content for the legend</span></div></div>
-        <div class="col-3">
-          <button class="restaurar"(click)="restaurar()">restaurar</button>
-          <button class="XClose" (click)="closePage()">cerrar</button>
-        </div>
+        <div class="col-2">
+          <div class="plotLegend">
+            <span>Alternative content for the legend</span>
+          </div>
+        <button class="btn btn-primary restaurar"(click)="restaurar()">Restaurar mapa</button>
+      </div>
       </div>
 
 
     </div>
+    <div class="botonMin " [hidden]="menuabierto" (cdkDragMoved)="onDragMoved($event)"  cdkDragBoundary=".container-fluid" cdkDrag>
+      <div class="openMenu p-3"    id="openMenu" (click)="openMenu()"></div>
+    </div>
+    <div id="botonera">
+      <button class="buttonControl pulse-animation" (click)="minimizeWindow()">_</button>
+      <button class="buttonControl" (click)="closePage()">X</button>
+    </div>
+
+
     <div class="map">Alternative content</div>
   </div>
   <div class="myModalContainer">
