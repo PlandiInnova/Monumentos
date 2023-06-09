@@ -32,9 +32,11 @@ export class PrincipalPageComponent implements AfterViewInit, OnDestroy,OnInit {
 // dtOptions: DataTables.Settings = {};
 // dtTrigger: Subject<any> = new Subject<any>();
 
-
+private observer: MutationObserver = null!;
 
 @ViewChild(DataTableDirective, {static: false})dtElement!: DataTableDirective;
+@ViewChild('titleTextRef', { static: true }) titleTextRef!: ElementRef;
+
 
 menuabierto = true;
 
@@ -68,6 +70,9 @@ dtTrigger: Subject<any> = new Subject<any>();
   // * IN THIS VARIABLE IS LOCATED ALL THE COUNTRYS FROM THE JSON FILE
   dataCountries: any;
 
+
+
+
   constructor(private elementRef: ElementRef, private changeDetector: ChangeDetectorRef) {
     // SET THE VALUES OF THE JSON FILES TO OUR VARIABLES PREVIOUSLY DECLARETED ↑
     this.monumentosDataRecords = dfByRecords;
@@ -76,16 +81,11 @@ dtTrigger: Subject<any> = new Subject<any>();
 
   ngOnInit(): void {
     // dataToPlots JUST CREATE THE PLOTS AS WE NEEDED AND WITH THE CORRECT FORM
-    setTimeout(() => {
-      this.dataToPlots(this.monumentosDataRecords);
-      this.contenidoLista();
-    }, 5);
 
     // THIS FUNC IS USED TO CREATE THE CORRECT FORMAT OF EACH COUNTRY FROM THE JSON FILE
     uniqueUsageToChangeInfoContries: '↓↓↓↓↓↓↓'
     //  areas(this.dataCountries);
     uniqueUsageToChangeInfoContries: '↑↑↑↑↑↑↑'
-
 
     // THIS FUNCT IS USED TO JUMP THE FRONT PAGE (NEED TO CHANGE THE VARIABLE OF LINE 28 dentroDelContenido TO 'true')
     useThisToWhenPortraitIsAvoided: ''
@@ -93,11 +93,28 @@ dtTrigger: Subject<any> = new Subject<any>();
 
 
 
-    this.dtOptions = {
+    const titleText = this.titleTextRef.nativeElement;
+    const letters = titleText.textContent.split('');
+
+    titleText.innerHTML = ''; // Utilizamos innerHTML en lugar de textContent
+
+    letters.forEach((letter: any, index: any) => {
+      const span = document.createElement('span');
+      span.textContent = letter;
+      span.style.animation = `moveLetter ${(index + 1) * 0.1}s infinite`;
+      titleText.appendChild(span);
+    });
+
+
+    setTimeout(() => {
+      this.dataToPlots(this.monumentosDataRecords);
+      this.tablas(this.plots);
+    }, 5);
+
+this.dtOptions = {
       pagingType: 'full_numbers',
       responsive: true,
       lengthMenu: [3, 6, 12],
-
       pageLength: 3,
       // scrollX: true,
       language: {
@@ -118,8 +135,6 @@ dtTrigger: Subject<any> = new Subject<any>();
         },
       },
     };
-
-
 
 
 
@@ -160,14 +175,14 @@ dtTrigger: Subject<any> = new Subject<any>();
 
 
 
-  funcionvacia(unvalor: any){
-    console.log(unvalor);
+  creaMapaUnico(idPlot: any){
+    console.log(idPlot);
     console.log(this.plots);
 
 
 
     this.plots.forEach((element: any) => {
-      if(element.id === unvalor){
+      if(element.id === idPlot){
         this.newUnicPlot.push(element);
         console.log(this.newUnicPlot);
       }
@@ -186,7 +201,83 @@ dtTrigger: Subject<any> = new Subject<any>();
     this.dentroDelContenido = true;
     setTimeout(() => {
       mapaGrande(this.plots, this.plots);
-    }, 15);
+    }, 3);
+
+
+
+    let divs = document.getElementsByClassName('example-box active');
+    var div = divs[0] as HTMLElement; // Conversión de tipo a
+    $('#dataTable').on('length.dt', (e: any, settings: any, len: any) => {
+
+      let tablaContenido = document.getElementsByClassName('row dt-row');
+      let tablaCont = tablaContenido[0] as HTMLElement;
+      let alturaTablaContenido = tablaCont.offsetHeight;
+
+      console.log('altura div antes: ' + div.offsetHeight);
+
+      console.log('altura tabla antes:' + alturaTablaContenido);
+
+      let diferencia = 150 - (div.offsetHeight - alturaTablaContenido);
+
+      console.log(diferencia);
+
+
+        if (len === 3) {
+          div.style.height = '400px';
+          div.style.removeProperty('top');
+
+        } else if (len === 6) {
+
+          div.style.height = '535px';
+          let posAct = div.getBoundingClientRect().top
+
+          if(div.getBoundingClientRect().bottom > this.bottomLimit) {
+            div.style.removeProperty('top');
+          }
+          else if(posAct < 120){
+            console.log(posAct);
+            div.style.top = 40 + 'rem';
+          }
+
+        } else if (len === 12) {
+          div.style.height = '880px';
+          let posAct = div.getBoundingClientRect().top
+          if(div.getBoundingClientRect().bottom > this.bottomLimit-60) {
+            div.style.removeProperty('top');
+          }
+          else if(posAct < 300){
+            div.style.top = 40 + 'rem';
+          }
+        }
+
+      this.comboListDataTableLenght = len; // Anotación de tipo para 'this'
+    });
+
+
+
+    $('input[type="search"]').on('keyup', (event: any) => {
+      let tablaContenido = document.getElementsByClassName('row dt-row');
+      let tablaCont = tablaContenido[0] as HTMLElement;
+      let alturaTablaContenido = tablaCont.offsetHeight;
+      let alturadiv = div.offsetHeight;
+      const searchTerm = $(event.target).val();
+
+      let diferencia = 150 - (alturadiv - alturaTablaContenido)
+
+      div.style.height = (alturadiv + diferencia)+'px';
+      let prueba1 = (alturadiv + diferencia)+'px';
+
+
+      console.log(prueba1);
+      // Realizar acciones de búsqueda o filtrado en función de searchTerm
+      // console.log("Se ha modificado el valor de búsqueda:", searchTerm);
+      // console.log(altura);
+      // console.log(alturadiv);
+
+      console.log(`la altura del div es ${alturadiv}, la de la tabla es: ${alturaTablaContenido} y la diferencia es de: ${diferencia}`);
+    });
+
+
   }
 
   contenidoLista(){
@@ -201,57 +292,13 @@ dtTrigger: Subject<any> = new Subject<any>();
     //RERENDERING THE INFO DATATABLE
     this.rerender();
 
-    $('#dataTable').on('length.dt', (e: any, settings: any, len: any) => {
-      let divs = document.getElementsByClassName('example-box active');
 
-      if (divs.length > 0) {
-        var div = divs[0] as HTMLElement; // Conversión de tipo a
-
-        if (len === 3) {
-          div.style.height = '320px';
-          div.style.removeProperty('top');
-          console.log(this.comboListDataTableLenght);
-          console.log(div.getBoundingClientRect().bottom)
-        } else if (len === 6) {
-
-          div.style.height = '450px';
-          let posAct = div.getBoundingClientRect().top
-          if(div.getBoundingClientRect().bottom > this.bottomLimit) {
-            div.style.removeProperty('top');
-          }
-          else if(posAct < 120){
-            console.log(posAct);
-            div.style.top = 40 + 'rem';
-          }
-          console.log(this.bottomLimit);
-          console.log(this.comboListDataTableLenght);
-          console.log(div.getBoundingClientRect().bottom)
-
-
-        } else if (len === 12) {
-          div.style.height = '640px';
-          let posAct = div.getBoundingClientRect().top
-          if(div.getBoundingClientRect().bottom > this.bottomLimit-60) {
-            div.style.removeProperty('top');
-          }
-          else if(posAct < 300){
-            console.log(posAct);
-            div.style.top = 40 + 'rem';
-          }
-          console.log(this.bottomLimit);
-          console.log(this.comboListDataTableLenght);
-          console.log(div.getBoundingClientRect().bottom)
-        }
-      }
-
-      this.comboListDataTableLenght = len; // Anotación de tipo para 'this'
-    });
   }
   // *************************************
   // FUNCTIONS TO WORK WITH DATA TABLE
   ngAfterViewInit(): void {
     this.dtTrigger.next(this.dtOptions);
-  }
+}
   ngOnDestroy(): void {
     // Do not forget to unsubscribe the event
     this.dtTrigger.unsubscribe();
@@ -300,7 +347,19 @@ dtTrigger: Subject<any> = new Subject<any>();
 
   }
 
-
+tablas(infoTablas: any){
+  console.log(infoTablas);
+  infoTablas.forEach((element: any) => {
+    console.log(`
+    <tr>
+    <td><span>${element.site}</span></td>
+    <td>${element.Pais}</td>
+    <td><img src="./assets/${element.value}.png"></td>
+    <td><button class="btn btn-success" (click)="creaMapaUnico(${element.id})">Ver</button></td>
+    </tr>
+    `);
+  });
+}
 
 
 
@@ -442,9 +501,6 @@ dtTrigger: Subject<any> = new Subject<any>();
   }
 }
 
-// function contenidoListas(plots: any){
-//   let
-// }
 
 // WITH THIS FUNCTION WE CREATE THE FORMAT FOR EACH COUNTRY AND ITS TOOLTIP WHICH DISPLAYS ALL THE INFORMATION ABOUT IT
 function areas(dfAreas: any) {
@@ -541,7 +597,7 @@ function mapaGrande(plots: any, newplots?: any) {
       plot: {
         hideElemsOnClick:
         {
-          // enabled: true,
+          enabled: true,
           opacity: 0
         },
         mode: "vertical",
@@ -622,10 +678,7 @@ function mapaGrande(plots: any, newplots?: any) {
               fill: "#FF0000"
             },
             clicked: true
-          }],
-          attrs: {
-            class: "custom-legend"
-          }
+          }]
       }
     },
     plots: newplots,
@@ -2557,8 +2610,8 @@ function mapaChico(plots: any, newplots?: any) {
             sliceValue: "1",
             type: "svg",
             path: "M 55.513 72.889 c 6.368 0 11.662 -4.466 12.963 -10.435 c 6.338 -1.01 11.194 -6.447 11.194 -13.072 c 0 -2.738 -0.832 -5.284 -2.263 -7.4 c 0.746 -1.651 1.171 -3.474 1.171 -5.4 c 0 -5.701 -3.607 -10.526 -8.662 -12.412 c 1.058 -1.903 1.711 -4.062 1.711 -6.393 c 0 -7.33 -5.943 -13.276 -13.284 -13.276 c -2.614 0 -5.048 0.787 -7.108 2.094 C 48.928 2.667 44.71 0 39.822 0 c -6.283 0 -11.51 4.374 -12.898 10.229 c -5.713 0.887 -10.402 5.407 -11.151 11.432 c -0.39 3.164 0.406 6.167 1.987 8.668 c -2.736 2.437 -4.504 5.944 -4.504 9.897 c 0 4.702 2.461 8.807 6.148 11.168 c -0.561 1.469 -0.905 3.053 -0.905 4.716 c 0 5.729 3.645 10.568 8.73 12.43 c 2.431 2.655 5.889 4.35 9.77 4.35 c 2.334 0 4.492 -0.654 6.398 -1.701 v 19.391 h -25.42 v 2.347 h 55.136 v -2.347 h -25.44 V 70.277 C 49.876 71.899 52.576 72.889 55.513 72.889 Z",
-            width: 3,
-            height: 3,
+            width: 10,
+            height: 10,
             attrs:
             {
               fill: "#00B706"
@@ -2570,8 +2623,8 @@ function mapaChico(plots: any, newplots?: any) {
             sliceValue: "2",
             type: 'image',
             url: './assets/BlueMuseum.png',
-            width: 3,
-            height: 3,
+            width: 10,
+            height: 10,
             attrs:
             {
               fill: "#0083FF"
@@ -2582,8 +2635,8 @@ function mapaChico(plots: any, newplots?: any) {
             sliceValue: "3",
             type: 'image',
             url: './assets/culturaNa.png',
-            width: 3,
-            height: 3,
+            width: 10,
+            height: 10,
             attrs:
             {
               fill: "#4200FF"
@@ -2594,8 +2647,8 @@ function mapaChico(plots: any, newplots?: any) {
             sliceValue: "4",
             type: "svg",
             path: "M 55.513 72.889 c 6.368 0 11.662 -4.466 12.963 -10.435 c 6.338 -1.01 11.194 -6.447 11.194 -13.072 c 0 -2.738 -0.832 -5.284 -2.263 -7.4 c 0.746 -1.651 1.171 -3.474 1.171 -5.4 c 0 -5.701 -3.607 -10.526 -8.662 -12.412 c 1.058 -1.903 1.711 -4.062 1.711 -6.393 c 0 -7.33 -5.943 -13.276 -13.284 -13.276 c -2.614 0 -5.048 0.787 -7.108 2.094 C 48.928 2.667 44.71 0 39.822 0 c -6.283 0 -11.51 4.374 -12.898 10.229 c -5.713 0.887 -10.402 5.407 -11.151 11.432 c -0.39 3.164 0.406 6.167 1.987 8.668 c -2.736 2.437 -4.504 5.944 -4.504 9.897 c 0 4.702 2.461 8.807 6.148 11.168 c -0.561 1.469 -0.905 3.053 -0.905 4.716 c 0 5.729 3.645 10.568 8.73 12.43 c 2.431 2.655 5.889 4.35 9.77 4.35 c 2.334 0 4.492 -0.654 6.398 -1.701 v 19.391 h -25.42 v 2.347 h 55.136 v -2.347 h -25.44 V 70.277 C 49.876 71.899 52.576 72.889 55.513 72.889 Z",
-            width: 3,
-            height: 3,
+            width: 10,
+            height: 10,
             attrs:
             {
               fill: "#FF0000"
@@ -2606,8 +2659,8 @@ function mapaChico(plots: any, newplots?: any) {
             sliceValue: "5",
             type: 'image',
             url: './assets/RedMuseum.png',
-            width: 3,
-            height: 3,
+            width: 10,
+            height: 10,
             attrs:
             {
               fill: "#FF0000"

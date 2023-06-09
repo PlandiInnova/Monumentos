@@ -40,7 +40,7 @@
 }
 .example-box.active {
   width: 250px;
-  height: 320px;
+  height: 370px;
   width: 92vw;
   transition: height 0.5s,width 0.5s;
   transition-delay: 0s, 0.75s;
@@ -279,9 +279,12 @@
   font-family: 'Goldplay_SemiBold';
   height: 10vh;
   font-size: 8em;
-  position: absolute;
   transform: translateY(25vh);
+  position: absolute;
 }
+
+
+
 /* ********** button to join into the app after the portrait ********** */
 
 .buttonContainer{
